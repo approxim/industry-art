@@ -1,0 +1,31 @@
+.nav-main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(50vh) rotate(-90deg);
+    margin-top: 50px;
+}
+
+.nav-main__list {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100vh;
+    // height: 100%;
+
+
+    
+}
+
+
+.nav-main__item {
+    
+
+    a {
+
+    }
+
+    span {
+        font-size: calc(10px + .5vh);
+        color: $color-white;
+    }
+}

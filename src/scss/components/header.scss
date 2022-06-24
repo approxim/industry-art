@@ -1,0 +1,33 @@
+.header {
+    display: flex;
+    position: fixed;
+    // overflow: auto;
+
+    // height: 100%;
+    margin: 30px 40px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header__burger {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    
+
+    span {
+        width: 37px;
+        height: 2px;
+        background-color: $color-white;
+        border-radius: 50%;
+
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    }
+}

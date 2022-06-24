@@ -1,0 +1,31 @@
+//- Подключаем файл с миксинами
+include html/global/mixins
+include html/global/variables
+
+html
+    include html/global/head    
+
+    body
+        include html/components/header
+
+        main.project.container
+
+            h1 Проект 1            
+            p Как бы то ни было, сплочённость команды профессионалов бодрит
+            
+            .project__image-wrapper 
+                .project__image-item 
+                    img.project__img(src="@img/images/test-picture_001.jpg" alt="picture" width="320" height="188")
+                .project__image-item 
+                    img.project__img(src="@img/images/test-picture_002.jpg" alt="picture" width="320" height="188")
+                .project__image-item 
+                    img.project__img(src="@img/images/test-picture_003.jpg" alt="picture" width="320" height="188")
+                    
+
+
+
+
+        include html/components/footer
+
+        //- Скрипты
+        include html/global/scripts-js

@@ -1,0 +1,19 @@
+ul.header__list
+    -
+        let menu = [
+            {url: "/", text: "главная"},
+            {url: "/rent.html", text: "о нас"},
+            {url: "/software.html", text: "виды поддержки"},
+            {url: "/video.html", text: "команда"},
+        ]
+
+    - let isPage = 0;
+    each element,i in menu
+        if isPage === i
+            li.header__item.current 
+                a(href=element.url)
+                    span #{element.text}
+        else
+            li.header__item
+                a(href=element.url)
+                    span #{element.text}
