@@ -1,14 +1,17 @@
 .header {
     display: flex;
     position: fixed;
-    // overflow: auto;
-
-    // height: 100%;
-    margin: 30px 40px 0;
+    margin: 30px 0 0;
+    padding: 0 40px;
     display: flex;
     justify-content: space-between;
     width: 100%;
     box-sizing: border-box;
+}
+
+.header__logo {
+    cursor: pointer;
+
 }
 
 .header__burger {
@@ -18,7 +21,7 @@
     background-color: transparent;
     outline: none;
     border: none;
-    
+
 
     span {
         width: 37px;
