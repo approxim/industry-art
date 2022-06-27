@@ -1,13 +1,13 @@
 .nav-secondary {
     position: fixed;
     top: 50%;
-    left: 50%;
+    right: 100px;
     z-index: 6003;
-    transform: translate(-50%, -50%);
-    
+    transform: translateY(-50%);
 
-    height: 80vh;
-    width: 80vw;
+
+    height: 70vh;
+    width: auto;
 
     display: flex;
     flex-flow: column;
@@ -15,7 +15,7 @@
     align-items: center;
 
     clip-path: inset(0 0 100vh 0);
-    transition: clip-path .7s ease;
+    transition: clip-path .9s ease;
 
     &.open {
         clip-path: inset(0);

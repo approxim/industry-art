@@ -1,12 +1,14 @@
 .nav-main {
     position: fixed;
-    top: 0;
+    top: 50%;
     left: 100px;
-    transform: rotate(90deg);
+    transform: translate(-45%, -50%) rotate(90deg);
     margin-top: 50px;
     z-index: 500;
 
-    outline: 2px solid white;
+    // outline: 1px solid white;
+    width: 80vh;
+    height: 3vh;
 
     display: none;
 
@@ -16,26 +18,74 @@
 }
 
 .nav-main__list {
-    position: absolute;
-    top: 0;
+    // position: absolute;
+    // top: 0;
     display: flex;
-    justify-content: space-evenly;
-    width: 100vh;
-    height: auto;
+    // justify-content: space-between;
+    width: 100%;
+    height: 100%;
 }
 
 .nav-main__item {
+    // outline: 1px solid green;
+    height: auto;
+    flex-basis: 25%;
+    justify-self: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    // &:not(:last-child) {
+    //     margin-right: auto;
+    // }
 
 
     a {
-        display: block;
+        // outline: 1px solid red;
+
         padding: 10px;
         transform: rotate(180deg);
+        position: absolute;
+        text-align: center;
 
-    }
+        width: auto;
+        height: 100%;
 
-    span {
-        font-size: calc(10px + .5vh);
-        color: $color-white;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translate(-50%);
+            width: 0;
+            height: 0;
+            background-color: $color-white;
+
+            transition: all .3s ease;
+
+        }
+
+        &:hover::before {
+            width: 10px;
+            height: 10px;
+        }
+
+        span {
+            position: relative;
+            bottom: 0;
+            font-size: calc(10px + .7vh);
+            transition: all .3s ease;
+            color: $color-white;
+            white-space: nowrap;
+        }
+
+        &:hover span {
+            font-size: calc(10px + 1.2vh);
+            bottom: -20px;
+        }
+
+
     }
 }
