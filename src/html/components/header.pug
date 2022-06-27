@@ -1,12 +1,55 @@
 header.header
+    nav.nav-main
+        ul.nav-main__list
+            li.nav-main__item
+                a(href="#" data-scroll="#promo")
+                    span главная
+            li.nav-main__item
+                a(href="#" data-scroll="#about-us")
+                    span о нас
+            li.nav-main__item 
+                a(href="#" data-scroll="#about-us")
+                    span виды поддержки
+            li.nav-main__item 
+                a(href="#" data-scroll="#about-us")
+                    span команда
 
     a.header__logo(href="#")
-        img(src="@img/icons/logo-white.svg" width="185" height="16")
+        img(src="@img/icons/logo-white.svg" width="104" height="9")
 
     button.header__burger(type="button")
         span
         span
         span
+        span
+
+    nav.nav-secondary
+        ul.nav-secondary__list 
+            li.nav-secondary__item.menu-mobile
+                a(href="/#promo" data-scroll="#promo")
+                    span главная
+            li.nav-secondary__item.menu-mobile
+                a(href="/#about" data-scroll="#about")
+                    span о нас
+            li.nav-secondary__item.menu-mobile
+                a(href="#" data-scroll="#about-us")
+                    span виды поддержки
+            li.nav-secondary__item.menu-mobile
+                a(href="#" data-scroll="#about-us")
+                    span команда
+
+            li.nav-secondary__item 
+                a(href="/board.html")
+                    span наблюдательский совет
+            li.nav-secondary__item 
+                a(href="/finance.html")
+                    span финансы
+            li.nav-secondary__item 
+                a(href="/creative.html")
+                    span креатив
+
+
+    .header__overlay
 
 
 

@@ -1,11 +1,18 @@
 .nav-main {
     position: fixed;
     top: 0;
-    left: 0;
-    transform: translateY(50vh) rotate(-90deg);
+    left: 100px;
+    transform: rotate(90deg);
     margin-top: 50px;
+    z-index: 500;
 
     outline: 2px solid white;
+
+    display: none;
+
+    @media(min-width: $desktop) {
+        display: block;
+    }
 }
 
 .nav-main__list {
@@ -15,16 +22,15 @@
     justify-content: space-evenly;
     width: 100vh;
     height: auto;
-
-
-
 }
-
 
 .nav-main__item {
 
 
     a {
+        display: block;
+        padding: 10px;
+        transform: rotate(180deg);
 
     }
 

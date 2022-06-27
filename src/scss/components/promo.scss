@@ -1,6 +1,122 @@
 .promo {
     width: 100%;
     height: 100vh;
-    // box-sizing: border-box;
-    // position: relative;
+
+    position: relative;
+    z-index: 0;
+
+    background: radial-gradient(circle at 120% 120%, #132f2c, #000000);
+    // background: #132f2c;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.promo__letter {
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+    @media(min-width: $tablet) {
+        display: block;
+    }
+}
+
+.promo__title {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @media(min-width: $tablet) {
+        
+        top: auto;
+        bottom: 0;
+    }
+    @media(min-width: $desktop) {
+        text-align: right;
+    }
+    
+    p {
+        color: $color-aquamarine;
+        position: relative;
+
+
+        &:nth-child(1) {
+            font-size: 25px;
+            line-height: 30px;
+            margin-bottom: 10px;
+
+            @media(min-width: $tablet) {
+                font-size: 36px;
+                line-height: 45px;
+            }
+    
+            @media(min-width: $desktop) {
+                font-size: 20px;
+                line-height: 25px;
+            } 
+    
+            span {
+                font-weight: 700;
+                line-height: 30px;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                filter: blur(5px);
+                opacity: .6;
+                transition: opacity .7s ease;
+
+                @media(min-width: $desktop) {
+                    left: auto;
+                    right: 0;
+                }
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            font-size: 14px;
+            line-height: 15px;
+
+            @media(min-width: $tablet) {
+                font-size: 36px;
+                line-height: 45px;
+            }
+            @media(min-width: $desktop) {
+                font-size: 20px;
+                line-height: 25px;
+            }
+
+            span {
+                font-weight: 700;
+                line-height: 30px;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-55%);
+                filter: blur(5px);
+                opacity: .6;
+                transition: opacity .7s ease;
+
+                @media(min-width: $desktop) {
+                    left: auto;
+                    right: 0;
+                }
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
 }
