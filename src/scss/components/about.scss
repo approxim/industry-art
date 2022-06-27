@@ -2,3 +2,17 @@
     height: 100vh;
     background: $color-darkgrey url(../../img/images/building-opacity.webp) no-repeat 50% 50% / cover;
 }
+
+.about__wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.about__title {
+    @include title;
+    width: 100%;
+}
+
+.about__content {
+
+}

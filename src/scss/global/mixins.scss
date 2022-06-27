@@ -1,17 +1,3 @@
-@mixin blur-box {
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    box-shadow: 4px 4px 5px 1px rgba(0, 0, 0, 0.14), inset 0px 2px 2px rgba(255, 255, 255, 0.26);
-    background: rgba(255, 255, 255, 0.01);
-
-    @media (min-width: $tablet) {
-
-    }
-    @media (min-width: $desktop) {
-        border-radius: 20px;
-    }
-}
-
 @mixin h2 {
     font-weight: 700;
     font-size: 24px;
@@ -43,5 +29,31 @@
     @media (min-width: $desktop) {
         font-size: 27px;
         line-height: 32px;
+    }
+}
+
+@mixin title {
+    display: none;
+    position: relative;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 25px;
+    color: $color-white;
+    text-transform: uppercase;
+    padding-top: 100px;
+    padding-bottom: 10px;
+
+    &::after {
+        content:'';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $color-white;
+    }
+
+    @media (min-width: $desktop) {
+        display: block;
     }
 }

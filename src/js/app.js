@@ -22,8 +22,8 @@ import * as OBJLoader from "./modules/OBJLoader.js";
 
 import * as MTLLoader from "./modules/MTLLoader.js";
 
-import * as letterMain from "./modules/letter-main.js";
-letterMain.letterMain();
+// import * as letterMain from "./modules/letter-main.js";
+// letterMain.letterMain();
 
 
 
