@@ -22,14 +22,14 @@ import * as OBJLoader from './modules/OBJLoader.js';
 
 import * as MTLLoader from './modules/MTLLoader.js';
 
-// import * as letterMain from "./modules/letter-main.js";
+// import * as letterMain from './modules/letter-main.js';
 // letterMain.letterMain();
 
 import * as navBar from './modules/nav.js';
 navBar.init();
 
-import * as screenChanger from './modules/screenChanger.js';
-screenChanger.init();
+// import * as screenChanger from './modules/screenChanger.js';
+// screenChanger.init();
 
 // В случае если ткнуть мимо пунктов сортера то список скроется
 // let projectsTagContainer = document.querySelector('.projects__tagcontainer');
