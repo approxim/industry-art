@@ -16,6 +16,9 @@ flsFunctions.isWebp();
 import * as header from "./modules/header.js";
 header.headerJS();
 
+import * as about from "./modules/about.js";
+about.aboutJS();
+
 import * as THREE from "./modules/three.min.js";
 
 import * as OBJLoader from "./modules/OBJLoader.js";
