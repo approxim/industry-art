@@ -4,6 +4,7 @@ export function init() {
     crossMargin: 25,
     crossMass: 0.03,
     crossColor: 'rgba(200, 200, 200, 0.9)',
+    circleSize: 600,
     bombSize: 300,
     bombMass: 2,
     mouseSize: 100,
@@ -75,6 +76,18 @@ export function init() {
       let deltaToMouse = { x: a.currPos.x - b.currPos.x, y: a.currPos.y - b.currPos.y };
       let distToMouse = Math.sqrt(deltaToMouse.x * deltaToMouse.x + deltaToMouse.y * deltaToMouse.y) || 1;
       let forceToMouse = 0;
+
+      let forceToStaticBomb = 0;
+      let distToStaticBomb = 0;
+      let deltaToStaticBomb = { x: 0, y: 0 };
+      if (staticBomb) {
+        deltaToStaticBomb = { x: a.currPos.x - staticBomb.currPos.x, y: a.currPos.y - staticBomb.currPos.y };
+        distToStaticBomb =
+          Math.sqrt(deltaToStaticBomb.x * deltaToStaticBomb.x + deltaToStaticBomb.y * deltaToStaticBomb.y) || 1;
+      }
+      if (distToStaticBomb < config.circleSize && staticBomb) {
+        forceToStaticBomb = (distToStaticBomb - config.circleSize) * 0.03;
+      }
       if (distToMouse < config.mouseSize) {
         forceToMouse = (distToMouse - config.mouseSize) * b.mass;
       }
@@ -87,13 +100,11 @@ export function init() {
         acc.x += deltaToBomb.x * forceToBomb;
         acc.y += deltaToBomb.y * forceToBomb;
       }
-
-      acc.x += delta.x * force - deltaToMouse.x * forceToMouse;
-      acc.y += delta.y * force - deltaToMouse.y * forceToMouse;
+      acc.x += delta.x * force - deltaToMouse.x * forceToMouse - deltaToStaticBomb.x * forceToStaticBomb;
+      acc.y += delta.y * force - deltaToMouse.y * forceToMouse - deltaToStaticBomb.y * forceToStaticBomb;
 
       let alpha = (config.mouseSize / distToMouse) * config.blurСoefficient;
       a.color = `rgba(200,200,200,${alpha})`;
-      //     dist < config.mouseSize ? (force = (dist - config.mouseSize) * b.mass) : (force = 0);
 
       crosses[i].vel.x = crosses[i].vel.x * config.smooth + acc.x * crosses[i].mass;
       crosses[i].vel.y = crosses[i].vel.y * config.smooth + acc.y * crosses[i].mass;
@@ -150,4 +161,15 @@ export function init() {
   }
 
   fillCanvas();
+
+  let staticBomb;
+  const debugButton = document.querySelector('#debug');
+  debugButton.addEventListener('click', () => {
+    if (staticBomb) {
+      staticBomb = undefined;
+    } else {
+      let cross = new Cross(canvas.width / 2, canvas.height / 2, 'rgba(255,0,0,0)', 60);
+      staticBomb = cross;
+    }
+  });
 }

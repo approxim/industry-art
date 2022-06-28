@@ -1,5 +1,10 @@
 .supports {
-    width: 100vw;
-    height: 100vh;
-    background-color: $color-blue;
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-blue;
+}
+#debug {
+  position: fixed;
+  top: 20px;
+  left: 20px;
 }
