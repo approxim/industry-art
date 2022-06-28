@@ -1,91 +1,82 @@
 .nav-main {
-    position: fixed;
-    top: 50%;
-    left: 100px;
-    transform: translate(-45%, -50%) rotate(90deg);
-    margin-top: 50px;
-    z-index: 500;
+  position: fixed;
+  top: 50%;
+  left: 100px;
+  transform: translate(-45%, -50%) rotate(90deg);
+  margin-top: 50px;
+  z-index: 500;
 
-    // outline: 1px solid white;
-    width: 80vh;
-    height: 3vh;
+  // outline: 1px solid white;
+  width: 80vh;
+  height: 3vh;
 
-    display: none;
+  display: none;
 
-    @media(min-width: $desktop) {
-        display: block;
-    }
+  @media (min-width: $desktop) {
+    display: block;
+  }
 }
 
 .nav-main__list {
-    // position: absolute;
-    // top: 0;
-    display: flex;
-    // justify-content: space-between;
-    width: 100%;
-    height: 100%;
+  // position: absolute;
+  // top: 0;
+  display: flex;
+  // justify-content: space-between;
+  width: 100%;
+  height: 100%;
 }
 
 .nav-main__item {
-    // outline: 1px solid green;
-    height: auto;
-    flex-basis: 25%;
-    justify-self: center;
+  // outline: 1px solid green;
+  height: auto;
+  flex-basis: 25%;
+  justify-self: center;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  // &:not(:last-child) {
+  //     margin-right: auto;
+  // }
 
-    // &:not(:last-child) {
-    //     margin-right: auto;
-    // }
+  a {
+    padding: 10px;
+    transform: rotate(180deg);
+    position: absolute;
+    text-align: center;
+    color: $color-white;
 
+    width: auto;
+    height: 100%;
 
-    a {
-        // outline: 1px solid red;
-
-        padding: 10px;
-        transform: rotate(180deg);
-        position: absolute;
-        text-align: center;
-
-        width: auto;
-        height: 100%;
-
-        &::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            transform: translate(-50%);
-            width: 0;
-            height: 0;
-            background-color: $color-white;
-
-            transition: all .3s ease;
-
-        }
-
-        &:hover::before {
-            width: 10px;
-            height: 10px;
-        }
-
-        span {
-            position: relative;
-            bottom: 0;
-            font-size: calc(10px + .7vh);
-            transition: all .3s ease;
-            color: $color-white;
-            white-space: nowrap;
-        }
-
-        &:hover span {
-            font-size: calc(10px + 1.2vh);
-            bottom: -20px;
-        }
-
-
+    &::before {
+      content: '■';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      font-size: 0;
+      transform: translate(-50%);
+      color: inherit;
+      transition: all 0.3s ease;
     }
+
+    &:hover::before {
+      font-size: 30px;
+    }
+
+    span {
+      position: relative;
+      bottom: 0;
+      font-size: calc(10px + 0.7vh);
+      transition: all 0.3s ease;
+      color: inherit;
+      white-space: nowrap;
+    }
+
+    &:hover span {
+      font-size: calc(10px + 1.2vh);
+      bottom: -20px;
+    }
+  }
 }
