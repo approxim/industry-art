@@ -27,59 +27,54 @@
 }
 
 .nav-main__item {
-    // outline: 1px solid green;
-    height: auto;
-    flex-basis: 25%;
-    justify-self: center;
+  // outline: 1px solid green;
+  height: auto;
+  flex-basis: 25%;
+  justify-self: center;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-
-    // &:not(:last-child) {
-    //     margin-right: auto;
-    // }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 
-    a {
-        padding: 10px;
-        transform: rotate(180deg);
+  a {
+    padding: 10px;
+    transform: rotate(180deg);
+    position: absolute;
+    text-align: center;
+    color: $color-white;
+
+    width: auto;
+    height: 100%;
+
+    &::before {
+        content: '■';
         position: absolute;
-        text-align: center;
-        color: $color-white;
+        left: 50%;
+        top: 0;
+        font-size: 0;
+        transform: translate(-50%);
+        color: inherit;
+        transition: all .3s ease;
+    }
 
-        width: auto;
-        height: 100%;
+    &:hover::before {
+        font-size: 30px;
+    }
 
-        &::before {
-            content: '■';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            font-size: 0;
-            transform: translate(-50%);
-            color: inherit;
-            transition: all .3s ease;
-        }
+    span {
+      position: relative;
+      bottom: 0;
+      font-size: calc(10px + .7vh);
+      transition: all .3s ease;
+      color: inherit;
+      white-space: nowrap;
+    }
 
-        &:hover::before {
-            font-size: 30px;
-        }
-
-        span {
-            position: relative;
-            bottom: 0;
-            font-size: calc(10px + .7vh);
-            transition: all .3s ease;
-            color: inherit;
-            white-space: nowrap;
-        }
-
-        &:hover span {
-            font-size: calc(10px + 1.2vh);
-            bottom: -20px;
-        }
+    &:hover span {
+      font-size: calc(10px + 1.2vh);
+      bottom: -20px;
     }
   }
+
 }

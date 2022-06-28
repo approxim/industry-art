@@ -1,5 +1,133 @@
 .team {
     width: 100%;
     height: 100vh;
-    background-color: $color-green;
+    // background-color: $color-green;
+
+    padding-top: 60px;
+    padding-bottom: 70px;
+
+    @media (min-width: $tablet) {
+        padding-top: 100px;
+        padding-bottom: 90px;
+    }
+}
+
+.team__title {
+    @include title
+}
+
+
+.team__slider-wrap {
+    width: 253px;
+    height: 392px;
+    display: grid !important;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+
+    &:hover .team__slider-color {
+        clip-path: circle(1000px at 50% 200%);
+    }
+}
+
+.team__slider-item {
+    grid-area: 1/1/2/2;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+}
+
+.team__slider-gray {
+
+    p {
+        margin-top: 15px;
+        text-align: center;
+        span {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 25px;
+            text-transform: uppercase;
+            color: $color-white;
+        }
+
+    }
+}
+
+.team__slider-color {
+    clip-path: circle(10px at 50% 150%);
+    transition: clip-path .7s ease;
+}
+
+.team__slider-boximage {
+    height: 82%;
+    width: inherit;
+
+    &--gray {
+
+    }
+
+    &--color {
+
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+}
+
+
+
+
+.team__slider-desc {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 60%;
+
+    background: linear-gradient(180deg, transparentize($color-lightgray, .41) 0%, $color-lightgray 46.15%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 14px;
+}
+
+.team__slider-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-black;
+
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 40%;
+        height: 1px;
+        background-color: $color-black;
+        left: 50%;
+        top: 120%;
+        transform: translateX(-50%);
+        // margin-top: 35px;
+    }
+}
+
+.team__slider-post {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 19px;
+    text-align: center;
+    color: $color-black;
 }
