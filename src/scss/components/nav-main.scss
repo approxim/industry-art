@@ -1,29 +1,29 @@
 .nav-main {
-    position: fixed;
-    top: 50%;
-    left: 100px;
-    transform: translate(-45%, -50%) rotate(90deg);
-    margin-top: 50px;
-    z-index: 500;
+  position: fixed;
+  top: 50%;
+  left: 100px;
+  transform: translate(-45%, -50%) rotate(90deg);
+  margin-top: 50px;
+  z-index: 500;
 
-    // outline: 1px solid white;
-    width: 80vh;
-    height: 3vh;
+  // outline: 1px solid white;
+  width: 80vh;
+  height: 3vh;
 
-    display: none;
+  display: none;
 
-    @media(min-width: $desktop) {
-        display: block;
-    }
+  @media (min-width: $desktop) {
+    display: block;
+  }
 }
 
 .nav-main__list {
-    // position: absolute;
-    // top: 0;
-    display: flex;
-    // justify-content: space-between;
-    width: 100%;
-    height: 100%;
+  // position: absolute;
+  // top: 0;
+  display: flex;
+  // justify-content: space-between;
+  width: 100%;
+  height: 100%;
 }
 
 .nav-main__item {
@@ -81,4 +81,5 @@
             bottom: -20px;
         }
     }
+  }
 }

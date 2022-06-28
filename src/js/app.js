@@ -1,5 +1,5 @@
 // Подключение jquery
-import $ from "jquery";
+import $ from 'jquery';
 
 // Подключение Slick-Slider
 // import  "slick-carousel";
@@ -9,29 +9,27 @@ import $ from "jquery";
 // const swiper = new Swiper();
 
 // Проверка браузеров на поддержку webp
-import * as flsFunctions from "./modules/functions.js";
+import * as flsFunctions from './modules/functions.js';
 flsFunctions.isWebp();
 
 // header
-import * as header from "./modules/header.js";
+import * as header from './modules/header.js';
 header.headerJS();
 
-import * as THREE from "./modules/three.min.js";
+import * as THREE from './modules/three.min.js';
 
-import * as OBJLoader from "./modules/OBJLoader.js";
+import * as OBJLoader from './modules/OBJLoader.js';
 
-import * as MTLLoader from "./modules/MTLLoader.js";
+import * as MTLLoader from './modules/MTLLoader.js';
 
 // import * as letterMain from "./modules/letter-main.js";
 // letterMain.letterMain();
 
+import * as navBar from './modules/nav.js';
+navBar.init();
 
-
-
-
-
-
-
+import * as screenChanger from './modules/screenChanger.js';
+screenChanger.init();
 
 // В случае если ткнуть мимо пунктов сортера то список скроется
 // let projectsTagContainer = document.querySelector('.projects__tagcontainer');
@@ -56,4 +54,3 @@ import * as MTLLoader from "./modules/MTLLoader.js";
 // 	  }
 // 	});
 // })
-
