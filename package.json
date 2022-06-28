@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "jquery": "latest",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "three": "^0.141.0"
   }
 }

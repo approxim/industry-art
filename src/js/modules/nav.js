@@ -16,18 +16,31 @@ function getRandomColor() {
 
 function activateSection(sectionID) {
   let section = sections[sectionID];
-  sections.forEach((section) => (section.style.display = 'none'));
-  section.style.display = '';
+  sections.forEach((sectionToRemove) => {
+    sectionToRemove.classList.remove('open');
+    setTimeout(() => {
+      sectionToRemove.style.display = 'none';
+      section.style.display = '';
+      setTimeout(() => {
+        section.classList.add('open');
+      }, 50);
+    }, 500);
+  });
+
   currentSection = sectionID;
 }
 
 function activateNavItem(item, navItems) {
-  navItems.forEach((item) => (item.querySelector('a').style.color = ''));
+  navItems.forEach((item) => {
+    item.classList.remove('open');
+    item.querySelector('a').style.color = '';
+  });
   let color = getRandomColor();
   while (color == colorInUse) {
     color = getRandomColor();
   }
   colorInUse = color;
+  item.classList.add('open');
   item.querySelector('a').style.color = color;
 }
 
@@ -42,14 +55,15 @@ export function init() {
     let navItem = event.target.closest('.nav-main__item');
     if (navItem) {
       activateNavItem(navItem, navItems);
-      let sectionToScroll;
 
+      let sectionToScroll;
       for (let i = 0; i < sections.length; i++) {
         console.log(sections[i].id, navItem.dataset);
         if (sections[i].id == navItem.dataset.scroll) {
           sectionToScroll = i;
         }
       }
+      wheelCounter = sectionToScroll * 5;
       activateSection(sectionToScroll);
     }
   });

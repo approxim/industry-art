@@ -16,17 +16,14 @@ flsFunctions.isWebp();
 import * as header from './modules/header.js';
 header.headerJS();
 
-import * as THREE from './modules/three.min.js';
-
-import * as OBJLoader from './modules/OBJLoader.js';
-
-import * as MTLLoader from './modules/MTLLoader.js';
-
-// import * as letterMain from './modules/letter-main.js';
-// letterMain.letterMain();
+import * as letterMain from './modules/letter-main.js';
+letterMain.letterMain();
 
 import * as navBar from './modules/nav.js';
 navBar.init();
+
+import * as crosses from './modules/crosses.js';
+crosses.init();
 
 // import * as screenChanger from './modules/screenChanger.js';
 // screenChanger.init();
