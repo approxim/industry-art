@@ -134,12 +134,16 @@ export function init() {
     bombs.push(cross);
     setTimeout(() => bombs.pop(), 50);
   }
-  window.addEventListener('resize', () => {
+
+  function updateCanvasFilling() {
     crosses = [];
     fillCanvas();
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-  });
+  }
+
+  window.addEventListener('resize', updateCanvasFilling);
+  window.addEventListener('fullscreenchange', updateCanvasFilling);
   canvas.addEventListener('mousemove', setPos);
   canvas.addEventListener('mousedown', fearCrosses);
   function fillCanvas() {
