@@ -7,35 +7,33 @@ section.about#about
 
     .about__content
       .about__info-box
-        .about__info.open
-          h3.about__info-title
-            span Сибирский институт развития креативных индустрий
-          p.about__info-desc – единый центр поддержки и продвижения креативного бизнеса в Красноярском крае. Мы объединяем власть, бизнес, образование, культуру, жителей и креативное сообщество региона.
-          template Сибирский институт
+        .about__info-list
+          .about__info.about__info--pink
+            h3.about__info-title
+              span Сибирский институт развития креативных индустрий
+            p.about__info-desc – единый центр поддержки и продвижения креативного бизнеса в Красноярском крае. Мы объединяем власть, бизнес, образование, культуру, жителей и креативное сообщество региона.
+            template Сибирский институт
 
+          .about__info.about__info--green.open
+            h3.about__info-title
+              span Креативные индустрии в красноярском крае
+            p.about__info-desc Сегодня в регионе официально зарегистрированы более 5 000 организаций в области креативных индустрий. Развитие креативного предпринимательства – одно из приоритетных направлений на уровне Правительства края.
+            template Красноярский край
 
-
-        .about__info
-          h3.about__info-title
-            span Креативные индустрии в красноярском крае
-          p.about__info-desc Сегодня в регионе официально зарегистрированы более 5 000 организаций в области креативных индустрий. Развитие креативного предпринимательства – одно из приоритетных направлений на уровне Правительства края.
-          template Красноярский край
-
-        button.about__info-toggle(type="button")
+          //.about__info-toggle--green
+        button.about__info-toggle.about__info-toggle--green(type="button")
           span Сибирский институт
 
 
-
-
       .about__cards
-        .about__card.about__direction
-          button(type="button")
-            img(src="@img/images/about-img_1.jpg" width="258" height="270")
+        .about__card.about__card--green
+          button.about__card-button.about__card-button--green(type="button")
+            //- img(src="@img/images/card-green-1.jpg" width="258" height="270")
           
 
-        .about__card.about__creative
-          button(type="button")
-            img(src="@img/images/about-img_2.jpg" width="258" height="270")
+        .about__card.about__card--pink
+          button.about__card-button.about__card-button--pink(type="button")
+            //- img(src="@img/images/card-pink_1.jpg" width="258" height="270")
 
 
 

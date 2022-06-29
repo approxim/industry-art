@@ -19,6 +19,9 @@ header.headerJS();
 import * as letterMain from './modules/letter-main.js';
 letterMain.letterMain();
 
+import * as about from "./modules/about.js";
+about.aboutJS();
+
 import * as navBar from './modules/nav.js';
 navBar.init();
 
