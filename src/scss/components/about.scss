@@ -13,6 +13,7 @@
 }
 
 .about__wrapper {
+  overflow: visible;
   display: flex;
   flex-direction: column;
 }
@@ -209,12 +210,26 @@
   }
 }
 
+.about__cards_animate {
+  animation: animCards 1s linear forwards;
+}
+.about__cards_animate2 {
+  animation: animCards 1s linear forwards reverse;
+}
 .about__cards {
   display: flex;
+  position: relative;
+  top: 80px;
   flex-direction: column;
+  width: 24em;
+  height: 16.5em;
   align-items: center;
   gap: 35px;
   margin-bottom: 20px;
+  border-radius: 50%;
+
+  transform-style: preserve-3d;
+  transform: rotateX(75deg);
 
   @media (min-width: $tablet) {
     flex-direction: row;
@@ -222,14 +237,24 @@
     gap: 0;
     padding: 50px 0;
     // transform: translateY(50px);
+    // animation: animCards 5s linear infinite;
   }
-
   @media (min-width: $desktop) {
-    flex-basis: 35%;
+    // flex-basis: 35%;
+  }
+}
+@keyframes animCards {
+  0% {
+    transform: rotateX(75deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(75deg) rotateZ(-180deg);
   }
 }
 
 .about__card {
+  position: absolute;
+  // top: 200px;
   width: 258px;
   height: 270px;
   overflow: hidden;
@@ -237,20 +262,40 @@
   box-shadow: 8px 8px 15px transparentize($color-black, 0.6);
 
   &--green {
+    top: -250px;
+    right: 0;
     @media (min-width: $tablet) {
-      transform: translate(60px, -50px);
+      transform: rotateX(-90deg);
     }
   }
 
   &--pink {
+    bottom: -250px;
+    left: 0;
     @media (min-width: $tablet) {
-      transform: translate(-60px, 50px);
+      transform: rotateX(-90deg);
     }
   }
 
   @media (min-width: $tablet) {
     width: 295px;
     height: 460px;
+  }
+}
+
+.about__card_animate {
+  animation: animCard 1s linear forwards;
+}
+.about__card_animate2 {
+  animation: animCard 1s linear forwards reverse;
+}
+
+@keyframes animCard {
+  0% {
+    transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(-90deg) rotateY(-180deg) rotateZ(0deg);
   }
 }
 
@@ -271,6 +316,85 @@
   }
 
   &--pink {
-    background: url('../../img/images/card-pink-1.jpg') no-repeat 50% 33% / cover;
+    background: url('../../img/images/card-pink-without-lines.png') no-repeat 50% 33% / cover;
   }
+}
+
+.about__card-ribbon {
+}
+.card-ribbon {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  height: 44px;
+  // width: ;
+  width: 400px;
+  background-color: #4f4b98;
+  filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.5));
+}
+.card-ribbon__text {
+  color: #000;
+  font-size: 1.8em;
+  font-weight: 400;
+  line-height: 44px;
+  text-align: left;
+  animation: animText 8s linear infinite;
+  white-space: nowrap;
+}
+.about__card-ribbon_1 {
+  z-index: 10;
+  left: -15px;
+  top: -20px;
+  transform: rotateZ(3deg);
+}
+.about__card-ribbon_2 {
+  z-index: 8;
+  left: -15px;
+  transform: rotateZ(-10deg);
+}
+.about__card-ribbon_3 {
+  left: -15px;
+  top: 10px;
+  transform: rotateZ(-3deg);
+}
+.about__card-ribbon_4 {
+  z-index: 4;
+  left: -50px;
+  top: 20px;
+  transform: rotateZ(-30deg);
+}
+.about__card-ribbon_5 {
+  left: -15px;
+  top: 20px;
+  transform: rotateZ(8deg);
+}
+
+.about__card-ribbon_1 .card-ribbon__text::after {
+  content: ' компьютерная графика разработка игр';
+}
+.about__card-ribbon_2 .card-ribbon__text::after {
+  content: ' искусство издательское дело журналистика';
+}
+.about__card-ribbon_3 .card-ribbon__text::after {
+  content: ' архитектура мода дизайн кино';
+}
+.about__card-ribbon_4 .card-ribbon__text::after {
+  content: ' новые медиа маркетинг IT-сфера гастрономия';
+}
+.about__card-ribbon_5 .card-ribbon__text::after {
+  content: ' урбанистика музыка саунд-дизайн';
+}
+@keyframes animText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+#debug2 {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
 }
