@@ -33,26 +33,26 @@
 }
 
 @mixin title {
-    display: none;
     position: relative;
-    font-size: 20px;
     font-weight: 500;
+    font-size: 20px;
     line-height: 25px;
     color: $color-white;
     text-transform: uppercase;
     padding-bottom: 10px;
+    margin-bottom: 30px;
+
+    @media (min-width: $desktop) {
+        display: block;
+    }
 
     &::after {
         content:'';
         position: absolute;
         bottom: 0;
         left: 0;
-        width: 100%;
+        width: 109%;
         height: 1px;
         background-color: $color-white;
-    }
-
-    @media (min-width: $desktop) {
-        display: block;
     }
 }

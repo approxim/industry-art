@@ -1,24 +1,24 @@
 .about {
-    height: 100vh;
+    width: 100%;
     background: $color-darkgrey url(../../img/images/building-opacity.webp) no-repeat 50% 50% / cover;
 
     padding-top: 60px;
+    padding-bottom: 70px;
 
     @media (min-width: $tablet) {
         padding-top: 100px;
+        padding-bottom: 90px;
     }
 }
 
 .about__wrapper {
     display: flex;
     flex-direction: column;
-
 }
 
 .about__title {
     @include title;
     width: 100%;
-
 }
 
 .about__content {
@@ -26,38 +26,81 @@
     @media(min-width: $desktop) {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         gap: 80px;
     }
-
 }
 
 .about__info-box {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    overflow: visible;
+    height: 100%;
+    position: relative;
+
+    margin-bottom: 90px;
 
     @media(min-width: $desktop) {
-        
+        flex-basis: 65%;
     }
 }
 
-.about__info {
-    display: none;
-    flex-basis: 65%;
-    flex-direction: column;
+.about__info-list {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+}
 
-    margin-bottom: 90px;
+.about__info {
+    display: flex;
+    flex-flow: column;
 
     @media(min-width: $desktop) {
         margin-bottom: 0;
     }
 
-    &.open {
-        display: flex;
+    // &--green {
+    //     grid-area: 1/1/2/2;        
+    //     transform: translateX(8000px);
+
+    //     transition: transform .5s ease;
+
+    //     &.open {
+    //         transform: translateX(0px);
+    //     }
+    // }
+
+    // &--pink {
+    //     grid-area: 1/1/2/2;
+    //     transform: translateX(-8000px);
+    //     transition: transform .5s ease;
+
+    //     &.open {
+    //         transform: translateX(0px);
+    //     }
+    // }
+
+    &--green {
+        grid-area: 1/1/2/2;        
+        opacity: 0;
+
+        transition: opacity .3s ease;
+
+        &.open {
+            opacity: 1;
+        }
+    }
+
+    &--pink {
+        grid-area: 1/1/2/2;
+        opacity: 0;
+        transition: opacity .3s ease;
+
+        &.open {
+            opacity: 1;
+        }
     }
 }
 
-.about__info-title {
+.about__info-title { 
     font-weight: 500;
     font-size: 24px;
     line-height: 30px;
@@ -82,7 +125,7 @@
         position: absolute;
         left: 0;
 
-        width: 130%;
+        width: 107%;
         height: 1px;
         background-color: $color-white;
 
@@ -154,12 +197,83 @@
         box-shadow: inset 0 0 10px 2px $color-pink-2, 0 0 10px 2px $color-pink-2; 
         text-shadow: 0 0 13px $color-pink-2;
     }
+
+    &--green {
+        box-shadow: inset 0 0 10px $color-green, 0 0 10px $color-green; 
+        text-shadow: 0 0 10px $color-green;
+
+        &:hover {
+            box-shadow: inset 0 0 10px 2px $color-green, 0 0 10px 2px $color-green; 
+            text-shadow: 0 0 13px $color-green;
+        }
+    }
 }
 
 .about__cards {
-    flex-basis: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    margin-bottom: 20px;
+
+    @media(min-width: $tablet) {
+        flex-direction: row;
+        justify-content: center;
+        gap: 0;
+        padding: 50px 0;
+        // transform: translateY(50px);
+    }
+
+    @media(min-width: $desktop) {
+        flex-basis: 35%;
+    }
 }
 
 .about__card {
+    width: 258px;
+    height: 270px;
+    overflow: hidden;
+    border-radius: 22px;
+    box-shadow: 8px 8px 15px transparentize($color-black, .6);
 
+    &--green {
+
+        @media(min-width: $tablet) {
+            transform: translate(60px, -50px);
+        }
+    }
+
+    &--pink {
+        @media(min-width: $tablet) {
+            transform: translate(-60px, 50px);
+        }
+    }
+
+    @media(min-width: $tablet) {
+        width: 295px;
+        height: 460px;
+    }
+}
+
+.about__card-button {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    
+    
+
+    // img {
+    //     width: 100%;
+    //     height: 100%;
+    //     object-fit: cover;
+    // }
+
+    &--green {
+        background: url('../../img/images/card-green-1.jpg') no-repeat 50% 33% / cover;
+    }
+
+    &--pink {
+        background: url('../../img/images/card-pink-1.jpg') no-repeat 50% 33% / cover;
+    }
 }
