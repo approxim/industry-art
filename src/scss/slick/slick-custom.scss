@@ -4,5 +4,101 @@
 }
 
 .slick-slide {
-  padding: 0 20px;
+  // margin: 0 50px 0 0;
 }
+
+.team .slick-list {
+  padding-right: 10%;
+  padding-left: 0;
+  transition: padding 0.45s ease;
+
+  @media (min-width: $tablet) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  @media (min-width: $desktop) {
+    padding-left: 10px;
+  }
+}
+
+.team .slick-slide {
+  padding-right: 10px;
+  padding-left: 0;
+  transition: padding 0.45s ease;
+
+  @media (min-width: $tablet) {
+    padding-right: 20px;
+    padding-left: 0;
+  }
+}
+
+.team__slider-init.left .slick-list {
+  padding-right: 0;
+  padding-left: 10%;
+
+  @media (min-width: $tablet) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+.team__slider-init.left .slick-slide {
+  padding-right: 0;
+  padding-left: 10px;
+
+  @media (min-width: $tablet) {
+    padding-right: 20px;
+  }
+}
+
+// Кастомные стрелки
+// .slick-slider .slick-arrow{
+//   position: absolute;
+//   top: 50%; // выравнивание по вертикали
+//   transform: translateY(-50%);
+//   margin: -15px 0 0 0; // корректировка  вертикального выравнивания
+//   z-index: 2; // стрелки сверху картинок
+//   font-size: 0; // убираем надпись на дефолтной стрелке
+//   width: 30px; // ширина стрелки
+//   height: 40px; // высота стрелки
+//   cursor: pointer;
+// }
+
+.slick-arrow::before {
+  font-size: 50px;
+}
+
+.slick-disabled {
+  cursor: default !important;
+  filter: grayscale(50%) opacity(80%);
+}
+
+.slick-prev,
+.slick-next {
+  padding: 10px;
+}
+
+.slick-prev {
+  left: -12px;
+}
+
+.slick-next {
+  right: 6px;
+}
+
+// .slick-slider .slick-arrow.prev{
+//   left: -18px; // левая стрелка остается с левой стороны слайдера
+//   background: url('../../media/icons/arrow-slider-left.svg') center / cover no-repeat;
+
+//   @media (min-width: $tablet) {
+//       left: -10px;
+//   }
+// }
+
+// .slick-slider .slick-arrow.next{
+//   right: -18px; // правая стрелка переместилась справа от слайдера
+//   background: url('../../media/icons/arrow-slider-right.svg') center / cover no-repeat;
+
+//   @media (min-width: $tablet) {
+//       right: -10px;
+//   }
+// }
