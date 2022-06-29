@@ -1,7 +1,6 @@
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import Stats from 'three/examples/jsm/libs/stats.module.js';
+import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js';
 export function letterMain() {
   const scene = new THREE.Scene();
   // scene.add(new THREE.AxesHelper(5));
@@ -31,6 +30,11 @@ export function letterMain() {
 
   var texture = new THREE.TextureLoader().load('../../files/Noise_texture_1.jpg');
 
+  new RGBELoader().load('../../files/background_small.hdr', function (texture) {
+    texture.mapping = THREE.EquirectangularReflectionMapping;
+    scene.environment = texture;
+  });
+
   // // renderer.setClearColor(0x666666);
   // renderer.physicallyCorrectLights = true;
   // renderer.shadowMap.enabled = true;
@@ -40,8 +44,8 @@ export function letterMain() {
 
   const loader = new GLTFLoader();
   loader.load(
-    // '../../files/Bubble_letter_1_3.glb',
-    '../../files/Construction_letter_1_2.glb',
+    // '../../files/Construction_letter_1_2.glb',
+    '../../files/Inflatable_letter_1_4.glb',
     function (gltf) {
       let object = gltf.scenes[0];
       object.position.y = -100;
@@ -59,13 +63,13 @@ export function letterMain() {
   );
 
   loader.load(
-    '../../files/Bubble_letter_1_3.glb',
-    // '../../files/Construction_letter_1_2.glb',
+    // '../../files/Bubble_letter_1_3.glb',
+    '../../files/Building_like_letter_1_1.glb',
     function (gltf) {
       let object = gltf.scenes[0];
       object.position.y = -100;
       object.rotation.y = 0.2;
-      object.children[0].material = new THREE.MeshLambertMaterial({ map: texture });
+      // object.children[0].material = new THREE.MeshLambertMaterial({ map: texture });
       objects.unshift(gltf.scene);
     },
     (xhr) => {
@@ -83,14 +87,14 @@ export function letterMain() {
   }
 
   let intervalCounter = 1;
-  setInterval(() => {
-    changeObject(intervalCounter);
-    if (intervalCounter == objects.length - 1) {
-      intervalCounter = 0;
-    } else {
-      intervalCounter++;
-    }
-  }, 7000);
+  // setInterval(() => {
+  //   changeObject(intervalCounter);
+  //   if (intervalCounter == objects.length - 1) {
+  //     intervalCounter = 0;
+  //   } else {
+  //     intervalCounter++;
+  //   }
+  // }, 7000);
 
   document.addEventListener('mousemove', mouseMoveHandler);
   var isProcessed = false;
