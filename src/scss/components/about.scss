@@ -1,5 +1,5 @@
 .about {
-    width: 100%;
+  width: 100%;
     background: $color-darkgrey url(../../img/images/building-opacity.webp) no-repeat 50% 50% / cover;
 
     padding-top: 60px;
@@ -22,7 +22,6 @@
 }
 
 .about__content {
-
     @media(min-width: $desktop) {
         display: flex;
         align-items: center;
@@ -53,11 +52,11 @@
     display: flex;
     flex-flow: column;
 
-    @media(min-width: $desktop) {
-        margin-bottom: 0;
-    }
+  @media (min-width: $desktop) {
+    margin-bottom: 0;
+  }
 
-    // &--green {
+   // &--green {
     //     grid-area: 1/1/2/2;        
     //     transform: translateX(8000px);
 
@@ -107,57 +106,58 @@
     text-transform: uppercase;
     color: $color-white;
 
-    margin-bottom: 50px;
-    position: relative;
 
-    @media(min-width: $tablet) {
-        font-size: 36px;
-        line-height: 45px;
+  margin-bottom: 50px;
+  position: relative;
 
-        margin-bottom: 125px;
+  @media (min-width: $tablet) {
+    font-size: 36px;
+    line-height: 45px;
+
+    margin-bottom: 125px;
+  }
+  @media (min-width: $desktop) {
+    margin-bottom: 70px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+
+    width: 107%;
+    height: 1px;
+    background-color: $color-white;
+
+    margin-top: 50px;
+
+    @media (min-width: $tablet) {
+      width: 50%;
+      margin-top: 100px;
     }
-    @media(min-width: $desktop) {
-        margin-bottom: 70px;
+    @media (min-width: $desktop) {
+      margin-top: 76px;
     }
-
-    &::after {
-        content:'';
-        position: absolute;
-        left: 0;
-
-        width: 107%;
-        height: 1px;
-        background-color: $color-white;
-
-        margin-top: 50px;
-
-        @media(min-width: $tablet) {
-            width: 50%;
-            margin-top: 100px;
-        }
-        @media(min-width: $desktop) {
-            margin-top: 76px;
-        }
-    }
+  }
 }
 
 .about__info-desc {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    color: $color-white;
-    margin-bottom: 30px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: $color-white;
+  margin-bottom: 30px;
 
-    @media(min-width: $tablet) {
-        font-size: 24px;
-        line-height: 30px;
-        margin-bottom: 55px;
-    }
-    @media(min-width: $desktop) {
-        font-size: 20px;
-        line-height: 25px;
-        margin-bottom: 15px;
-    }
+  @media (min-width: $tablet) {
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 55px;
+  }
+  @media (min-width: $desktop) {
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 15px;
+  }
 }
 
 .about__info-toggle {

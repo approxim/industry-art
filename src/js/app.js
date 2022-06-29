@@ -2,7 +2,7 @@
 import $ from 'jquery';
 
 // Подключение Slick-Slider
-import "slick-carousel";
+import 'slick-carousel';
 
 // подключение слайдера Swiper
 // import Swiper, { Navigation, Pagination } from 'swiper';
@@ -16,23 +16,17 @@ flsFunctions.isWebp();
 import * as header from './modules/header.js';
 header.headerJS();
 
-import * as about from "./modules/about.js";
+import * as letterMain from './modules/letter-main.js';
+letterMain.letterMain();
+
+import * as about from './modules/about.js';
 about.aboutJS();
-
-import * as THREE from "./modules/three.min.js";
-
-import * as OBJLoader from './modules/OBJLoader.js';
-
-import * as MTLLoader from './modules/MTLLoader.js';
-
-// import * as letterMain from "./modules/letter-main.js";
-// letterMain.letterMain();
 
 import * as navBar from './modules/nav.js';
 navBar.init();
 
-import * as screenChanger from './modules/screenChanger.js';
-screenChanger.init();
+import * as crosses from './modules/crosses.js';
+crosses.init();
 
 import * as slickInit from './modules/slick-init.js';
 slickInit.slickInit();
@@ -45,7 +39,6 @@ slickInit.slickInit();
 //   	if (NODES.includes(e.target.nodeName)) return;
 //   	container.classList.remove("visible");
 // });
-
 
 // Управление сортировкой в секции Проекты
 // $(document).ready(function(){
