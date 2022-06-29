@@ -3,9 +3,13 @@
   height: 100vh;
   background-color: $color-blue;
 }
+#supports img {
+  position: absolute;
+  top: 27%;
+  left: 38%;
+}
 #debug {
   position: fixed;
-  top: 20px;
+  bottom: 20px;
   left: 20px;
 }
-

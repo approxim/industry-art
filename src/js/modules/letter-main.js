@@ -82,7 +82,7 @@ export function letterMain() {
     });
   }
 
-  let intervalCounter = 0;
+  let intervalCounter = 1;
   setInterval(() => {
     changeObject(intervalCounter);
     if (intervalCounter == objects.length - 1) {
