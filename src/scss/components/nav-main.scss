@@ -35,6 +35,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
+
+
+  a {
+    padding: 10px;
+    transform: rotate(180deg);
+    position: absolute;
+    text-align: center;
+    color: $color-white;
+
+    width: auto;
+    height: 100%;
+
+    &::before {
+        content: '■';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        font-size: 0;
+        transform: translate(-50%);
+        color: inherit;
+        transition: all .3s ease;
+    }
+
+    &:hover::before {
+        font-size: 30px;
+=======
 
   // &:not(:last-child) {
   //     margin-right: auto;
@@ -63,13 +90,19 @@
 
     &:hover::before {
       font-size: 30px;
+>>>>>>> main
     }
 
     span {
       position: relative;
       bottom: 0;
+<<<<<<< HEAD
+      font-size: calc(10px + .7vh);
+      transition: all .3s ease;
+=======
       font-size: calc(10px + 0.7vh);
       transition: all 0.3s ease;
+>>>>>>> main
       color: inherit;
       white-space: nowrap;
     }
@@ -79,4 +112,5 @@
       bottom: -20px;
     }
   }
+
 }

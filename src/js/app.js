@@ -2,7 +2,7 @@
 import $ from 'jquery';
 
 // Подключение Slick-Slider
-// import  "slick-carousel";
+import 'slick-carousel';
 
 // подключение слайдера Swiper
 // import Swiper, { Navigation, Pagination } from 'swiper';
@@ -19,7 +19,7 @@ header.headerJS();
 import * as letterMain from './modules/letter-main.js';
 letterMain.letterMain();
 
-import * as about from "./modules/about.js";
+import * as about from './modules/about.js';
 about.aboutJS();
 
 import * as navBar from './modules/nav.js';
@@ -28,8 +28,8 @@ navBar.init();
 import * as crosses from './modules/crosses.js';
 crosses.init();
 
-// import * as screenChanger from './modules/screenChanger.js';
-// screenChanger.init();
+import * as slickInit from './modules/slick-init.js';
+slickInit.slickInit();
 
 // В случае если ткнуть мимо пунктов сортера то список скроется
 // let projectsTagContainer = document.querySelector('.projects__tagcontainer');
