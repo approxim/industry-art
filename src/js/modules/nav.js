@@ -48,8 +48,8 @@ export function init() {
   let navItems = document.querySelectorAll('.nav-main__item');
   const navList = document.querySelector('.nav-main__list');
 
-  activateSection(3);
-  activateNavItem(navItems[3], navItems);
+  activateSection(0);
+  activateNavItem(navItems[0], navItems);
 
   navList.addEventListener('click', (event) => {
     let navItem = event.target.closest('.nav-main__item');
@@ -58,7 +58,6 @@ export function init() {
 
       let sectionToScroll;
       for (let i = 0; i < sections.length; i++) {
-        console.log(sections[i].id, navItem.dataset);
         if (sections[i].id == navItem.dataset.scroll) {
           sectionToScroll = i;
         }

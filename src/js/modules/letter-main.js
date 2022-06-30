@@ -3,7 +3,6 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js';
 export function letterMain() {
   const scene = new THREE.Scene();
-  // scene.add(new THREE.AxesHelper(5));
 
   let objects = [];
 
@@ -19,38 +18,26 @@ export function letterMain() {
   camera.position.z = 300;
 
   const renderer = new THREE.WebGLRenderer({ antialias: true });
-  // renderer.setClearColor(0xffffff);
-
-  // var texture = new THREE.Texture();
-  // const imgLoader = new THREE.ImageLoader();
-  // imgLoader.load('../../files/Noise_texture_1.jpg', (image) => {
-  // texture.image = image;
-  // texture.needsUpdate = true;
-  // });
 
   var texture = new THREE.TextureLoader().load('../../files/Noise_texture_1.jpg');
-
+  let backgroundTexture;
   new RGBELoader().load('../../files/background_small.hdr', function (texture) {
     texture.mapping = THREE.EquirectangularReflectionMapping;
-    scene.environment = texture;
+    backgroundTexture = texture;
   });
 
   // // renderer.setClearColor(0x666666);
-  // renderer.physicallyCorrectLights = true;
-  // renderer.shadowMap.enabled = true;
-  // renderer.outputEncoding = THREE.sRGBEncoding;
+
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.querySelector('.promo__letter').appendChild(renderer.domElement);
 
   const loader = new GLTFLoader();
   loader.load(
-    // '../../files/Construction_letter_1_2.glb',
-    '../../files/Inflatable_letter_1_4.glb',
+    '../../files/Construction_letter_1_2.glb',
     function (gltf) {
       let object = gltf.scenes[0];
       object.position.y = -100;
       object.rotation.y = 0.2;
-      // object.children[0].material = new THREE.MeshLambertMaterial({ map: texture });
       objects.unshift(gltf.scene);
       scene.add(object);
     },
@@ -63,14 +50,48 @@ export function letterMain() {
   );
 
   loader.load(
-    // '../../files/Bubble_letter_1_3.glb',
-    '../../files/Building_like_letter_1_1.glb',
+    '../../files/Bubble_letter_1_3.glb',
+    function (gltf) {
+      let object = gltf.scenes[0];
+      object.position.y = -100;
+      object.rotation.y = 0.02;
+      object.children[0].material = new THREE.MeshLambertMaterial({ map: texture });
+      objects.push(gltf.scene);
+    },
+    (xhr) => {
+      console.log((xhr.loaded / xhr.total) * 100 + '% loaded');
+    },
+    (error) => {
+      console.log(error);
+    }
+  );
+
+  var mramorTexture = new THREE.TextureLoader().load('../../files/texture-mramor.jpg');
+
+  loader.load(
+    '../../files/Building_like_letter_1_4.glb',
+    function (gltf) {
+      let object = gltf.scenes[0];
+      object.position.y = -100;
+      object.rotation.y = 0.02;
+      object.children[0].material = new THREE.MeshLambertMaterial({ map: mramorTexture });
+      objects.push(gltf.scene);
+    },
+    (xhr) => {
+      console.log((xhr.loaded / xhr.total) * 100 + '% loaded');
+    },
+    (error) => {
+      console.log(error);
+    }
+  );
+
+  loader.load(
+    '../../files/Inflatable_letter_1_4.glb',
     function (gltf) {
       let object = gltf.scenes[0];
       object.position.y = -100;
       object.rotation.y = 0.2;
-      // object.children[0].material = new THREE.MeshLambertMaterial({ map: texture });
-      objects.unshift(gltf.scene);
+      objects.push(gltf.scene);
     },
     (xhr) => {
       console.log((xhr.loaded / xhr.total) * 100 + '% loaded');
@@ -87,18 +108,22 @@ export function letterMain() {
   }
 
   let intervalCounter = 1;
-  // setInterval(() => {
-  //   changeObject(intervalCounter);
-  //   if (intervalCounter == objects.length - 1) {
-  //     intervalCounter = 0;
-  //   } else {
-  //     intervalCounter++;
-  //   }
-  // }, 7000);
+  setInterval(() => {
+    changeObject(intervalCounter);
+    if (intervalCounter == 1) {
+      scene.environment = backgroundTexture;
+    } else {
+      scene.environment = null;
+    }
+    if (intervalCounter == objects.length - 1) {
+      intervalCounter = 0;
+    } else {
+      intervalCounter++;
+    }
+  }, 7000);
 
   document.addEventListener('mousemove', mouseMoveHandler);
   var isProcessed = false;
-  console.log(scene);
   function mouseMoveHandler(event) {
     if (isProcessed || scene.children[2] == undefined) {
       return;
