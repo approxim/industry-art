@@ -12,13 +12,14 @@ canvas {
   //   position: fixed;
   //   top: 200px;
 }
-section {
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  &.open {
-    opacity: 1;
-  }
-}
+// section {
+//   opacity: 0;
+//   transition: opacity 0.25s ease;
+//   transition-delay: 0.25s;
+//   &.open {
+//     opacity: 1;
+//   }
+// }
 
 body {
   font-family: $font-main;
