@@ -6,12 +6,10 @@
 @import "./global/mixins.scss";
 @import "./global/keyframes.scss";
 
-
 // Slick
 @import "./slick/slick-theme.scss";
 @import "./slick/slick.scss";
 @import "./slick/slick-custom.scss";
-
 
 // Components
 @import "./components/promo.scss";
@@ -22,5 +20,6 @@
 @import "./components/supports.scss";
 @import "./components/team.scss";
 
-// @import "./components/footer.scss";
+@import "./components/footer.scss";
 
+// @import "./components/footer.scss";
