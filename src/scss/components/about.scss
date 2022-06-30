@@ -1,7 +1,8 @@
 .about {
   height: 100vh;
   width: 100%;
-  background: $color-darkgrey url(../../img/images/building-opacity.webp) no-repeat 50% 50% / cover;
+  background: #000;
+  transition: background 0.5s ease;
 
   padding-top: 60px;
   padding-bottom: 70px;
@@ -10,6 +11,9 @@
     padding-top: 100px;
     padding-bottom: 90px;
   }
+}
+.about.open {
+  background: $color-darkgrey url(../../img/images/building-opacity.webp) no-repeat 50% 50% / cover;
 }
 
 .about__wrapper {
@@ -432,10 +436,4 @@
   100% {
     transform: translateX(-50%);
   }
-}
-
-#debug2 {
-  position: fixed;
-  bottom: 30px;
-  left: 30px;
 }
