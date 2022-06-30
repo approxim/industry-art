@@ -12,6 +12,9 @@
     padding-bottom: 90px;
   }
 }
+.about.open {
+  background: $color-darkgrey url(../../img/images/building-opacity.webp) no-repeat 50% 50% / cover;
+}
 
 .about.open {
   background: $color-darkgrey url(../../img/images/building-opacity.webp)
@@ -443,12 +446,6 @@
   100% {
     transform: translateX(-50%);
   }
-}
-
-#debug2 {
-  position: fixed;
-  bottom: 30px;
-  left: 30px;
 }
 
 .about__infopanel {
