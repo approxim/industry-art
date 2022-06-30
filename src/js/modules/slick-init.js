@@ -29,6 +29,7 @@ export function slickInit() {
     ],
   });
 
+  // сдвиг слайдера при долистывании до конца в мобильной и планшетной версии
   $(".team__slider-init").on("afterChange", function (event, slider, slide) {
     if (slide == slider.$slides.length - 1) {
       $(this).addClass("left");
@@ -37,7 +38,12 @@ export function slickInit() {
     }
   });
 
-  // let sliderTeam = document.querySelector('.team__slider-init');
-
-  // sliderTeam.addEventListener.
+  $(".about__infopanel-slider").slick({
+    dots: true,
+    infinite: false,
+    arrows: false,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  });
 }

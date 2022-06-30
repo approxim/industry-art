@@ -1,7 +1,8 @@
 .about {
   height: 100vh;
   width: 100%;
-  background: $color-darkgrey url(../../img/images/building-opacity.webp) no-repeat 50% 50% / cover;
+  background: #000;
+  transition: background 0.5s ease;
 
   padding-top: 60px;
   padding-bottom: 70px;
@@ -10,6 +11,11 @@
     padding-top: 100px;
     padding-bottom: 90px;
   }
+}
+
+.about.open {
+  background: $color-darkgrey url(../../img/images/building-opacity.webp)
+    no-repeat 50% 87% / cover;
 }
 
 .about__wrapper {
@@ -134,7 +140,7 @@
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
 
@@ -346,6 +352,9 @@
   width: 100%;
   height: 100%;
 
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
   // img {
   //     width: 100%;
   //     height: 100%;
@@ -353,11 +362,13 @@
   // }
 
   &--green {
-    background: url('../../img/images/card-green-1.jpg') no-repeat 50% 33% / cover;
+    background: url("../../img/images/card-green-1.jpg") no-repeat 50% 33% /
+      cover;
   }
 
   &--pink {
-    background: url('../../img/images/card-pink-without-lines.png') no-repeat 50% 33% / cover;
+    background: url("../../img/images/card-pink-without-lines.png") no-repeat
+      50% 33% / cover;
   }
 }
 
@@ -411,19 +422,19 @@
 }
 
 .about__card-ribbon_1 .card-ribbon__text::after {
-  content: ' компьютерная графика разработка игр';
+  content: " компьютерная графика разработка игр";
 }
 .about__card-ribbon_2 .card-ribbon__text::after {
-  content: ' искусство издательское дело журналистика';
+  content: " искусство издательское дело журналистика";
 }
 .about__card-ribbon_3 .card-ribbon__text::after {
-  content: ' архитектура мода дизайн кино';
+  content: " архитектура мода дизайн кино";
 }
 .about__card-ribbon_4 .card-ribbon__text::after {
-  content: ' новые медиа маркетинг IT-сфера гастрономия';
+  content: " новые медиа маркетинг IT-сфера гастрономия";
 }
 .about__card-ribbon_5 .card-ribbon__text::after {
-  content: ' урбанистика музыка саунд-дизайн';
+  content: " урбанистика музыка саунд-дизайн";
 }
 @keyframes animText {
   0% {
@@ -438,4 +449,79 @@
   position: fixed;
   bottom: 30px;
   left: 30px;
+}
+
+.about__infopanel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 30px 20px 15px;
+
+  background-color: $color-black;
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  border: none;
+  // display: flex;
+  // flex-direction: column;
+  // text-align: left;
+
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  @media (min-width: $tablet) {
+    // padding: 57px 50px;
+  }
+
+  @media (min-width: $desktop) {
+  }
+
+  &--green {
+    background-image: url(../../img/images/background-green-popup.webp);
+    background-position: 46% 87%;
+    background-size: 147%;
+  }
+
+  &--pink {
+    background-image: url(../../img/images/background-pink-popup.webp);
+    background-position: 30% 78%;
+    background-size: 98%;
+  }
+}
+
+.about__infopanel-title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: $color-white;
+  margin-bottom: 30px;
+  position: relative;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 50px;
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    height: 1px;
+    width: 50%;
+    background-color: $color-white;
+  }
+}
+
+.about__infopanel-desc {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: $color-white;
+
+  @media (min-width: $tablet) {
+    font-size: 20px;
+    line-height: 26px;
+  }
 }
