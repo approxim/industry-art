@@ -50,6 +50,25 @@
   }
 }
 
+.about__infopanel-slider .slick-dots li button {
+  // background-color: ;
+  border: 1px solid $color-white;
+  border-radius: 50%;
+
+  &::before {
+    display: none;
+  }
+}
+.about__infopanel-slider .slick-active button {
+  border: none;
+  background-color: $color-white;
+  transition: background 0.5s ease;
+}
+
+.about__infopanel-slider .slick-dots {
+  bottom: -100px;
+}
+
 // Кастомные стрелки
 // .slick-slider .slick-arrow{
 //   position: absolute;
