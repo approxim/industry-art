@@ -2,7 +2,6 @@ header.header
     nav.nav-main
         ul.nav-main__list
             li.nav-main__item(data-scroll="promo")
-
                 a(href="#")
                     span главная
             li.nav-main__item(data-scroll="about")
@@ -14,6 +13,9 @@ header.header
             li.nav-main__item(data-scroll="team")
                 a(href="/#team")
                     span команда
+            li.nav-main__item(data-scroll="footer")
+                a(href="/#footer")
+                    span контакты
 
     a.header__logo(href="#")
         img(src="@img/icons/logo-white.svg" width="104" height="9")
@@ -27,17 +29,20 @@ header.header
     nav.nav-secondary
         ul.nav-secondary__list
             li.nav-secondary__item.menu-mobile
-                a(href="/#promo" data-scroll="#promo")
+                a(href="/#promo")
                     span главная
             li.nav-secondary__item.menu-mobile
-                a(href="/#about" data-scroll="#about")
+                a(href="/#about")
                     span о нас
             li.nav-secondary__item.menu-mobile
-                a(href="#" data-scroll="#about-us")
+                a(href="#")
                     span виды поддержки
             li.nav-secondary__item.menu-mobile
-                a(href="#" data-scroll="#about-us")
+                a(href="#")
                     span команда
+            li.nav-secondary__item.menu-mobile
+                a(href="#")
+                    span контакты
 
             li.nav-secondary__item
                 a(href="/board.html")
