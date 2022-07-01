@@ -13,11 +13,13 @@
   }
 }
 .about.open {
-  background: $color-darkgrey url(../../img/images/building-opacity.webp) no-repeat 50% 50% / cover;
+  background: $color-darkgrey url(../../img/images/building-opacity.webp)
+    no-repeat 50% 50% / cover;
 }
 
 .about.open {
-  background: $color-darkgrey url(../../img/images/building-opacity.webp) no-repeat 50% 87% / cover;
+  background: $color-darkgrey url(../../img/images/building-opacity.webp)
+    no-repeat 50% 87% / cover;
 }
 
 .about__wrapper {
@@ -25,6 +27,7 @@
   overflow: visible;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .about__title {
@@ -44,21 +47,24 @@
 .about__content {
   @media (min-width: $desktop) {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-between;
     gap: 80px;
+    margin-top: 50px;
   }
 }
 
 .about__info-box {
   overflow: visible;
-  height: 100%;
+
   position: relative;
 
   margin-bottom: 90px;
 
   @media (min-width: $desktop) {
     flex-basis: 65%;
+    margin-bottom: 0;
+    height: 100%;
   }
 }
 
@@ -75,27 +81,6 @@
   @media (min-width: $desktop) {
     margin-bottom: 0;
   }
-
-  // &--green {
-  //     grid-area: 1/1/2/2;
-  //     transform: translateX(8000px);
-
-  //     transition: transform .5s ease;
-
-  //     &.open {
-  //         transform: translateX(0px);
-  //     }
-  // }
-
-  // &--pink {
-  //     grid-area: 1/1/2/2;
-  //     transform: translateX(-8000px);
-  //     transition: transform .5s ease;
-
-  //     &.open {
-  //         transform: translateX(0px);
-  //     }
-  // }
 
   &--green {
     grid-area: 1/1/2/2;
@@ -121,7 +106,7 @@
 
 .about__info-title {
   height: 0;
-  overflow: hidden;
+
   transition: height 0.5s ease;
   font-weight: 500;
   font-size: 24px;
@@ -135,15 +120,15 @@
   @media (min-width: $tablet) {
     font-size: 36px;
     line-height: 45px;
-
     margin-bottom: 125px;
+    overflow: hidden;
   }
   @media (min-width: $desktop) {
     margin-bottom: 70px;
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
 
@@ -228,7 +213,9 @@
   }
 
   @media (min-width: $desktop) {
-    align-self: flex-end;
+    // align-self: flex-end;
+    // justify-self: flex-end;
+    margin-top: 20px;
   }
 
   &:hover {
@@ -390,14 +377,16 @@
   // }
 
   &--green {
-    background: url('../../img/images/card-green-1.jpg') no-repeat 50% 33% / cover;
+    background: url("../../img/images/card-green-1.jpg") no-repeat 50% 33% /
+      cover;
   }
 
   &--pink {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: url('../../img/images/card-pink-without-lines.png') no-repeat 50% 33% / cover;
+    background: url("../../img/images/card-pink-without-lines.png") no-repeat
+      50% 33% / cover;
   }
 }
 
@@ -452,19 +441,19 @@
 }
 
 .about__card-ribbon_1 .card-ribbon__text::after {
-  content: ' компьютерная графика разработка игр';
+  content: " компьютерная графика разработка игр";
 }
 .about__card-ribbon_2 .card-ribbon__text::after {
-  content: ' искусство издательское дело журналистика';
+  content: " искусство издательское дело журналистика";
 }
 .about__card-ribbon_3 .card-ribbon__text::after {
-  content: ' архитектура мода дизайн кино';
+  content: " архитектура мода дизайн кино";
 }
 .about__card-ribbon_4 .card-ribbon__text::after {
-  content: ' новые медиа маркетинг IT-сфера гастрономия';
+  content: " новые медиа маркетинг IT-сфера гастрономия";
 }
 .about__card-ribbon_5 .card-ribbon__text::after {
-  content: ' урбанистика музыка саунд-дизайн';
+  content: " урбанистика музыка саунд-дизайн";
 }
 @keyframes animText {
   0% {
@@ -499,17 +488,17 @@
   @media (min-width: $desktop) {
   }
 
-  &--green {
-    background-image: url(../../img/images/background-green-popup.webp);
-    background-position: 46% 87%;
-    background-size: 147%;
-  }
+  // &--green {
+  //   background-image: url(../../img/images/background-green-popup.webp);
+  //   background-position: 46% 87%;
+  //   background-size: 147%;
+  // }
 
-  &--pink {
-    background-image: url(../../img/images/background-pink-popup.webp);
-    background-position: 30% 78%;
-    background-size: 98%;
-  }
+  // &--pink {
+  //   background-image: url(../../img/images/background-pink-popup.webp);
+  //   background-position: 30% 78%;
+  //   background-size: 98%;
+  // }
 }
 
 .about__infopanel-title {
@@ -528,7 +517,7 @@
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -15px;
     left: 0;
@@ -545,7 +534,23 @@
   color: $color-white;
 
   @media (min-width: $tablet) {
-    font-size: 20px;
+    font-size: 19px;
     line-height: 26px;
   }
+
+  // li {
+  //   padding-bottom: 7px;
+  //   position: relative;
+  //   margin-left: 15px;
+
+  //   &::before {
+  //     content: "○";
+  //     position: absolute;
+  //     left: -15px;
+  //     top: 50%;
+  //     transform: translateY(-65%);
+  //     font-size: 18px;
+  //     color: $color-white;
+  //   }
+  // }
 }
