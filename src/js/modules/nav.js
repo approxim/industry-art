@@ -85,4 +85,18 @@ export function init() {
       activateNavItem(navItems[section], navItems);
     }
   });
+  let mouseMoved = false;
+  document.querySelector('.about__cards').addEventListener('mousemove', () => {
+    mouseMoved = true;
+  });
+  document.querySelector('.about__cards').addEventListener('mousedown', (event) => {
+    mouseMoved = false;
+  });
+  document.querySelector('.about__cards').addEventListener('mouseup', (event) => {
+    if (event.target.tagName == 'BUTTON' || mouseMoved) {
+      return;
+    }
+    let card = event.target.closest('.about__card-wrapper');
+    card.classList.toggle('flipped');
+  });
 }

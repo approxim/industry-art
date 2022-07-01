@@ -17,11 +17,11 @@
 }
 
 .about.open {
-  background: $color-darkgrey url(../../img/images/building-opacity.webp)
-    no-repeat 50% 87% / cover;
+  background: $color-darkgrey url(../../img/images/building-opacity.webp) no-repeat 50% 87% / cover;
 }
 
 .about__wrapper {
+  position: relative;
   overflow: visible;
   display: flex;
   flex-direction: column;
@@ -143,7 +143,7 @@
   }
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
 
@@ -309,7 +309,8 @@
   height: 270px;
   overflow: hidden;
   border-radius: 22px;
-  box-shadow: 8px 8px 15px transparentize($color-black, 0.6);
+
+  transform-style: preserve-3d;
 
   &--green {
     top: -250px;
@@ -330,6 +331,30 @@
   @media (min-width: $tablet) {
     width: 295px;
     height: 460px;
+  }
+}
+
+.front,
+.back {
+  border-radius: 25px;
+  position: absolute;
+  backface-visibility: hidden;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.back {
+  transform: rotateY(180deg);
+}
+
+.about__card-wrapper {
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  &.flipped {
+    transform: rotateY(180deg);
   }
 }
 
@@ -365,13 +390,14 @@
   // }
 
   &--green {
-    background: url("../../img/images/card-green-1.jpg") no-repeat 50% 33% /
-      cover;
+    background: url('../../img/images/card-green-1.jpg') no-repeat 50% 33% / cover;
   }
 
   &--pink {
-    background: url("../../img/images/card-pink-without-lines.png") no-repeat
-      50% 33% / cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: url('../../img/images/card-pink-without-lines.png') no-repeat 50% 33% / cover;
   }
 }
 
@@ -381,6 +407,7 @@
   display: flex;
   position: relative;
   overflow: hidden;
+  backface-visibility: hidden;
   height: 44px;
   // width: ;
   width: 400px;
@@ -425,19 +452,19 @@
 }
 
 .about__card-ribbon_1 .card-ribbon__text::after {
-  content: " компьютерная графика разработка игр";
+  content: ' компьютерная графика разработка игр';
 }
 .about__card-ribbon_2 .card-ribbon__text::after {
-  content: " искусство издательское дело журналистика";
+  content: ' искусство издательское дело журналистика';
 }
 .about__card-ribbon_3 .card-ribbon__text::after {
-  content: " архитектура мода дизайн кино";
+  content: ' архитектура мода дизайн кино';
 }
 .about__card-ribbon_4 .card-ribbon__text::after {
-  content: " новые медиа маркетинг IT-сфера гастрономия";
+  content: ' новые медиа маркетинг IT-сфера гастрономия';
 }
 .about__card-ribbon_5 .card-ribbon__text::after {
-  content: " урбанистика музыка саунд-дизайн";
+  content: ' урбанистика музыка саунд-дизайн';
 }
 @keyframes animText {
   0% {
@@ -501,7 +528,7 @@
   }
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: -15px;
     left: 0;
