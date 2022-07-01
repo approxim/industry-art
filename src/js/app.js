@@ -1,35 +1,37 @@
 // Подключение jquery
-import $ from 'jquery';
+import $ from "jquery";
 
 // Подключение Slick-Slider
-import 'slick-carousel';
+import "slick-carousel";
 
 // подключение слайдера Swiper
 // import Swiper, { Navigation, Pagination } from 'swiper';
 // const swiper = new Swiper();
 
 // Проверка браузеров на поддержку webp
-import * as flsFunctions from './modules/functions.js';
+import * as flsFunctions from "./modules/functions.js";
 flsFunctions.isWebp();
 
-// header
-import * as header from './modules/header.js';
+import * as support from "./modules/supports.js";
+support.tabs();
+
+import * as header from "./modules/header.js";
 header.headerJS();
 
-import * as letterMain from './modules/letter-main.js';
-letterMain.letterMain();
+import * as slickInit from "./modules/slick-init.js";
+slickInit.slickInit();
 
-import * as about from './modules/about.js';
+import * as about from "./modules/about.js";
 about.aboutJS();
 
-import * as navBar from './modules/nav.js';
+import * as navBar from "./modules/nav.js";
 navBar.init();
 
-import * as crosses from './modules/crosses.js';
-crosses.init();
+import * as letterMain from "./modules/letter-main.js";
+letterMain.letterMain();
 
-import * as slickInit from './modules/slick-init.js';
-slickInit.slickInit();
+import * as crosses from "./modules/crosses.js";
+crosses.init();
 
 // В случае если ткнуть мимо пунктов сортера то список скроется
 // let projectsTagContainer = document.querySelector('.projects__tagcontainer');
