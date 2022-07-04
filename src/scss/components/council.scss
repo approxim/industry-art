@@ -1,0 +1,130 @@
+.council {
+  width: 100%;
+  min-height: 100%;
+  background-color: $color-lightgray;
+  padding-top: 120px;
+  padding-bottom: 80px;
+
+  @media (min-width: $desktop) {
+    height: 100vh;
+  }
+
+  .container {
+    @media (min-width: $desktop) {
+      padding-right: 100px;
+      padding-left: 100px;
+    }
+  }
+}
+
+.council__title {
+  @include title;
+  color: $color-black;
+  margin-bottom: 80px;
+  padding-bottom: 15px;
+
+  &::after {
+    background-color: $color-black;
+    margin-left: 30px;
+
+    @media (min-width: $tablet) {
+      margin-left: 60px;
+    }
+    @media (min-width: $desktop) {
+      margin-left: 100px;
+    }
+  }
+}
+
+.council__content {
+  display: grid;
+  grid-template-columns: 100%;
+
+  @media (min-width: $tablet) {
+    grid-template-columns: 50% 50%;
+    align-items: flex-start;
+  }
+
+  @media (min-width: $laptop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: $desktop) {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+  }
+}
+
+.council__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 92px;
+
+  // @media (min-width: $tablet) {
+  //   flex-basis: 50%;
+  // }
+}
+
+.council__img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  max-width: 200px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  p {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    padding: 16px 5px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-white;
+
+    background-color: transparentize($color-black, 0.55);
+
+    // @media (min-width: $desktop) {
+    //   position: static;
+    //   background-color: transparent;
+    //   color: $color-black;
+    //   padding-bottom: 0;
+    // }
+  }
+}
+
+.council__post {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  color: $color-black;
+  position: relative;
+  margin-top: 30px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 70px;
+    height: 1px;
+    background-color: $color-black;
+  }
+}

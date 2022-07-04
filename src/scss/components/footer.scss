@@ -6,6 +6,10 @@
   flex-flow: row wrap;
   margin-top: 20%;
 
+  filter: blur(20px);
+  opacity: 0;
+  transition: filter 0.5s ease, opacity 0.5s ease;
+
   p,
   a,
   address {
@@ -15,6 +19,11 @@
     line-height: 20px;
     color: $color-white;
   }
+}
+
+.footer.open {
+  filter: blur(0);
+  opacity: 1;
 }
 
 .footer__logo {
@@ -65,4 +74,28 @@
 }
 .footer__icon:not(:last-child) {
   margin-right: 12px;
+}
+
+.footer.white {
+  background-color: $color-lightgray;
+  margin-top: 0;
+
+  @media (min-width: $desktop) {
+    display: none;
+  }
+
+  p,
+  a,
+  address {
+    color: $color-black;
+  }
+
+  svg {
+    path {
+      fill: black;
+    }
+  }
+  .footer__links::before {
+    background-color: $color-black;
+  }
 }
