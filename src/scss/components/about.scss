@@ -1,21 +1,27 @@
 .about {
-  height: 100vh;
   width: 100%;
+
   background: #000;
   transition: background 0.5s ease;
 
-  padding-top: 60px;
-  padding-bottom: 70px;
+  padding-top: 35px;
+  padding-bottom: 30px;
+  background: $color-darkgrey url(../../img/images/building-opacity.webp)
+    no-repeat 50% 87% / cover;
 
   @media (min-width: $tablet) {
-    padding-top: 100px;
-    padding-bottom: 90px;
+    padding-top: 72px;
+    // padding-bottom: 30px;
+  }
+  @media (min-width: $desktop) {
+    background: $color-black;
+    height: 100vh;
   }
 }
-.about.open {
-  background: $color-darkgrey url(../../img/images/building-opacity.webp)
-    no-repeat 50% 50% / cover;
-}
+// .about.open {
+//   background: $color-darkgrey url(../../img/images/building-opacity.webp)
+//     no-repeat 50% 50% / cover;
+// }
 
 .about.open {
   background: $color-darkgrey url(../../img/images/building-opacity.webp)
@@ -32,10 +38,32 @@
 
 .about__title {
   @include title;
-  width: 0%;
   overflow: hidden;
   white-space: nowrap;
   transition: width 0.5s ease;
+  margin-top: 0;
+
+  @media (min-width: $tablet) {
+    margin-top: 1px;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: $desktop) {
+    width: 0%;
+  }
+
+  &::after {
+    margin: 0 30px;
+
+    @media (min-width: $tablet) {
+      margin: 0 60px;
+      width: calc(100% - 120px);
+    }
+    @media (min-width: $desktop) {
+      margin: 0 100px 0 267px;
+      width: calc(100% - 367px);
+    }
+  }
 }
 
 .about.open {
@@ -45,21 +73,25 @@
 }
 
 .about__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 70vh;
   @media (min-width: $desktop) {
-    display: flex;
+    flex-direction: row;
     align-items: stretch;
-    justify-content: space-between;
+
     gap: 80px;
     margin-top: 50px;
+    overflow: visible;
+    height: 100%;
   }
 }
 
 .about__info-box {
   overflow: visible;
-
   position: relative;
-
-  margin-bottom: 90px;
+  margin-bottom: 28px;
 
   @media (min-width: $desktop) {
     flex-basis: 65%;
@@ -105,8 +137,6 @@
 }
 
 .about__info-title {
-  height: 0;
-
   transition: height 0.5s ease;
   font-weight: 500;
   font-size: 24px;
@@ -114,17 +144,19 @@
   text-transform: uppercase;
   color: $color-white;
 
-  margin-bottom: 50px;
+  padding-bottom: 50px;
   position: relative;
 
   @media (min-width: $tablet) {
     font-size: 36px;
     line-height: 45px;
-    margin-bottom: 125px;
+    padding-bottom: 125px;
     overflow: hidden;
   }
   @media (min-width: $desktop) {
-    margin-bottom: 70px;
+    padding-bottom: 70px;
+    // margin-bottom: 70px;
+    height: 0;
   }
 
   &::after {
@@ -150,7 +182,9 @@
 
 .about.open {
   & .about__info-title {
-    height: 80px;
+    @media (min-width: $desktop) {
+      height: auto;
+    }
   }
 }
 
@@ -161,9 +195,6 @@
   color: $color-white;
   margin-bottom: 30px;
 
-  transform: translate(0, 2000px);
-  transition: transform 0.5s ease;
-
   @media (min-width: $tablet) {
     font-size: 24px;
     line-height: 30px;
@@ -173,6 +204,8 @@
     font-size: 20px;
     line-height: 25px;
     margin-bottom: 15px;
+    transform: translate(0, 2000px);
+    transition: transform 0.5s ease;
   }
 }
 .about.open {
@@ -204,8 +237,6 @@
 
   transition: all 0.3s ease, transform 0.5s ease;
 
-  transform: translate(0, 2000px);
-
   @media (min-width: $tablet) {
     font-size: 20px;
     line-height: 25px;
@@ -213,9 +244,8 @@
   }
 
   @media (min-width: $desktop) {
-    // align-self: flex-end;
-    // justify-self: flex-end;
     margin-top: 20px;
+    transform: translate(0, 2000px);
   }
 
   &:hover {
@@ -246,21 +276,24 @@
   animation: animCards 1s linear forwards reverse;
 }
 .about__cards {
-  display: flex;
   position: relative;
-  top: 80px;
-  left: 8000px;
+  // bottom: -73px;
+  // left: 0;
+  // right: 0;
+  // margin: 0 auto;
+  // top: 25%;
+  left: calc(50% - 160px);
+  // height: 50em;
+  height: auto;
+  width: 20em;
   flex-direction: column;
-  width: 24em;
-  height: 16.5em;
   align-items: center;
   gap: 35px;
-  margin-bottom: 20px;
+  margin: auto 0;
   border-radius: 50%;
-
-  transform-style: preserve-3d;
   transform: rotateX(75deg);
-  transition: left 0.5s ease;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
 
   @media (min-width: $tablet) {
     flex-direction: row;
@@ -271,12 +304,21 @@
     // animation: animCards 5s linear infinite;
   }
   @media (min-width: $desktop) {
+    position: static;
+    bottom: 0;
     // flex-basis: 35%;
+    left: 8000px;
+    transform: rotateX(75deg);
+    margin: 0 auto;
+    align-self: center;
+    width: 24em;
+    height: 16.5em;
   }
 }
 .about.open {
   & .about__cards {
     left: 0;
+    height: 16.5em;
   }
 }
 
@@ -296,7 +338,7 @@
   height: 270px;
   overflow: hidden;
   border-radius: 22px;
-
+  transform: rotateX(-90deg);
   transform-style: preserve-3d;
 
   &--green {
@@ -310,6 +352,7 @@
   &--pink {
     bottom: -250px;
     left: 0;
+    transform: rotateX(-90deg);
     @media (min-width: $tablet) {
       transform: rotateX(-90deg);
     }
@@ -366,15 +409,16 @@
   outline: none;
   width: 100%;
   height: 100%;
+  object-fit: cover;
 
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 
-  // img {
-  //     width: 100%;
-  //     height: 100%;
-  //     object-fit: cover;
-  // }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   &--green {
     background: url("../../img/images/card-green-1.jpg") no-repeat 50% 33% /
@@ -386,12 +430,14 @@
     flex-direction: column;
     justify-content: center;
     background: url("../../img/images/card-pink-without-lines.png") no-repeat
-      50% 33% / cover;
+      50% 15% / cover;
+
+    @media (min-width: $tablet) {
+      background-position-y: 33%;
+    }
   }
 }
 
-.about__card-ribbon {
-}
 .card-ribbon {
   display: flex;
   position: relative;
@@ -417,6 +463,11 @@
   left: -15px;
   top: -20px;
   transform: rotateZ(3deg);
+  display: none;
+
+  @media (min-width: $desktop) {
+    display: block;
+  }
 }
 .about__card-ribbon_2 {
   z-index: 8;
