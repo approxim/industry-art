@@ -148,6 +148,12 @@
     span {
       background-color: $color-black;
     }
+
+    &.open {
+      span {
+        background-color: $color-white;
+      }
+    }
   }
 }
 

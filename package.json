@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "jquery": "latest",
+    "mobile-detect": "^1.4.5",
     "slick-carousel": "^1.8.1",
     "three": "^0.141.0"
   }

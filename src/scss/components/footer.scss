@@ -79,6 +79,8 @@
 .footer.white {
   background-color: $color-lightgray;
   margin-top: 0;
+  filter: blur(0);
+  opacity: 1;
 
   @media (min-width: $desktop) {
     display: none;
