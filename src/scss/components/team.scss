@@ -29,6 +29,7 @@
   overflow: hidden;
   white-space: nowrap;
 }
+
 .team.open {
   & .team__title {
     width: 100%;
@@ -36,22 +37,21 @@
 }
 
 .team__content {
-  filter: blur(20px);
-  opacity: 0;
-  transition: filter 0.5s ease, opacity 0.5s ease;
-  @media (min-width: $tablet) {
-  }
-
   @media (min-width: $desktop) {
     margin: 85px 0 0;
     padding: 0 50px;
     margin: auto 0;
+    opacity: 0;
+    filter: blur(20px);
+    transition: filter 0.5s ease, opacity 0.5s ease;
   }
 }
 .team.open {
   & .team__content {
-    opacity: 1;
-    filter: blur(0);
+    @media (min-width: $desktop) {
+      opacity: 1;
+      filter: blur(0);
+    }
   }
 }
 
@@ -121,7 +121,11 @@
   left: 0;
   top: 60%;
 
-  background: linear-gradient(180deg, transparentize($color-lightgray, 0.41) 0%, $color-lightgray 46.15%);
+  background: linear-gradient(
+    180deg,
+    transparentize($color-lightgray, 0.41) 0%,
+    $color-lightgray 46.15%
+  );
 
   display: flex;
   flex-direction: column;

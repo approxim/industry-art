@@ -25,13 +25,29 @@ import * as about from "./modules/about.js";
 about.aboutJS();
 
 import * as navBar from "./modules/nav.js";
-navBar.init();
-
 import * as letterMain from "./modules/letter-main.js";
-letterMain.letterMain();
-
 import * as crosses from "./modules/crosses.js";
-crosses.init();
+import { MobileDetect } from "mobile-detect";
+
+// var mobileDetect = new MobileDetect(window.navigator.userAgent);
+// console.log("Mobile: " + detect.mobile());
+// console.log("Phone: " + detect.phone());
+// console.log("Tablet: " + detect.tablet());
+// console.log("OS: " + detect.os());
+// console.log("userAgent: " + detect.userAgent());
+
+// if (mobileDetect.mobile() !== null) {
+//   navBar.init();
+//   letterMain.letterMain();
+//   crosses.init();
+// }
+
+var screenResolution = parseInt(window.innerWidth);
+if (screenResolution > 1439) {
+  navBar.init();
+  letterMain.letterMain();
+  crosses.init();
+}
 
 // В случае если ткнуть мимо пунктов сортера то список скроется
 // let projectsTagContainer = document.querySelector('.projects__tagcontainer');
