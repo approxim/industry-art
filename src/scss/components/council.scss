@@ -3,7 +3,7 @@
   min-height: 100%;
   background-color: $color-lightgray;
   padding-top: 120px;
-  padding-bottom: 80px;
+  // padding-bottom: 80px;
 
   @media (min-width: $desktop) {
     height: 100vh;
@@ -17,11 +17,41 @@
   }
 }
 
+.header-2 {
+  &::after {
+    content: "";
+    position: absolute;
+    top: -50px;
+    z-index: 100;
+    width: 100%;
+    height: 212px;
+    background: linear-gradient(
+      180deg,
+      rgba(212, 216, 218, 1) 0%,
+      rgba(212, 216, 218, 1) 80%,
+      rgba(212, 216, 218, 0) 100%
+    );
+  }
+
+  & .header__logo {
+    left: 32px;
+    @media (min-width: $tablet) {
+      left: 62px;
+    }
+    @media (min-width: $desktop) {
+      left: 102px;
+    }
+  }
+}
+
 .council__title {
   @include title;
   color: $color-black;
   margin-bottom: 80px;
   padding-bottom: 15px;
+  position: sticky;
+  top: 100px;
+  z-index: 500;
 
   &::after {
     background-color: $color-black;
@@ -33,6 +63,14 @@
     @media (min-width: $desktop) {
       margin-left: 100px;
     }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -200px;
+    height: 200px;
+    width: 100%;
   }
 }
 
