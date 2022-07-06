@@ -1,14 +1,13 @@
 .team {
   width: 100%;
-  padding-top: 60px;
-  padding-bottom: 70px;
+  padding-bottom: 30px;
 
   @media (min-width: $tablet) {
-    padding-top: 100px;
-    padding-bottom: 90px;
   }
   @media (min-width: $desktop) {
+    padding-top: 100px;
     height: 100vh;
+    padding-bottom: 90px;
   }
 }
 
@@ -24,11 +23,16 @@
 .team__title {
   @include title;
   flex: 0 0 auto;
-  width: 0%;
+  width: 100%;
   transition: width 0.5s ease;
-  overflow: hidden;
   white-space: nowrap;
+
+  @media (min-width: $desktop) {
+    width: 0%;
+    overflow: hidden;
+  }
 }
+
 .team.open {
   & .team__title {
     width: 100%;
@@ -36,22 +40,21 @@
 }
 
 .team__content {
-  filter: blur(20px);
-  opacity: 0;
-  transition: filter 0.5s ease, opacity 0.5s ease;
-  @media (min-width: $tablet) {
-  }
-
   @media (min-width: $desktop) {
     margin: 85px 0 0;
     padding: 0 50px;
     margin: auto 0;
+    opacity: 0;
+    filter: blur(20px);
+    transition: filter 0.5s ease, opacity 0.5s ease;
   }
 }
 .team.open {
   & .team__content {
-    opacity: 1;
-    filter: blur(0);
+    @media (min-width: $desktop) {
+      opacity: 1;
+      filter: blur(0);
+    }
   }
 }
 
@@ -121,7 +124,11 @@
   left: 0;
   top: 60%;
 
-  background: linear-gradient(180deg, transparentize($color-lightgray, 0.41) 0%, $color-lightgray 46.15%);
+  background: linear-gradient(
+    180deg,
+    transparentize($color-lightgray, 0.41) 0%,
+    $color-lightgray 46.15%
+  );
 
   display: flex;
   flex-direction: column;
