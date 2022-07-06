@@ -48,6 +48,7 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "circletype": "^2.3.0",
     "jquery": "latest",
     "slick-carousel": "^1.8.1",
     "three": "^0.141.0"

@@ -48,8 +48,8 @@ export function init() {
   let navItems = document.querySelectorAll('.nav-main__item');
   const navList = document.querySelector('.nav-main__list');
 
-  activateSection(0);
-  activateNavItem(navItems[0], navItems);
+  activateSection(2);
+  activateNavItem(navItems[2], navItems);
 
   navList.addEventListener('click', (event) => {
     let navItem = event.target.closest('.nav-main__item');
