@@ -93,12 +93,12 @@
   position: relative;
   margin-bottom: 72px;
 
-  @media (min-width: $desktop) {
+  @media (min-width: $tablet) {
+    margin-bottom: 20px;
   }
 
   @media (min-width: $desktop) {
     flex-basis: 65%;
-    margin-bottom: 0;
     height: 100%;
   }
 }
@@ -308,11 +308,12 @@
 
   @media (min-width: $tablet) {
     padding: 50px 0;
+    flex-direction: row;
+    justify-content: space-evenly;
     // transform: translateY(50px);
     // animation: animCards 5s linear infinite;
   }
   @media (min-width: $desktop) {
-    flex-direction: row;
     justify-content: center;
     position: static;
     bottom: 0;
@@ -351,6 +352,11 @@
   border-radius: 22px;
   transform-style: preserve-3d;
   flex-basis: auto;
+
+  @media (min-width: $tablet) {
+    width: 302px;
+    height: 468px;
+  }
 
   @media (min-width: $desktop) {
     position: absolute;
