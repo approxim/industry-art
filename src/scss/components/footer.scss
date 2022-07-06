@@ -4,12 +4,13 @@
 
   display: flex;
   flex-flow: row wrap;
-  margin-top: 20%;
+  // margin-top: 20%;
 
-  filter: blur(20px);
-  opacity: 0;
-  transition: filter 0.5s ease, opacity 0.5s ease;
-
+  @media (min-width: $desktop) {
+    filter: blur(20px);
+    opacity: 0;
+    transition: filter 0.5s ease, opacity 0.5s ease;
+  }
   p,
   a,
   address {

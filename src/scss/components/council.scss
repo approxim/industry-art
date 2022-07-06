@@ -52,6 +52,7 @@
   position: sticky;
   top: 100px;
   z-index: 500;
+  margin-top: 0;
 
   &::after {
     background-color: $color-black;

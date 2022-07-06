@@ -1,14 +1,13 @@
 .team {
   width: 100%;
-  padding-top: 60px;
-  padding-bottom: 70px;
+  padding-bottom: 30px;
 
   @media (min-width: $tablet) {
-    padding-top: 100px;
-    padding-bottom: 90px;
   }
   @media (min-width: $desktop) {
+    padding-top: 100px;
     height: 100vh;
+    padding-bottom: 90px;
   }
 }
 
@@ -24,10 +23,14 @@
 .team__title {
   @include title;
   flex: 0 0 auto;
-  width: 0%;
+  width: 100%;
   transition: width 0.5s ease;
-  overflow: hidden;
   white-space: nowrap;
+
+  @media (min-width: $desktop) {
+    width: 0%;
+    overflow: hidden;
+  }
 }
 
 .team.open {
