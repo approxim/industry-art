@@ -122,8 +122,8 @@ export function init() {
 
   crosses.push(new Cross(mouse.x, mouse.y, 'rgba(0,0,0,0)', config.mouseWeight));
 
-  function setPos({ layerX, layerY }) {
-    [mouse.x, mouse.y] = [layerX, layerY];
+  function setPos({ clientX, clientY }) {
+    [mouse.x, mouse.y] = [clientX, clientY];
     let cross = crosses[0];
     [cross.currPos.x, cross.currPos.y] = [mouse.x, mouse.y];
   }
@@ -144,8 +144,8 @@ export function init() {
 
   window.addEventListener('resize', updateCanvasFilling);
   window.addEventListener('fullscreenchange', updateCanvasFilling);
-  canvas.addEventListener('mousemove', setPos);
-  canvas.addEventListener('mousedown', fearCrosses);
+  window.addEventListener('mousemove', setPos);
+  window.addEventListener('mousedown', fearCrosses);
   function fillCanvas() {
     for (
       let i = config.crossMargin + config.crossSize / 2;
@@ -167,13 +167,13 @@ export function init() {
   fillCanvas();
 
   let staticBomb;
-  const debugButton = document.querySelector('#debug');
-  debugButton.addEventListener('click', () => {
+  function createStaticBomb() {
     if (staticBomb) {
       staticBomb = undefined;
     } else {
       let cross = new Cross(canvas.width / 2, canvas.height / 2, 'rgba(255,0,0,0)', 60);
       staticBomb = cross;
     }
-  });
+  }
+  createStaticBomb();
 }

@@ -49,6 +49,9 @@ if (screenResolution > 1439) {
   crosses.init();
 }
 
+import * as supports from './modules/supports.js';
+supports.init();
+
 // В случае если ткнуть мимо пунктов сортера то список скроется
 // let projectsTagContainer = document.querySelector('.projects__tagcontainer');
 // projectsTagContainer.addEventListener("click", (e) => {
