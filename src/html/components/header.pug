@@ -1,21 +1,8 @@
-header.header
-    nav.nav-main
-        ul.nav-main__list
-            li.nav-main__item(data-scroll="promo")
+header.header#header
 
-                a(href="#")
-                    span главная
-            li.nav-main__item(data-scroll="about")
-                a(href="/#about")
-                    span о нас
-            li.nav-main__item(data-scroll="supports")
-                a(href="/#supports")
-                    span виды поддержки
-            li.nav-main__item(data-scroll="team")
-                a(href="/#team")
-                    span команда
+    include add/nav-main
 
-    a.header__logo(href="#")
+    a.header__logo(href="/")
         img(src="@img/icons/logo-white.svg" width="104" height="9")
 
     button.header__burger(type="button")
@@ -33,22 +20,18 @@ header.header
                 a(href="/#about" data-scroll="#about")
                     span о нас
             li.nav-secondary__item.menu-mobile
-                a(href="#" data-scroll="#about-us")
+                a(href="/#supports" data-scroll="#supports")
                     span виды поддержки
             li.nav-secondary__item.menu-mobile
-                a(href="#" data-scroll="#about-us")
+                a(href="/#team" data-scroll="#team")
                     span команда
+            li.nav-secondary__item.menu-mobile
+                a(href="/#footer" data-scroll="#footer")
+                    span контакты
 
             li.nav-secondary__item
-                a(href="/board.html")
-                    span наблюдательский совет
-            li.nav-secondary__item
-                a(href="/finance.html")
-                    span финансы
-            li.nav-secondary__item
-                a(href="/creative.html")
-                    span креатив
-
+                a(href="/council.html")
+                    span наблюдательный совет
 
     .header__overlay
 

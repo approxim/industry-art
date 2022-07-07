@@ -1,0 +1,57 @@
+doctype html
+include html/global/mixins
+include html/global/variables
+
+html
+    include html/global/head
+
+    body
+        include html/components/header-2
+
+        section.council#council
+            h2.visually-hidden Наблюдательный совет
+
+            p.council__title.container
+                span Наблюдательный совет
+
+            ul.council__content.container
+                li.council__item 
+                    .council__img 
+                        img(src="@img/images/council_verhushina.jpg", alt="Верхушина Юлия Вячеславовна" width="180" height="311")
+                        p.council__name Верхушина Юлия Вячеславовна
+                    p.council__post Заместитель руководителя Администрации Губернатора Красноярского края, председатель наблюдательного совета
+
+                li.council__item 
+                    .council__img 
+                        img(src="@img/images/council_raspopin.jpg", alt="Распопин Николай Александрович" width="180" height="311")
+                        p.council__name Распопин Николай Александрович                    
+                    p.council__post Министр цифрового развития Красноярского края
+
+                li.council__item 
+                    .council__img 
+                        img(src="@img/images/council_garnec.jpg", alt="Гарнец Анна Карловна" width="180" height="311")
+                        p.council__name Гарнец Анна Карловна
+                    p.council__post Министр экономики и регионального развития Красноярского края
+
+                li.council__item 
+                    .council__img 
+                        img(src="@img/images/council_vasilenko.jpg", alt="Василенко Ольга Александровна" width="180" height="311")
+                        p.council__name Василенко Ольга Александровна
+                    p.council__post Руководитель Агентства по туризму Красноярского края
+                
+                li.council__item 
+                    .council__img 
+                        img(src="@img/images/council_kachanova.jpg", alt="Кочанова Алена Сергеевна" width="180" height="311")
+                        p.council__name Кочанова Алена Сергеевна
+                    p.council__post Директор КГКУ «ТИЦ Красноярского края»
+
+                li.council__item 
+                    .council__img 
+                        img(src="@img/images/council_zinov.jpg", alt="Зинов Аркадий Владимирович" width="180" height="311")
+                        p.council__name Зинов Аркадий Владимирович
+                    p.council__post Министр культуры Красноярского края
+
+
+        include html/components/footer-white
+
+        include html/global/scripts-js
