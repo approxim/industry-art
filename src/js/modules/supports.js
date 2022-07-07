@@ -80,5 +80,20 @@ function activateSection(sectionID) {
     }, 500);
     document.querySelector(".menu-circle__choice").innerText =
       document.querySelector(".menu-circle__item_" + sectionID).innerText;
+  
+  
+
+    document.querySelector('.circle__circle-words').classList.add('hidden');
+    setTimeout(() => {
+      document.querySelector('.circle__circle-words').classList.remove('hidden');
+    }, 1300);
+    circle.classList.add('activate-' + sectionID);
+    document.querySelector('.circle__text_' + sectionID).classList.add('active');
+    setTimeout(() => {
+      document.querySelector('.menu-circle__item_' + sectionID).classList.add('active');
+    }, 500);
+    document.querySelector('.menu-circle__choice').innerText = document.querySelector(
+      '.menu-circle__item_' + sectionID
+    ).innerText;
   }
 }

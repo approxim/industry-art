@@ -20,16 +20,6 @@
     opacity: 1;
   }
 }
-
-#supports img {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-}
-
 #debug {
   position: absolute;
   bottom: 20px;
@@ -61,6 +51,16 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    animation: bigShureshka1 infinite linear 40s;
+
+    @keyframes bigShureshka1 {
+      from {
+        transform: translate(-50%, -50%) rotateZ(0deg);
+      }
+      to {
+        transform: translate(-50%, -50%) rotateZ(360deg);
+      }
+    }
 
     & img {
       width: 100%;
@@ -75,6 +75,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    animation: bigShureshka1 infinite 38s linear;
 
     & img {
       width: 100%;
@@ -110,6 +111,7 @@
     transform: translate(-50%, -50%);
 
     & .circle__icon_wrapper {
+      transition: transform 1.5s ease;
       z-index: 5;
       border-radius: 50%;
       background-color: #000;
@@ -122,37 +124,25 @@
       &_1 {
         top: -29px;
         left: 40.5%;
-        & .circle__icon_image {
-          transform: translate(-50%, -50%);
-        }
       }
       &_2 {
         top: 24%;
         right: -19px;
-        & .circle__icon_image {
-          transform: translate(-50%, -50%) rotateZ(72deg);
+        & img.circle__icon_image {
+          transform: translate(-50%, -50%);
         }
       }
       &_3 {
         bottom: 7px;
         right: 39px;
-        & .circle__icon_image {
-          transform: translate(-50%, -50%) rotateZ(144deg);
-        }
       }
       &_4 {
         bottom: 7px;
         left: 39px;
-        & .circle__icon_image {
-          transform: translate(-50%, -50%) rotateZ(216deg);
-        }
       }
       &_5 {
         top: 24%;
         left: -19px;
-        & .circle__icon_image {
-          transform: translate(-50%, -50%) rotateZ(288deg);
-        }
       }
 
       & img {
@@ -164,6 +154,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
+        transform: translate(-50%, -50%);
         width: 80%;
         height: 80%;
 
@@ -254,9 +245,15 @@
   }
   & .circle__circle-words {
     font-size: 25px;
+    opacity: 1;
+    transition: opacity 0.2s linear;
+    &.hidden {
+      opacity: 0;
+    }
     & .circle__word {
       z-index: 100;
       position: absolute;
+
       & img {
         width: 100%;
         height: 100%;
@@ -353,6 +350,10 @@
     & .circle__letter {
       transform: translate(-50%, -50%) rotateZ(72deg);
     }
+
+    & .circle__icon_wrapper {
+      transform: rotateZ(72deg);
+    }
   }
   &.activate-3 {
     transform: translate(-50%, -50%) rotateZ(-144deg);
@@ -363,6 +364,10 @@
 
     & .circle__letter {
       transform: translate(-50%, -50%) rotateZ(144deg);
+    }
+
+    & .circle__icon_wrapper {
+      transform: rotateZ(144deg);
     }
   }
   &.activate-4 {
@@ -375,6 +380,10 @@
     & .circle__letter {
       transform: translate(-50%, -50%) rotateZ(216deg);
     }
+
+    & .circle__icon_wrapper {
+      transform: rotateZ(216deg);
+    }
   }
   &.activate-5 {
     transform: translate(-50%, -50%) rotateZ(-288deg);
@@ -385,6 +394,10 @@
 
     & .circle__letter {
       transform: translate(-50%, -50%) rotateZ(288deg);
+    }
+
+    & .circle__icon_wrapper {
+      transform: rotateZ(288deg);
     }
   }
 
