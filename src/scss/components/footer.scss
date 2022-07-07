@@ -25,6 +25,8 @@
 .footer.open {
   filter: blur(0);
   opacity: 1;
+  position: absolute;
+  bottom: 100px;
 }
 
 .footer__logo {

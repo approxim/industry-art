@@ -6,15 +6,15 @@ export function aboutJS() {
     const pinkBlock = $(".about__info--pink template").html();
     const greenBlock = $(".about__info--green template").html();
 
-    $(".about__info--pink").toggleClass("open", "switch");
-    $(".about__info--green").toggleClass("open", "switch");
-    $(this).toggleClass("about__info-toggle--green", "switch");
+    $(".about__info--pink").toggleClass("open");
+    $(".about__info--green").toggleClass("open");
+    $(this).toggleClass("about__info-toggle--green");
 
     $(this).text((idx, oldText) => {
-      if (oldText == pinkBlock) {
-        return greenBlock;
+      if (oldText == greenBlock) {
+        return pinkBlock;
       }
-      return pinkBlock;
+      return greenBlock;
     });
   });
 
