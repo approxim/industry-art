@@ -136,10 +136,11 @@ export function init() {
   }
 
   function updateCanvasFilling() {
-    crosses = [];
     fillCanvas();
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    removeStaticBomb();
+    createStaticBomb();
   }
 
   window.addEventListener('resize', updateCanvasFilling);
@@ -147,6 +148,7 @@ export function init() {
   window.addEventListener('mousemove', setPos);
   window.addEventListener('mousedown', fearCrosses);
   function fillCanvas() {
+    crosses = [];
     for (
       let i = config.crossMargin + config.crossSize / 2;
       i < canvas.width;
@@ -171,9 +173,24 @@ export function init() {
     if (staticBomb) {
       staticBomb = undefined;
     } else {
-      let cross = new Cross(canvas.width / 2, canvas.height / 2, 'rgba(255,0,0,0)', 60);
+      let x, y;
+      if (parseInt(window.innerWidth) > 1400) {
+        x = canvas.width / 2;
+        y = canvas.height / 2;
+      } else {
+        x = '400';
+        y = canvas.height / 2;
+      }
+      let cross = new Cross(x, y, 'rgba(255,0,0,0)', 60);
       staticBomb = cross;
     }
   }
+
+  function removeStaticBomb() {
+    staticBomb = undefined;
+  }
+
+  window.staticBomb = staticBomb;
+
   createStaticBomb();
 }

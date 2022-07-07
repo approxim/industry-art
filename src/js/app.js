@@ -23,7 +23,7 @@ import * as about from './modules/about.js';
 about.aboutJS();
 
 import * as navBar from './modules/nav.js';
-navBar.init();
+// navBar.init();
 
 import * as crosses from './modules/crosses.js';
 crosses.init();
