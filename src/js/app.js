@@ -27,7 +27,7 @@ about.aboutJS();
 import * as navBar from './modules/nav.js';
 import * as letterMain from './modules/letter-main.js';
 import * as crosses from './modules/crosses.js';
-import { MobileDetect } from 'mobile-detect';
+import { isMobile } from 'mobile-device-detect';
 
 // var mobileDetect = new MobileDetect(window.navigator.userAgent);
 // console.log("Mobile: " + detect.mobile());
@@ -41,9 +41,7 @@ import { MobileDetect } from 'mobile-detect';
 //   letterMain.letterMain();
 //   crosses.init();
 // }
-
-var screenResolution = parseInt(window.innerWidth);
-if (screenResolution > 1439) {
+if (!isMobile) {
   navBar.init();
   letterMain.letterMain();
   crosses.init();
