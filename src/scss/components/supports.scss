@@ -21,7 +21,6 @@
   }
 }
 
-
 #supports img {
   position: absolute;
   top: 0;
@@ -37,7 +36,6 @@
   left: 20px;
 }
 
-
 .supports__wrapper {
   position: relative;
   z-index: 10;
@@ -45,7 +43,7 @@
 
 .supports__title {
   @include title;
-
+}
 .circle {
   transition: transform 1.5s ease;
   width: 600px;
@@ -439,6 +437,14 @@ ul.circle__text {
       top: 50%;
       transform: translateY(-50%);
     }
+
+    @media (max-width: 900px) {
+      font-family: 'Geometria';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+    }
   }
   &.active {
     transform: translateX(0);
@@ -458,7 +464,7 @@ ul.circle__text {
       right: auto;
       // top: 50%;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translateX(-39%);
       width: 60%;
     }
   }
@@ -475,7 +481,7 @@ ul.circle__text {
 .circle__texts {
   position: relative;
   width: 100%;
-  bottom: 20px;
+  bottom: 50px;
   height: 400px;
 
   @media (min-width: 900px) {

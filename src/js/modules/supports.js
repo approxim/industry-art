@@ -1,41 +1,10 @@
-import $ from "jquery";
+import $ from 'jquery';
 import CircleType from 'circletype';
-
-export function tabs() {
-  $(function () {
-    const content = $(".supports__content > li");
-    content.hide().filter(":first").show();
-
-    // Клики по вкладкам.
-    $(".supports__tabs a")
-      .click(function () {
-        content.hide();
-        content.filter(this.hash).show();
-        $(".supports__tabs a").removeClass("open");
-        $(this).addClass("open");
-        return false;
-      })
-      .filter(":first")
-      .click();
-
-    // Клики по якорным ссылкам.
-    // $('.tabs-target').click(function(){
-    //     $('#tabs .tabs-nav a[href=' + $(this).attr('href')+ ']').click();
-    // });
-
-    // Отрытие вкладки из хеша URL
-    // if(window.location.hash){
-    //     $('#tabs-nav a[href=' + window.location.hash + ']').click();
-    //     window.scrollTo(0, $("#" . window.location.hash).offset().top);
-    // }
-  });
-
 
 export function init() {
   let supportSection = document.querySelector('#supports');
   let circle = document.querySelector('.circle');
   circle.addEventListener('click', (event) => {
-    console.log(1);
     const target = event.target;
     if (target.classList.contains('circle__word')) {
       let wordID = target.id.split('_')[3];
@@ -55,13 +24,17 @@ export function init() {
     if (target.classList.contains('menu-circle__item')) {
       let menuItemID = target.classList[1].split('_')[3];
       document.querySelector('.menu-circle__menu').classList.remove('active');
-      document.querySelector('.menu-circle__choice').classList.toggle('opened');
+      document.querySelector('.menu-circle__choice').classList.remove('opened');
       activateSection(menuItemID);
     }
     if (target.classList.contains('menu-circle__choice')) {
-      document.querySelector('.menu-circle__menu').classList.toggle('active');
-      document.querySelector('.menu-circle__choice').classList.toggle('opened');
-      activateSection(menuItemID);
+      if (document.querySelector('.menu-circle__choice').classList.contains('opened')) {
+        document.querySelector('.menu-circle__choice').classList.remove('opened');
+        document.querySelector('.menu-circle__menu').classList.remove('active');
+      } else {
+        document.querySelector('.menu-circle__choice').classList.add('opened');
+        document.querySelector('.menu-circle__menu').classList.add('active');
+      }
     }
   });
 }
@@ -86,15 +59,4 @@ function activateSection(sectionID) {
   document.querySelector('.menu-circle__choice').innerText = document.querySelector(
     '.menu-circle__item_' + sectionID
   ).innerText;
-
 }
-
-document.querySelector('.menu-circle').addEventListener('click', (event) => {
-  let target = event.target;
-  let menu = target.closest('.menu-circle');
-  if (!menu.classList.contains('opened')) {
-    menu.classList.add('opened');
-  } else {
-    menu.classList.remove('opened');
-  }
-});

@@ -1,35 +1,33 @@
 // Подключение jquery
-import $ from "jquery";
+import $ from 'jquery';
 
 // Подключение Slick-Slider
-import "slick-carousel";
+import 'slick-carousel';
 
 // подключение слайдера Swiper
 // import Swiper, { Navigation, Pagination } from 'swiper';
 // const swiper = new Swiper();
 
 // Проверка браузеров на поддержку webp
-import * as flsFunctions from "./modules/functions.js";
+import * as flsFunctions from './modules/functions.js';
 flsFunctions.isWebp();
 
-import * as support from "./modules/supports.js";
-support.tabs();
+import * as support from './modules/supports.js';
+support.init();
 
-import * as header from "./modules/header.js";
+import * as header from './modules/header.js';
 header.headerJS();
 
-import * as slickInit from "./modules/slick-init.js";
+import * as slickInit from './modules/slick-init.js';
 slickInit.slickInit();
 
-import * as about from "./modules/about.js";
+import * as about from './modules/about.js';
 about.aboutJS();
 
-
-import * as navBar from "./modules/nav.js";
-import * as letterMain from "./modules/letter-main.js";
-import * as crosses from "./modules/crosses.js";
-import { MobileDetect } from "mobile-detect";
-
+import * as navBar from './modules/nav.js';
+import * as letterMain from './modules/letter-main.js';
+import * as crosses from './modules/crosses.js';
+import { MobileDetect } from 'mobile-detect';
 
 // var mobileDetect = new MobileDetect(window.navigator.userAgent);
 // console.log("Mobile: " + detect.mobile());
@@ -50,9 +48,6 @@ if (screenResolution > 1439) {
   letterMain.letterMain();
   crosses.init();
 }
-
-import * as supports from './modules/supports.js';
-supports.init();
 
 // В случае если ткнуть мимо пунктов сортера то список скроется
 // let projectsTagContainer = document.querySelector('.projects__tagcontainer');
