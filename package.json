@@ -50,7 +50,7 @@
   "dependencies": {
     "circletype": "^2.3.0",
     "jquery": "latest",
-    "mobile-detect": "^1.4.5",
+    "mobile-device-detect": "^0.4.3",
     "slick-carousel": "^1.8.1",
     "three": "^0.141.0"
   }

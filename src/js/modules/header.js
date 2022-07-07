@@ -19,10 +19,10 @@ export function headerJS() {
     event.preventDefault();
 
     let elementId = $(this).data('scroll');
-    let elementOffset = $(elementId).offset.top;
-
+    console.log(elementId);
+    let elementOffset = $(elementId).offset().top;
+    console.log(elementOffset);
     // nav.removeClass("open");
-
     $('html, body').animate(
       {
         scrollTop: elementOffset - 65 /*65 это отступ(смещение) для уточнения позиционирования при скролле документа*/,

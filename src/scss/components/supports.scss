@@ -5,6 +5,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
+  position: relative;
 }
 
 #bg {
@@ -428,6 +430,8 @@ ul.circle__text {
   right: 50px;
 
   & li {
+    margin-bottom: 10px;
+
     position: relative;
     font-family: 'Geometria';
     font-style: normal;
@@ -494,8 +498,9 @@ ul.circle__text {
 .circle__texts {
   position: relative;
   width: 100%;
-  bottom: 50px;
-  height: 400px;
+  bottom: 200px;
+  height: 180px;
+  overflow: hidden;
 
   @media (min-width: 900px) {
     position: absolute;
@@ -522,6 +527,7 @@ ul.circle__text {
   }
 
   & .menu-circle__choice {
+    cursor: pointer;
     height: 50px;
     width: 300px;
     display: none;
