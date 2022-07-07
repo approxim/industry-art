@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow-x: hidden;
 }
 
 #bg {
@@ -258,13 +259,6 @@
         width: 100%;
         height: 100%;
       }
-      &:before {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-      }
       &:after {
         content: url(../img/support/Arrow.svg);
         display: block;
@@ -339,6 +333,10 @@
     & .circle__letter {
       transform: translate(-50%, -50%) rotateZ(0deg);
     }
+
+    & #circle__word_1 .circle__shadow {
+      background: lightblue;
+    }
   }
   &.activate-2 {
     transform: translate(-50%, -50%) rotateZ(-72deg);
@@ -353,6 +351,10 @@
 
     & .circle__icon_wrapper {
       transform: rotateZ(72deg);
+    }
+
+    & #circle__word_2 .circle__shadow {
+      background: lightblue;
     }
   }
   &.activate-3 {
@@ -369,6 +371,10 @@
     & .circle__icon_wrapper {
       transform: rotateZ(144deg);
     }
+
+    & #circle__word_3 .circle__shadow {
+      background: lightblue;
+    }
   }
   &.activate-4 {
     transform: translate(-50%, -50%) rotateZ(-216deg);
@@ -384,6 +390,10 @@
     & .circle__icon_wrapper {
       transform: rotateZ(216deg);
     }
+
+    & #circle__word_4 .circle__shadow {
+      background: lightblue;
+    }
   }
   &.activate-5 {
     transform: translate(-50%, -50%) rotateZ(-288deg);
@@ -398,6 +408,10 @@
 
     & .circle__icon_wrapper {
       transform: rotateZ(288deg);
+    }
+
+    & #circle__word_5 .circle__shadow {
+      background: lightblue;
     }
   }
 
@@ -429,17 +443,18 @@ ul.circle__text {
 
   & li {
     position: relative;
-    font-family: 'Geometria';
+    font-family: "Geometria";
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 25px;
-    text-shadow: 0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1),
+    text-shadow: 0px 0px 15px rgba(97, 0, 255, 1),
+      0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1),
       0px 0px 15px rgba(97, 0, 255, 1);
     border: 1px solid #000000;
 
     &::before {
-      content: '';
+      content: "";
       box-shadow: 0px 0px 15px 4px rgba(97, 0, 255, 1);
       position: absolute;
       left: -20px;
@@ -452,7 +467,7 @@ ul.circle__text {
     }
 
     @media (max-width: 900px) {
-      font-family: 'Geometria';
+      font-family: "Geometria";
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
@@ -509,7 +524,8 @@ ul.circle__text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-shadow: 0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1),
+  text-shadow: 0px 0px 15px rgba(97, 0, 255, 1),
+    0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1),
     0px 0px 15px rgba(97, 0, 255, 1);
 
   & .menu-circle__menu {
@@ -529,7 +545,7 @@ ul.circle__text {
     align-items: center;
     position: relative;
 
-    font-family: 'Geometria';
+    font-family: "Geometria";
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
@@ -543,7 +559,7 @@ ul.circle__text {
     }
 
     &::after {
-      content: url('../img/support/arrow.svg');
+      content: url("../img/support/arrow.svg");
       position: absolute;
       top: 23%;
       right: 13px;
@@ -585,4 +601,93 @@ ul.circle__text {
       height: 50px;
     }
   }
+}
+
+.circle__circle-words {
+  z-index: -1;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.circle__word {
+  cursor: pointer;
+  &:hover {
+    .circle__shadow {
+      background: lightblue;
+    }
+  }
+}
+
+.circle__word {
+  &:nth-child(1) {
+    // display: none;
+    .circle__shadow {
+      top: 41px;
+      left: -9px;
+      // transform: rotateZ(4deg);
+    }
+  }
+  &:nth-child(2) {
+    .circle__shadow {
+      top: 60px;
+      left: -116px;
+      transform: rotateZ(72deg);
+    }
+  }
+  &:nth-child(3) {
+    .circle__shadow {
+      top: -55px;
+      left: -77px;
+      transform: rotateZ(144deg);
+    }
+  }
+  &:nth-child(4) {
+    .circle__shadow {
+      top: -22px;
+      left: 16px;
+      transform: rotateZ(216deg);
+    }
+  }
+  &:nth-child(5) {
+    .circle__shadow {
+      top: 47px;
+      left: -3px;
+      transform: rotateZ(288deg);
+    }
+  }
+}
+
+.circle__shadow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 200px;
+  height: 100px;
+  background: gray;
+  border-radius: 50%;
+  filter: blur(10px);
+  transition: all 0.4s ease;
+  user-select: none;
+}
+
+.circle__shureshka-small {
+  background: black;
+  border-radius: 50%;
+  z-index: -1;
+  user-select: none;
+  overflow: hidden;
+
+  img {
+    border-radius: 50%;
+  }
+}
+
+.circle__shureshka-big {
+  z-index: -2;
+  user-select: none;
 }

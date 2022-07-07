@@ -8,10 +8,15 @@ export function init() {
   if (circle && supportSection) {
     circle.addEventListener("click", (event) => {
       const target = event.target;
-      if (target.classList.contains("circle__word")) {
-        let wordID = target.id.split("_")[3];
-        activateSection(wordID);
+      if (target.closest(".circle__word") != null) {
+        if (
+          target.closest(".circle__word").classList.contains("circle__word")
+        ) {
+          let wordID = target.closest(".circle__word").id.split("_")[3];
+          activateSection(wordID);
+        }
       }
+
       if (target.classList.contains("circle__icon")) {
         let iconID = target.classList[1].split("_")[3];
         activateSection(iconID);
@@ -80,20 +85,23 @@ function activateSection(sectionID) {
     }, 500);
     document.querySelector(".menu-circle__choice").innerText =
       document.querySelector(".menu-circle__item_" + sectionID).innerText;
-  
-  
 
-    document.querySelector('.circle__circle-words').classList.add('hidden');
+    document.querySelector(".circle__circle-words").classList.add("hidden");
     setTimeout(() => {
-      document.querySelector('.circle__circle-words').classList.remove('hidden');
+      document
+        .querySelector(".circle__circle-words")
+        .classList.remove("hidden");
     }, 1300);
-    circle.classList.add('activate-' + sectionID);
-    document.querySelector('.circle__text_' + sectionID).classList.add('active');
+    circle.classList.add("activate-" + sectionID);
+    document
+      .querySelector(".circle__text_" + sectionID)
+      .classList.add("active");
     setTimeout(() => {
-      document.querySelector('.menu-circle__item_' + sectionID).classList.add('active');
+      document
+        .querySelector(".menu-circle__item_" + sectionID)
+        .classList.add("active");
     }, 500);
-    document.querySelector('.menu-circle__choice').innerText = document.querySelector(
-      '.menu-circle__item_' + sectionID
-    ).innerText;
+    document.querySelector(".menu-circle__choice").innerText =
+      document.querySelector(".menu-circle__item_" + sectionID).innerText;
   }
 }
