@@ -17,13 +17,13 @@ export function headerJS() {
   //   скролл до нужного элемента при клике на пункт меню
   $("[data-scroll]").on("click", function (event) {
     event.preventDefault();
-
     let elementId = $(this).data("scroll");
     let elementOffset = $(elementId).offset().top;
 
     // nav.removeClass("open");
 
     $("html, body").animate(
+
       {
         scrollTop:
           elementOffset -
