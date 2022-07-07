@@ -24,10 +24,12 @@ slickInit.slickInit();
 import * as about from "./modules/about.js";
 about.aboutJS();
 
+
 import * as navBar from "./modules/nav.js";
 import * as letterMain from "./modules/letter-main.js";
 import * as crosses from "./modules/crosses.js";
 import { MobileDetect } from "mobile-detect";
+
 
 // var mobileDetect = new MobileDetect(window.navigator.userAgent);
 // console.log("Mobile: " + detect.mobile());
