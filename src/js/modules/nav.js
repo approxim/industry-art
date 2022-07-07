@@ -1,7 +1,9 @@
-const COLORS = ['#4F4B98', '#2AA89A', '#D6338A', '#F0E400'];
-let colorInUse = '';
+import $ from "jquery";
 
-const sections = document.querySelectorAll('section');
+const COLORS = ["#4F4B98", "#2AA89A", "#D6338A", "#F0E400"];
+let colorInUse = "";
+
+const sections = document.querySelectorAll("section");
 const clicksToScroll = 5;
 const maxScroll = clicksToScroll * sections.length - 1;
 
@@ -17,12 +19,51 @@ function getRandomColor() {
 function activateSection(sectionID) {
   let section = sections[sectionID];
   sections.forEach((sectionToRemove) => {
-    sectionToRemove.classList.remove('open');
+    sectionToRemove.classList.remove("open");
     setTimeout(() => {
-      sectionToRemove.style.display = 'none';
-      section.style.display = '';
+      sectionToRemove.style.display = "none";
+
+      section.style.display = "";
+      $(".team__slider-init")
+        .slick("unslick")
+        .slick({
+          mobileFirst: true,
+          dots: false,
+          infinite: false,
+          arrows: false,
+          speed: 300,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                arrows: true,
+              },
+            },
+            {
+              breakpoint: 1440,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                arrows: true,
+              },
+            },
+          ],
+        });
+      $(".about__infopanel-slider").slick("unslick").slick({
+        dots: true,
+        infinite: false,
+        arrows: false,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      });
+
       setTimeout(() => {
-        section.classList.add('open');
+        section.classList.add("open");
       }, 50);
     }, 500);
   });
@@ -32,27 +73,27 @@ function activateSection(sectionID) {
 
 function activateNavItem(item, navItems) {
   navItems.forEach((item) => {
-    item.classList.remove('open');
-    item.querySelector('a').style.color = '';
+    item.classList.remove("open");
+    item.querySelector("a").style.color = "";
   });
   let color = getRandomColor();
   while (color == colorInUse) {
     color = getRandomColor();
   }
   colorInUse = color;
-  item.classList.add('open');
-  item.querySelector('a').style.color = color;
+  item.classList.add("open");
+  item.querySelector("a").style.color = color;
 }
 
 export function init() {
-  let navItems = document.querySelectorAll('.nav-main__item');
-  const navList = document.querySelector('.nav-main__list');
+  let navItems = document.querySelectorAll(".nav-main__item");
+  const navList = document.querySelector(".nav-main__list");
 
   activateSection(0);
   activateNavItem(navItems[0], navItems);
 
-  navList.addEventListener('click', (event) => {
-    let navItem = event.target.closest('.nav-main__item');
+  navList.addEventListener("click", (event) => {
+    let navItem = event.target.closest(".nav-main__item");
     if (navItem) {
       activateNavItem(navItem, navItems);
 
@@ -67,8 +108,8 @@ export function init() {
     }
   });
 
-  document.body.style.overflow = 'hidden';
-  document.addEventListener('wheel', (event) => {
+  document.body.style.overflow = "hidden";
+  document.addEventListener("wheel", (event) => {
     const scrollDelta = event.deltaY;
     scrollDelta > 0 ? wheelCounter++ : wheelCounter--;
     if (wheelCounter < 0) {
