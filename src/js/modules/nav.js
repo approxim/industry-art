@@ -22,6 +22,7 @@ function getRandomColor() {
 function activateSection(sectionID) {
   if (isFunctionalActive) {
     let section = sections[sectionID];
+    wheelCounter = sectionID * clicksToScroll;
     sections.forEach((sectionToRemove) => {
       sectionToRemove.classList.remove('open');
       setTimeout(() => {
@@ -153,7 +154,7 @@ export function init() {
 }
 
 function overflowChanger() {
-  if (parseInt(window.innerWidth) > 1440) {
+  if (parseInt(window.innerWidth) > 767) {
     document.body.style.overflow = 'hidden';
     activateSection(0);
     activateNavItem(document.querySelectorAll('.nav-main__item')[0], document.querySelectorAll('.nav-main__item'));

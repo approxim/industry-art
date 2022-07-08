@@ -6,8 +6,7 @@
 
   padding-top: 35px;
   padding-bottom: 30px;
-  background: $color-darkgrey url(../../img/images/building-opacity.webp)
-    no-repeat 50% 87% / cover;
+  background: $color-darkgrey url(../../img/images/building-opacity.webp) no-repeat 50% 87% / cover;
 
   @media (min-width: $tablet) {
     padding-top: 72px;
@@ -24,8 +23,7 @@
 // }
 
 .about.open {
-  background: $color-darkgrey url(../../img/images/building-opacity.webp)
-    no-repeat 50% 87% / cover;
+  background: $color-darkgrey url(../../img/images/building-opacity.webp) no-repeat 50% 87% / cover;
 }
 
 .about__wrapper {
@@ -139,7 +137,7 @@
 }
 
 .about__info-title {
-  transition: height 0.5s ease;
+  transition: height 0.5s ease, padding-bottom 0.5s ease;
   font-weight: 500;
   font-size: 24px;
   line-height: 30px;
@@ -156,13 +154,13 @@
     overflow: hidden;
   }
   @media (min-width: $desktop) {
-    padding-bottom: 70px;
+    padding-bottom: 0;
     // margin-bottom: 70px;
     height: 0;
   }
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
 
@@ -186,6 +184,7 @@
   & .about__info-title {
     @media (min-width: $desktop) {
       height: auto;
+      padding-bottom: 76px;
     }
   }
 }
@@ -314,10 +313,11 @@
     height: 16.5em;
   }
 }
+
 .about.open {
   & .about__cards {
     @media (min-width: $desktop) {
-      left: 0;
+      right: 0;
       height: 16.5em;
     }
   }
@@ -339,6 +339,8 @@
   border-radius: 22px;
   transform-style: preserve-3d;
   flex-basis: auto;
+  opacity: 1;
+  transition: opacity 0.5s;
 
   &:first-child {
     margin-bottom: 35px;
@@ -349,6 +351,7 @@
   }
 
   @media (min-width: $tablet) {
+    opacity: 0;
     width: 302px;
     height: 468px;
   }
@@ -378,6 +381,14 @@
       bottom: -250px;
       left: 0;
       transform: rotateX(-90deg);
+    }
+  }
+}
+
+.about.open {
+  & .about__card {
+    @media (min-width: $desktop) {
+      opacity: 1;
     }
   }
 }
@@ -438,16 +449,14 @@
   }
 
   &--green {
-    background: url("../../img/images/card-green-1.png") no-repeat 50% 33% /
-      cover;
+    background: url('../../img/images/card-green-1.png') no-repeat 50% 33% / cover;
   }
 
   &--pink {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: url("../../img/images/card-pink-without-lines.png") no-repeat
-      50% 15% / cover;
+    background: url('../../img/images/card-pink-without-lines.png') no-repeat 50% 15% / cover;
 
     @media (min-width: $tablet) {
       background-position-y: 33%;
@@ -508,19 +517,19 @@
 }
 
 .about__card-ribbon_1 .card-ribbon__text::after {
-  content: " компьютерная графика разработка игр";
+  content: ' компьютерная графика разработка игр';
 }
 .about__card-ribbon_2 .card-ribbon__text::after {
-  content: " искусство издательское дело журналистика";
+  content: ' искусство издательское дело журналистика';
 }
 .about__card-ribbon_3 .card-ribbon__text::after {
-  content: " архитектура мода дизайн кино";
+  content: ' архитектура мода дизайн кино';
 }
 .about__card-ribbon_4 .card-ribbon__text::after {
-  content: " новые медиа маркетинг IT-сфера гастрономия";
+  content: ' новые медиа маркетинг IT-сфера гастрономия';
 }
 .about__card-ribbon_5 .card-ribbon__text::after {
-  content: " урбанистика музыка саунд-дизайн";
+  content: ' урбанистика музыка саунд-дизайн';
 }
 @keyframes animText {
   0% {
@@ -569,6 +578,7 @@
 }
 
 .about__infopanel-title {
+  overflow: hidden;
   font-weight: 500;
   font-size: 24px;
   line-height: 30px;
@@ -584,7 +594,7 @@
   }
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: -15px;
     left: 0;
