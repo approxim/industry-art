@@ -37,7 +37,7 @@
   @include title;
 }
 .circle {
-  transition: transform 1.5s ease;
+  transition: transform 1.5s ease, left 0.5s ease;
   width: 600px;
   height: 600px;
 
@@ -45,6 +45,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @media (min-width: $tablet) {
+    left: 300%;
+  }
 
   & .circle__shureshka-big {
     width: 100%;
@@ -460,18 +464,17 @@ ul.circle__text {
     margin-bottom: 10px;
 
     position: relative;
-    font-family: "Geometria";
+    font-family: 'Geometria';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 25px;
-    text-shadow: 0px 0px 15px rgba(97, 0, 255, 1),
-      0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1),
+    text-shadow: 0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1),
       0px 0px 15px rgba(97, 0, 255, 1);
     border: 1px solid #000000;
 
     &::before {
-      content: "";
+      content: '';
       box-shadow: 0px 0px 15px 4px rgba(97, 0, 255, 1);
       position: absolute;
       left: -20px;
@@ -484,7 +487,7 @@ ul.circle__text {
     }
 
     @media (max-width: 900px) {
-      font-family: "Geometria";
+      font-family: 'Geometria';
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
@@ -515,6 +518,14 @@ ul.circle__text {
   }
 }
 
+#supports.open {
+  & .circle {
+    @media (min-width: 1400px) {
+      left: 50%;
+    }
+  }
+}
+
 .circle__menu {
   position: relative;
   // top: 20%;
@@ -530,11 +541,24 @@ ul.circle__text {
   height: 180px;
   overflow: hidden;
 
+  transition: right 0.5s ease;
+
   @media (min-width: 900px) {
     position: absolute;
     width: 400px;
     right: 5px;
     top: 20%;
+  }
+  @media (min-width: 1400px) {
+    right: -500px;
+  }
+}
+
+#supports.open {
+  & .circle__texts {
+    @media (min-width: 1400px) {
+      right: 5px;
+    }
   }
 }
 
@@ -542,8 +566,7 @@ ul.circle__text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-shadow: 0px 0px 15px rgba(97, 0, 255, 1),
-    0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1),
+  text-shadow: 0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1),
     0px 0px 15px rgba(97, 0, 255, 1);
 
   & .menu-circle__menu {
@@ -564,7 +587,7 @@ ul.circle__text {
     align-items: center;
     position: relative;
 
-    font-family: "Geometria";
+    font-family: 'Geometria';
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
@@ -578,7 +601,7 @@ ul.circle__text {
     }
 
     &::after {
-      content: url("../img/support/arrow.svg");
+      content: url('../img/support/arrow.svg');
       position: absolute;
       top: 23%;
       right: 13px;
