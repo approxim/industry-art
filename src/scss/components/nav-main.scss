@@ -76,4 +76,16 @@
       bottom: -20px;
     }
   }
+
+  &.open {
+    a::before {
+      font-size: 30px;
+      top: -12px;
+    }
+
+    span {
+      font-size: calc(10px + 1.2vh);
+      bottom: -20px;
+    }
+  }
 }

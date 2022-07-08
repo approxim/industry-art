@@ -35,6 +35,13 @@
     &::before {
       display: none;
     }
+    padding: 0;
+    @media (min-width: $tablet) {
+      padding: 0;
+    }
+    @media (min-width: $desktop) {
+      padding: 0;
+    }
   }
 }
 
