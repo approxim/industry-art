@@ -71,7 +71,7 @@
   grid-template-columns: 100%;
   grid-template-rows: 100%;
 
-  &:hover .team__slider-color {
+  &.active .team__slider-color {
     clip-path: circle(1600px at 100% 100%);
   }
 }
@@ -124,11 +124,7 @@
   left: 0;
   top: 60%;
 
-  background: linear-gradient(
-    180deg,
-    transparentize($color-lightgray, 0.41) 0%,
-    $color-lightgray 46.15%
-  );
+  background: linear-gradient(180deg, transparentize($color-lightgray, 0.41) 0%, $color-lightgray 46.15%);
 
   display: flex;
   flex-direction: column;

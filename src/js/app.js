@@ -29,6 +29,9 @@ import * as letterMain from './modules/letter-main.js';
 import * as crosses from './modules/crosses.js';
 import { isMobile } from 'mobile-device-detect';
 
+import * as team from './modules/team.js';
+team.init();
+
 // var mobileDetect = new MobileDetect(window.navigator.userAgent);
 // console.log("Mobile: " + detect.mobile());
 // console.log("Phone: " + detect.phone());
