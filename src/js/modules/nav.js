@@ -6,6 +6,7 @@ let colorInUse = '';
 let isFunctionalActive = true;
 
 const sections = document.querySelectorAll('section');
+console.log(sections);
 const clicksToScroll = 5;
 const maxScroll = clicksToScroll * sections.length - 1;
 
@@ -95,9 +96,26 @@ export function init() {
 
   overflowChanger();
   window.addEventListener('resize', overflowChanger);
-
-  activateSection(0);
-  activateNavItem(navItems[0], navItems);
+  let anchor = window.location.hash;
+  if (anchor == '#promo') {
+    activateSection(0);
+    activateNavItem(navItems[0], navItems);
+  } else if (anchor == '#about') {
+    activateSection(1);
+    activateNavItem(navItems[1], navItems);
+  } else if (anchor == '#supports') {
+    activateSection(2);
+    activateNavItem(navItems[2], navItems);
+  } else if (anchor == '#team') {
+    activateSection(3);
+    activateNavItem(navItems[3], navItems);
+  } else if (anchor == '#footer') {
+    activateSection(4);
+    activateNavItem(navItems[4], navItems);
+  } else {
+    activateSection(0);
+    activateNavItem(navItems[0], navItems);
+  }
 
   navList.addEventListener('click', (event) => {
     let navItem = event.target.closest('.nav-main__item');
@@ -138,6 +156,7 @@ function overflowChanger() {
   if (parseInt(window.innerWidth) > 1440) {
     document.body.style.overflow = 'hidden';
     activateSection(0);
+    activateNavItem(document.querySelectorAll('.nav-main__item')[0], document.querySelectorAll('.nav-main__item'));
     isFunctionalActive = true;
   } else {
     document.body.style.overflow = '';
