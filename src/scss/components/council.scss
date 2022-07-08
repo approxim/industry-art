@@ -1,9 +1,15 @@
+.second-page {
+  background-color: $color-lightgray;
+}
 .council {
   width: 100%;
   min-height: 100%;
   background-color: $color-lightgray;
-  padding-top: 120px;
-  // padding-bottom: 80px;
+  padding-top: 200px;
+
+  @media (min-width: $tablet) {
+    padding-top: 250px;
+  }
 
   @media (min-width: $desktop) {
     height: 100vh;
@@ -15,6 +21,12 @@
       padding-left: 100px;
     }
   }
+
+  // ul {
+  //   @media (min-width: $desktop) {
+  //     margin-top: 100px;
+  //   }
+  // }
 }
 
 .header-2 {
@@ -47,12 +59,16 @@
 .council__title {
   @include title;
   color: $color-black;
-  margin-bottom: 80px;
+  // margin-bottom: 80px;
   padding-bottom: 15px;
-  position: sticky;
+  position: fixed;
   top: 100px;
   z-index: 500;
   margin-top: 0;
+
+  @media (min-width: $tablet) {
+    margin-top: 0;
+  }
 
   &::after {
     background-color: $color-black;
