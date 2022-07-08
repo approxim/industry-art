@@ -59,7 +59,7 @@
     left: 30%;
   }
 
-  @media (min-width: $tablet) {
+  @media (min-width: $desktop) {
     left: 300%;
   }
 
@@ -758,8 +758,8 @@ ul.circle__text {
   }
   &:nth-child(2) {
     .circle__shadow {
-      top: 60px;
-      left: -116px;
+      top: 49px;
+      left: -85px;
       transform: scale(0.5) rotateZ(72deg);
 
       @media (min-width: $tablet) {
@@ -771,8 +771,8 @@ ul.circle__text {
   }
   &:nth-child(3) {
     .circle__shadow {
-      top: -55px;
-      left: -77px;
+      top: -23px;
+      left: -57px;
       transform: scale(0.5) rotateZ(144deg);
 
       @media (min-width: $tablet) {
@@ -784,8 +784,8 @@ ul.circle__text {
   }
   &:nth-child(4) {
     .circle__shadow {
-      top: -22px;
-      left: 16px;
+      top: 6px;
+      left: -3px;
       transform: scale(0.5) rotateZ(216deg);
 
       @media (min-width: $tablet) {
@@ -797,8 +797,8 @@ ul.circle__text {
   }
   &:nth-child(5) {
     .circle__shadow {
-      top: 47px;
-      left: -3px;
+      top: 44px;
+      left: -41px;
       transform: scale(0.5) rotateZ(288deg);
 
       @media (min-width: $tablet) {
