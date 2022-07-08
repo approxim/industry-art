@@ -614,7 +614,7 @@ ul.circle__text {
 .circle__texts {
   position: relative;
   width: 100%;
-  bottom: 0;
+  top: 120px;
   height: 180px;
   overflow: hidden;
 
@@ -844,4 +844,42 @@ ul.circle__text {
 .circle__shureshka-big {
   z-index: -2;
   user-select: none;
+}
+.support__title {
+  top: 90px;
+  @include title;
+  position: absolute;
+
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 0;
+
+  @media (min-width: $tablet) {
+    margin-top: 1px;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: $desktop) {
+    width: 0%;
+    transition: width 0.5s ease;
+  }
+
+  &::after {
+    margin: 0 30px;
+
+    @media (min-width: $tablet) {
+      margin: 0 60px;
+      width: calc(100% - 120px);
+    }
+    @media (min-width: $desktop) {
+      margin: 0 100px 0 267px;
+      width: calc(100% - 367px);
+    }
+  }
+}
+
+.supports.open {
+  & .support__title {
+    width: 100%;
+  }
 }
