@@ -22,8 +22,8 @@ export function init() {
         }
       }
 
-      if (target.classList.contains("circle__icon")) {
-        let iconID = target.classList[1].split("_")[3];
+      if (target.classList.contains('circle__icon')) {
+        let iconID = target.classList[1].split('_')[3];
         activateSection(iconID);
       }
       if (target.classList.contains('circle__icon_image')) {
@@ -58,6 +58,9 @@ activateSection(1);
 function activateSection(sectionID) {
   let circle = document.querySelector('.circle');
   if (circle) {
+    if (+circle.classList[1].split('-')[1] == sectionID) {
+      return;
+    }
     for (let i = 1; i < 6; i++) {
       circle.classList.remove('activate-' + i);
       document.querySelector('.circle__text_' + i).classList.remove('active');
@@ -70,16 +73,15 @@ function activateSection(sectionID) {
     setTimeout(() => {
       document.querySelector('.menu-circle__item_' + sectionID).classList.add('active');
     }, 500);
-    document.querySelector(".menu-circle__choice").innerText =
-      document.querySelector(".menu-circle__item_" + sectionID).innerText;
+    document.querySelector('.menu-circle__choice').innerText = document.querySelector(
+      '.menu-circle__item_' + sectionID
+    ).innerText;
 
-    document.querySelector(".circle__circle-words").classList.add("hidden");
+    document.querySelector('.circle__circle-words').classList.add('hidden');
     setTimeout(() => {
-      document
-        .querySelector(".circle__circle-words")
-        .classList.remove("hidden");
+      document.querySelector('.circle__circle-words').classList.remove('hidden');
     }, 1300);
-    
+
     circle.classList.add('activate-' + sectionID);
     document.querySelector('.circle__text_' + sectionID).classList.add('active');
 
@@ -91,11 +93,10 @@ function activateSection(sectionID) {
         li.style.textShadow = `0px 0px 10px ${color}, 0px 0px 10px ${color}, 0px 0px 10px ${color}, 0px 0px 10px ${color}`;
       });
     setTimeout(() => {
-      document
-        .querySelector(".menu-circle__item_" + sectionID)
-        .classList.add("active");
+      document.querySelector('.menu-circle__item_' + sectionID).classList.add('active');
     }, 500);
-    document.querySelector(".menu-circle__choice").innerText =
-      document.querySelector(".menu-circle__item_" + sectionID).innerText;
+    document.querySelector('.menu-circle__choice').innerText = document.querySelector(
+      '.menu-circle__item_' + sectionID
+    ).innerText;
   }
 }
