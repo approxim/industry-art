@@ -37,14 +37,26 @@
   @include title;
 }
 .circle {
-  transition: transform 1.5s ease;
-  width: 600px;
-  height: 600px;
-
+  display: block;
+  width: 300px;
+  height: 300px;
   position: absolute;
-  top: 50%;
+  bottom: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+
+  transform: translate(-50%, 50%);
+  transition: transform 1.5s ease;
+
+  @media (min-width: $tablet) {
+    width: 600px;
+    height: 600px;
+
+    top: 50%;
+    left: 50%;
+  }
+  @media (min-width: 900px) and (max-width: 1439px) {
+    left: 30%;
+  }
 
   & .circle__shureshka-big {
     width: 100%;
@@ -92,7 +104,11 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -46%);
+
+    @media (min-width: $tablet) {
+      transform: translate(-50%, -50%);
+    }
 
     & img {
       position: relative;
@@ -120,31 +136,52 @@
       position: absolute;
       width: 20%;
       height: 20%;
+      cursor: pointer;
       & .circle__icon {
         position: absolute;
       }
       &_1 {
-        top: -29px;
+        top: -15px;
         left: 40.5%;
+
+        @media (min-width: $tablet) {
+          top: -29px;
+        }
       }
       &_2 {
-        top: 24%;
-        right: -19px;
+        top: 25%;
+        right: -11px;
+        @media (min-width: $tablet) {
+          top: 24%;
+          right: -19px;
+        }
         & img.circle__icon_image {
           transform: translate(-50%, -50%);
         }
       }
       &_3 {
-        bottom: 7px;
-        right: 39px;
+        bottom: 2px;
+        right: 19px;
+        @media (min-width: $tablet) {
+          bottom: 7px;
+          right: 39px;
+        }
       }
       &_4 {
-        bottom: 7px;
-        left: 39px;
+        bottom: 3px;
+        left: 18px;
+        @media (min-width: $tablet) {
+          bottom: 7px;
+          left: 39px;
+        }
       }
       &_5 {
         top: 24%;
-        left: -19px;
+        left: -11px;
+        @media (min-width: $tablet) {
+          top: 24%;
+          left: -19px;
+        }
       }
 
       & img {
@@ -256,9 +293,14 @@
       z-index: 100;
       position: absolute;
 
-      & img {
-        width: 100%;
-        height: 100%;
+      & svg {
+        // width: 100%;
+        // height: 100%;
+        transform: scale(0.7);
+
+        @media (min-width: $tablet) {
+          transform: scale(1);
+        }
       }
       &:after {
         content: url(../img/support/Arrow.svg);
@@ -273,36 +315,81 @@
         transform: translate(-50%, 0);
 
         &:after {
-          transform: scale(2) translateX(-50%);
+          transform: scale(1) translate(-63%, -34%);
+
+          @media (min-width: $tablet) {
+            transform: scale(2) translateX(-50%);
+          }
         }
       }
       &#circle__word_2 {
-        right: 8%;
-        top: 22%;
+        right: 3%;
+        top: 9%;
+
+        @media (min-width: $tablet) {
+          right: 8%;
+          top: 22%;
+        }
+
         &:after {
-          transform: scale(2) rotateZ(72deg) translateX(100%) translateY(10%);
+          transform: scale(1) rotateZ(72deg) translateX(150%) translateY(10%);
+
+          @media (min-width: $tablet) {
+            transform: scale(2) rotateZ(72deg) translateX(100%) translateY(10%);
+          }
         }
       }
       &#circle__word_3 {
-        bottom: 9%;
-        right: 15%;
+        bottom: 0%;
+        right: 6%;
+
+        @media (min-width: $tablet) {
+          bottom: 9%;
+          right: 15%;
+        }
         &:after {
-          transform: scale(2) rotateZ(144deg) translateX(40%) translateY(10%);
+          transform: scale(1) rotateZ(144deg) translateX(40%) translateY(0%);
+
+          @media (min-width: $tablet) {
+            transform: scale(2) rotateZ(144deg) translateX(40%) translateY(10%);
+          }
         }
       }
       &#circle__word_4 {
-        bottom: 8%;
-        left: 13%;
+        bottom: 0%;
+        left: 0%;
+        transform: rotateZ(3deg);
+
+        @media (min-width: $tablet) {
+          bottom: 8%;
+          left: 13%;
+        }
+
         &:after {
           top: 50%;
-          transform: scale(2) rotateZ(216deg) translateX(10%) translateY(10%);
+          transform: scale(1) rotateZ(212deg) translateX(10%) translateY(20%);
+
+          @media (min-width: $tablet) {
+            transform: scale(2) rotateZ(216deg) translateX(10%) translateY(10%);
+          }
         }
       }
       &#circle__word_5 {
-        left: 6%;
-        top: 24%;
+        left: 3%;
+        top: 11%;
+        transform: translate(4%, -2%);
+
+        @media (min-width: $tablet) {
+          left: 6%;
+          top: 24%;
+        }
+
         &:after {
-          transform: scale(2) rotateZ(288deg) translateX(-50%) translateY(10%);
+          transform: scale(1) rotateZ(288deg) translateX(-160%) translateY(-20%);
+
+          @media (min-width: $tablet) {
+            transform: scale(2) rotateZ(288deg) translateX(-50%) translateY(10%);
+          }
         }
       }
     }
@@ -416,20 +503,8 @@
     }
   }
 
-  @media (max-width: 1400px) {
-    left: 30%;
-  }
-  @media (max-width: 900px) {
-    display: none;
-  }
-
-  @media (max-width: 630px) {
-    width: 450px;
-    height: 450px;
-  }
-  @media (max-width: 471px) {
-    width: 300px;
-    height: 300px;
+  @media (min-width: 1400px) {
+    left: 50%;
   }
 
   & .circle__star {
@@ -516,6 +591,7 @@ ul.circle__text {
 }
 
 .circle__menu {
+  display: none;
   position: relative;
   // top: 20%;
   width: auto;
@@ -526,7 +602,7 @@ ul.circle__text {
 .circle__texts {
   position: relative;
   width: 100%;
-  bottom: 200px;
+  bottom: 0;
   height: 180px;
   overflow: hidden;
 
@@ -545,6 +621,7 @@ ul.circle__text {
   text-shadow: 0px 0px 15px rgba(97, 0, 255, 1),
     0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1),
     0px 0px 15px rgba(97, 0, 255, 1);
+  display: none;
 
   & .menu-circle__menu {
     clip-path: inset(0 0 105% 0);
@@ -643,39 +720,68 @@ ul.circle__text {
 
 .circle__word {
   &:nth-child(1) {
-    // display: none;
     .circle__shadow {
-      top: 41px;
-      left: -9px;
-      // transform: rotateZ(4deg);
+      top: 1px;
+      left: -8px;
+      transform: scale(0.5) rotateZ(0);
+
+      @media (min-width: $tablet) {
+        top: 41px;
+        left: -9px;
+        transform: scale(1) rotateZ(0);
+      }
     }
   }
   &:nth-child(2) {
     .circle__shadow {
       top: 60px;
       left: -116px;
-      transform: rotateZ(72deg);
+      transform: scale(0.5) rotateZ(72deg);
+
+      @media (min-width: $tablet) {
+        top: 60px;
+        left: -116px;
+        transform: scale(1) rotateZ(72deg);
+      }
     }
   }
   &:nth-child(3) {
     .circle__shadow {
       top: -55px;
       left: -77px;
-      transform: rotateZ(144deg);
+      transform: scale(0.5) rotateZ(144deg);
+
+      @media (min-width: $tablet) {
+        transform: scale(1) rotateZ(144deg);
+        top: -55px;
+        left: -77px;
+      }
     }
   }
   &:nth-child(4) {
     .circle__shadow {
       top: -22px;
       left: 16px;
-      transform: rotateZ(216deg);
+      transform: scale(0.5) rotateZ(216deg);
+
+      @media (min-width: $tablet) {
+        transform: scale(1) rotateZ(216deg);
+        top: -22px;
+        left: 16px;
+      }
     }
   }
   &:nth-child(5) {
     .circle__shadow {
       top: 47px;
       left: -3px;
-      transform: rotateZ(288deg);
+      transform: scale(0.5) rotateZ(288deg);
+
+      @media (min-width: $tablet) {
+        transform: scale(1) rotateZ(288deg);
+        top: 47px;
+        left: -3px;
+      }
     }
   }
 }
@@ -692,6 +798,11 @@ ul.circle__text {
   filter: blur(10px);
   transition: all 0.4s ease;
   user-select: none;
+  // transform: scale(0.5);
+
+  // @media (min-width: $tablet) {
+  //   transform: scale(1);
+  // }
 }
 
 .circle__shureshka-small {
