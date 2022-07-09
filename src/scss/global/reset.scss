@@ -4,15 +4,16 @@
   // font-family: "Helvetica-Neue","Helvetica",Arial,sans-serif;
   color: #FFF;
   margin: 0;
-  padding: 0
+  padding: 0;
+  caret-color: transparent;
 }
-  
+
 div,span,object,iframe,img,table,caption,thead,tbody,tfoot,tr,tr,td,article,aside,canvas,details,figure,hgroup,menu,nav,footer,header,section,summary,mark,audio,video {
   border: 0;
   margin: 0;
   padding: 0
 }
-  
+
 h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,code,del,dfn,em,ins,q,samp,small,strong,sub,sup,b,i,hr,dl,dt,dd,ol,ul,li,fieldset,legend,label {
   border: 0;
   font-size: 100%;
@@ -20,47 +21,47 @@ h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,code,del,dfn,em,ins,q,samp,sma
   margin: 0;
   padding: 0
 }
-  
+
 div,main,article,aside,canvas,figure,figure img,figcaption,hgroup,footer,header,nav,section,audio,video {
   display: block
 }
-  
+
 table {
   border-collapse: separate;
   border-spacing: 0
 }
-  
+
 table caption,table th,table td {
   text-align: left;
   vertical-align: middle
 }
-  
+
 a img {
   border: 0
 }
-  
+
 img {
   max-width: 100%;
   height: auto;
 }
-  
+
 a {
     text-decoration: none
 }
-  
+
 ul,li {
   list-style-type: none;
   line-height: 1
 }
-  
+
 :focus {
   outline: 0
 }
-  
+
 * {
   box-sizing: border-box
 }
-  
+
 :after, :before {
   box-sizing: border-box;
 }
