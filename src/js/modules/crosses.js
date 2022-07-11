@@ -115,6 +115,7 @@ export function init() {
 
   function loop() {
     c.clearRect(0, 0, canvas.width, canvas.height);
+
     updateCrosses();
 
     window.requestAnimationFrame(loop);
@@ -125,7 +126,8 @@ export function init() {
   function setPos({ clientX, clientY }) {
     [mouse.x, mouse.y] = [clientX, clientY];
     let cross = crosses[0];
-    cross.color = 'rgba(0,0,0,0)'[(cross.currPos.x, cross.currPos.y)] = [mouse.x, mouse.y];
+    cross.color = 'rgba(0,0,0,0)';
+    [cross.currPos.x, cross.currPos.y] = [mouse.x, mouse.y];
   }
 
   loop();

@@ -1,12 +1,11 @@
-import $ from "jquery";
+import $ from 'jquery';
 
-const COLORS = ["#4F4B98", "#2AA89A", "#D6338A", "#F0E400"];
-let colorInUse = "";
+const COLORS = ['#4F4B98', '#2AA89A', '#D6338A', '#F0E400'];
+let colorInUse = '';
 
 let isFunctionalActive = true;
 
-const sections = document.querySelectorAll("section");
-console.log(sections);
+const sections = document.querySelectorAll('section');
 const clicksToScroll = 5;
 const maxScroll = clicksToScroll * sections.length - 1;
 
@@ -24,13 +23,13 @@ function activateSection(sectionID) {
     let section = sections[sectionID];
     wheelCounter = sectionID * clicksToScroll;
     sections.forEach((sectionToRemove) => {
-      sectionToRemove.classList.remove("open");
+      sectionToRemove.classList.remove('open');
       setTimeout(() => {
-        sectionToRemove.style.display = "none";
+        sectionToRemove.style.display = 'none';
 
-        section.style.display = "";
-        $(".team__slider-init")
-          .slick("unslick")
+        section.style.display = '';
+        $('.team__slider-init')
+          .slick('unslick')
           .slick({
             mobileFirst: true,
             dots: false,
@@ -58,7 +57,7 @@ function activateSection(sectionID) {
               },
             ],
           });
-        $(".about__infopanel-slider").slick("unslick").slick({
+        $('.about__infopanel-slider').slick('unslick').slick({
           dots: true,
           infinite: false,
           arrows: false,
@@ -68,7 +67,7 @@ function activateSection(sectionID) {
         });
 
         setTimeout(() => {
-          section.classList.add("open");
+          section.classList.add('open');
         }, 50);
       }, 500);
     });
@@ -79,38 +78,52 @@ function activateSection(sectionID) {
 
 function activateNavItem(item, navItems) {
   navItems.forEach((item) => {
-    item.classList.remove("open");
-    item.querySelector("a").style.color = "";
+    item.classList.remove('open');
+    item.querySelector('a').style.color = '';
   });
   let color = getRandomColor();
   while (color == colorInUse) {
     color = getRandomColor();
   }
   colorInUse = color;
-  item.classList.add("open");
-  item.querySelector("a").style.color = color;
+  item.classList.add('open');
+  item.querySelector('a').style.color = color;
 }
 
 export function init() {
-  let navItems = document.querySelectorAll(".nav-main__item");
-  const navList = document.querySelector(".nav-main__list");
+  let navItems = document.querySelectorAll('.nav-main__item');
+  const navList = document.querySelector('.nav-main__list');
+
+  document.addEventListener('scroll', () => {
+    if (isScrolledIntoView(document.querySelector('#promo'))) {
+      activateNavItem(navItems[0], navItems);
+    } else if (isScrolledIntoView(document.querySelector('#about'))) {
+      activateNavItem(navItems[1], navItems);
+    } else if (isScrolledIntoView(document.querySelector('#supports'))) {
+      activateNavItem(navItems[2], navItems);
+    } else if (isScrolledIntoView(document.querySelector('#team'))) {
+      activateNavItem(navItems[3], navItems);
+    } else if (isScrolledIntoView(document.querySelector('#footer'))) {
+      activateNavItem(navItems[4], navItems);
+    }
+  });
 
   overflowChanger();
-  window.addEventListener("resize", overflowChanger);
+  window.addEventListener('resize', overflowChanger);
   let anchor = window.location.hash;
-  if (anchor == "#promo") {
+  if (anchor == '#promo') {
     activateSection(0);
     activateNavItem(navItems[0], navItems);
-  } else if (anchor == "#about") {
+  } else if (anchor == '#about') {
     activateSection(1);
     activateNavItem(navItems[1], navItems);
-  } else if (anchor == "#supports") {
+  } else if (anchor == '#supports') {
     activateSection(2);
     activateNavItem(navItems[2], navItems);
-  } else if (anchor == "#team") {
+  } else if (anchor == '#team') {
     activateSection(3);
     activateNavItem(navItems[3], navItems);
-  } else if (anchor == "#footer") {
+  } else if (anchor == '#footer') {
     activateSection(4);
     activateNavItem(navItems[4], navItems);
   } else {
@@ -118,8 +131,8 @@ export function init() {
     activateNavItem(navItems[0], navItems);
   }
 
-  navList.addEventListener("click", (event) => {
-    let navItem = event.target.closest(".nav-main__item");
+  navList.addEventListener('click', (event) => {
+    let navItem = event.target.closest('.nav-main__item');
     if (navItem) {
       activateNavItem(navItem, navItems);
 
@@ -134,7 +147,10 @@ export function init() {
     }
   });
 
-  document.addEventListener("wheel", (event) => {
+  document.addEventListener('wheel', (event) => {
+    if ((document.body.style.display = '')) {
+      return;
+    }
     const scrollDelta = event.deltaY;
     scrollDelta > 0 ? wheelCounter++ : wheelCounter--;
     if (wheelCounter < 0) {
@@ -153,17 +169,24 @@ export function init() {
   });
 }
 
+function isScrolledIntoView(elem) {
+  var docViewTop = $(window).scrollTop();
+  var docViewBottom = docViewTop + $(window).height();
+
+  var elemTop = $(elem).offset().top;
+  var elemBottom = elemTop + $(elem).height();
+
+  return elemBottom <= docViewBottom && elemTop >= docViewTop;
+}
+
 function overflowChanger() {
   if (parseInt(window.innerWidth) > 1399 && parseInt(window.innerHeight) > 899) {
     document.body.style.overflow = 'hidden';
     activateSection(0);
-    activateNavItem(
-      document.querySelectorAll(".nav-main__item")[0],
-      document.querySelectorAll(".nav-main__item")
-    );
+    activateNavItem(document.querySelectorAll('.nav-main__item')[0], document.querySelectorAll('.nav-main__item'));
     isFunctionalActive = true;
   } else {
-    document.body.style.overflow = "";
+    document.body.style.overflow = '';
     sections.forEach((section) => {
       section.style.display = '';
       sections.forEach((section) => {
