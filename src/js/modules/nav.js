@@ -154,8 +154,8 @@ export function init() {
 }
 
 function overflowChanger() {
-  if (parseInt(window.innerWidth) > 767) {
-    document.body.style.overflow = "hidden";
+  if (parseInt(window.innerWidth) > 1399 && parseInt(window.innerHeight) > 899) {
+    document.body.style.overflow = 'hidden';
     activateSection(0);
     activateNavItem(
       document.querySelectorAll(".nav-main__item")[0],
@@ -165,7 +165,10 @@ function overflowChanger() {
   } else {
     document.body.style.overflow = "";
     sections.forEach((section) => {
-      section.style.display = "";
+      section.style.display = '';
+      sections.forEach((section) => {
+        section.classList.add('open');
+      });
     });
     isFunctionalActive = false;
   }
