@@ -1,9 +1,11 @@
 import $ from 'jquery';
+import { isWindows } from 'mobile-device-detect';
 
 const COLORS = ['#4F4B98', '#2AA89A', '#D6338A', '#F0E400'];
 let colorInUse = '';
 
 let isFunctionalActive = true;
+window.temp = isFunctionalActive;
 
 const sections = document.querySelectorAll('section');
 const clicksToScroll = 5;
@@ -28,6 +30,7 @@ function activateSection(sectionID) {
         sectionToRemove.style.display = 'none';
 
         section.style.display = '';
+
         $('.team__slider-init')
           .slick('unslick')
           .slick({
@@ -67,7 +70,7 @@ function activateSection(sectionID) {
         });
 
         setTimeout(() => {
-          section.classList.add('open');
+          sectionToRemove.classList.add('open');
         }, 50);
       }, 500);
     });
@@ -138,17 +141,37 @@ export function init() {
 
       let sectionToScroll;
       for (let i = 0; i < sections.length; i++) {
-        if (sections[i].id == navItem.dataset.scroll) {
+        if ('#' + sections[i].id == navItem.dataset.scroll) {
           sectionToScroll = i;
         }
       }
       wheelCounter = sectionToScroll * 5;
       activateSection(sectionToScroll);
     }
+    if (isFunctionalActive) {
+    }
+  });
+
+  $('[data-scroll]').on('click', function (event) {
+    if (!isFunctionalActive) {
+      event.preventDefault();
+      let elementId = $(this).data('scroll');
+      let elementOffset = $(elementId).offset().top;
+
+      // nav.removeClass("open");
+
+      $('html, body').animate(
+        {
+          scrollTop:
+            elementOffset - 65 /*65 это отступ(смещение) для уточнения позиционирования при скролле документа*/,
+        },
+        700
+      );
+    }
   });
 
   document.addEventListener('wheel', (event) => {
-    if ((document.body.style.display = '')) {
+    if (document.body.style.overflow == '') {
       return;
     }
     const scrollDelta = event.deltaY;
@@ -172,11 +195,20 @@ export function init() {
 function isScrolledIntoView(elem) {
   var docViewTop = $(window).scrollTop();
   var docViewBottom = docViewTop + $(window).height();
-
   var elemTop = $(elem).offset().top;
   var elemBottom = elemTop + $(elem).height();
+  console.log(elem);
+  if (elem == document.querySelector('#supports')) {
+    console.log(
+      $(window).scrollTop(),
+      docViewTop + $(window).height(),
+      $(elem).offset().top,
+      elemTop + $(elem).height(),
+      elemBottom <= docViewBottom && elemTop >= docViewTop
+    );
+  }
 
-  return elemBottom <= docViewBottom && elemTop >= docViewTop;
+  return elemTop >= docViewTop;
 }
 
 function overflowChanger() {

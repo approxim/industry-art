@@ -126,8 +126,10 @@ export function init() {
   function setPos({ clientX, clientY }) {
     [mouse.x, mouse.y] = [clientX, clientY];
     let cross = crosses[0];
-    cross.color = 'rgba(0,0,0,0)';
-    [cross.currPos.x, cross.currPos.y] = [mouse.x, mouse.y];
+    if (cross) {
+      cross.color = 'rgba(0,0,0,0)';
+      [cross.currPos.x, cross.currPos.y] = [mouse.x, mouse.y];
+    }
   }
 
   loop();
