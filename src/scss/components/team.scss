@@ -8,6 +8,7 @@
     padding-top: 100px;
     height: 100vh;
     padding-bottom: 90px;
+    min-height: 767px;
   }
 }
 
@@ -124,7 +125,11 @@
   left: 0;
   top: 60%;
 
-  background: linear-gradient(180deg, transparentize($color-lightgray, 0.41) 0%, $color-lightgray 46.15%);
+  background: linear-gradient(
+    180deg,
+    transparentize($color-lightgray, 0.41) 0%,
+    $color-lightgray 46.15%
+  );
 
   display: flex;
   flex-direction: column;

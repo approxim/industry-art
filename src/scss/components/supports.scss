@@ -45,9 +45,45 @@
   z-index: 10;
 }
 
-.supports__title {
+.support__title {
+  top: 90px;
   @include title;
+  position: absolute;
+
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 0;
+
+  @media (min-width: $tablet) {
+    margin-top: 1px;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: $desktop) {
+    width: 0%;
+    transition: width 0.5s ease;
+  }
+
+  &::after {
+    margin: 0 30px;
+
+    @media (min-width: $tablet) {
+      margin: 0 60px;
+      width: calc(100% - 120px);
+    }
+    @media (min-width: $desktop + 1) {
+      margin: 0 100px 0 267px;
+      width: calc(100% - 367px);
+    }
+  }
 }
+
+.supports.open {
+  & .support__title {
+    width: 100%;
+  }
+}
+
 .circle {
   display: block;
   width: 300px;
@@ -572,17 +608,18 @@ ul.circle__text {
     margin-bottom: 10px;
 
     position: relative;
-    font-family: 'Geometria';
+    font-family: "Geometria";
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 25px;
-    text-shadow: 0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1),
+    text-shadow: 0px 0px 15px rgba(97, 0, 255, 1),
+      0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1),
       0px 0px 15px rgba(97, 0, 255, 1);
     border: 1px solid #000000;
 
     &::before {
-      content: '';
+      content: "";
       box-shadow: 0px 0px 15px 4px rgba(97, 0, 255, 1);
       position: absolute;
       left: -20px;
@@ -595,7 +632,7 @@ ul.circle__text {
     }
 
     @media (max-width: 900px) {
-      font-family: 'Geometria';
+      font-family: "Geometria";
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
@@ -675,7 +712,8 @@ ul.circle__text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-shadow: 0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1),
+  text-shadow: 0px 0px 15px rgba(97, 0, 255, 1),
+    0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1),
     0px 0px 15px rgba(97, 0, 255, 1);
   display: none;
 
@@ -697,7 +735,7 @@ ul.circle__text {
     align-items: center;
     position: relative;
 
-    font-family: 'Geometria';
+    font-family: "Geometria";
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
@@ -711,7 +749,7 @@ ul.circle__text {
     }
 
     &::after {
-      content: url('../img/support/arrow.svg');
+      content: url("../img/support/arrow.svg");
       position: absolute;
       top: 23%;
       right: 13px;
@@ -876,42 +914,4 @@ ul.circle__text {
 .circle__shureshka-big {
   z-index: -2;
   user-select: none;
-}
-.support__title {
-  top: 90px;
-  @include title;
-  position: absolute;
-
-  overflow: hidden;
-  white-space: nowrap;
-  margin-top: 0;
-
-  @media (min-width: $tablet) {
-    margin-top: 1px;
-    box-sizing: border-box;
-  }
-
-  @media (min-width: $desktop) {
-    width: 0%;
-    transition: width 0.5s ease;
-  }
-
-  &::after {
-    margin: 0 30px;
-
-    @media (min-width: $tablet) {
-      margin: 0 60px;
-      width: calc(100% - 120px);
-    }
-    @media (min-width: $desktop) {
-      margin: 0 100px 0 267px;
-      width: calc(100% - 367px);
-    }
-  }
-}
-
-.supports.open {
-  & .support__title {
-    width: 100%;
-  }
 }

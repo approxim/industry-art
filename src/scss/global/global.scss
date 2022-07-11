@@ -57,7 +57,7 @@ body {
     padding: 0 60px;
   }
 
-  @media (min-width: $desktop) {
+  @media (min-width: $desktop + 1px) {
     max-width: 100%;
     padding: 0 100px 0 267px;
   }
