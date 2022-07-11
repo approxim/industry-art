@@ -67,12 +67,8 @@
     top: 50%;
     left: 50%;
   }
-  @media (min-width: 900px) and (max-width: 1439px) {
-    left: 30%;
-  }
-
   @media (min-width: $desktop) {
-    left: 300%;
+    left: 30%;
   }
 
   & .circle__shureshka-big {

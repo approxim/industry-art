@@ -8,7 +8,10 @@ export function init() {
   });
   slider.addEventListener('pointerup', (event) => {
     if (!isMoved) {
-      event.target.closest('.team__slider-wrap').classList.toggle('active');
+      let target = event.target.closest('.team__slider-wrap');
+      if (target) {
+        target.classList.toggle('active');
+      }
     }
   });
   slider.addEventListener('pointermove', () => {
@@ -16,11 +19,17 @@ export function init() {
   });
   if (!isMobile) {
     slider.addEventListener('mouseover', (event) => {
-      event.target.closest('.team__slider-wrap').classList.add('active');
+      let target = event.target.closest('.team__slider-wrap');
+      if (target) {
+        target.classList.add('active');
+      }
     });
 
     slider.addEventListener('mouseout', (event) => {
-      event.target.closest('.team__slider-wrap').classList.remove('active');
+      let target = event.target.closest('.team__slider-wrap');
+      if (target) {
+        target.classList.remove('active');
+      }
     });
   }
 }
