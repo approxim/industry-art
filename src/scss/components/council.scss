@@ -22,12 +22,6 @@
       padding-left: 100px;
     }
   }
-
-  // ul {
-  //   @media (min-width: $desktop) {
-  //     margin-top: 100px;
-  //   }
-  // }
 }
 
 .header-2 {
@@ -60,7 +54,6 @@
 .council__title {
   @include title;
   color: $color-black;
-  // margin-bottom: 80px;
   padding-bottom: 15px;
   position: fixed;
   top: 100px;
@@ -115,12 +108,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   margin-bottom: 92px;
-
-  // @media (min-width: $tablet) {
-  //   flex-basis: 50%;
-  // }
 }
 
 .council__img {
@@ -142,24 +130,14 @@
     right: 0;
     bottom: 0;
     left: 0;
-
     padding: 16px 5px;
-
     font-weight: 700;
     font-size: 14px;
     line-height: 18px;
     text-align: center;
     text-transform: uppercase;
     color: $color-white;
-
     background-color: transparentize($color-black, 0.55);
-
-    // @media (min-width: $desktop) {
-    //   position: static;
-    //   background-color: transparent;
-    //   color: $color-black;
-    //   padding-bottom: 0;
-    // }
   }
 }
 

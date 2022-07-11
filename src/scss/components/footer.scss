@@ -4,7 +4,6 @@
 
   display: flex;
   flex-flow: row wrap;
-  // margin-top: 20%;
 
   @media (min-width: $desktop) {
     filter: blur(20px);
@@ -19,6 +18,8 @@
     font-size: 16px;
     line-height: 20px;
     color: $color-white;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
@@ -70,7 +71,7 @@
   padding-top: 23px;
 
   &::before {
-    content: '';
+    content: "";
     width: 100%;
     height: 1px;
     background-color: $color-white;
@@ -82,8 +83,14 @@
 .footer__social {
   display: flex;
 }
-.footer__icon:not(:last-child) {
-  margin-right: 12px;
+.footer__icon {
+  &:not(:last-child) {
+    margin-right: 12px;
+  }
+  a {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 .footer.white {

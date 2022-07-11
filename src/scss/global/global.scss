@@ -1,25 +1,6 @@
 html {
   height: 100%;
-  // для отсутствия прокрутки в режиме модального окна
-  // &.hystmodal__opened {
-  //   position: fixed;
-  //   right: 0;
-  //   left: 0;
-  //   overflow: hidden;
-  // }
 }
-canvas {
-  //   position: fixed;
-  //   top: 200px;
-}
-// section {
-//   opacity: 0;
-//   transition: opacity 0.25s ease;
-//   transition-delay: 0.25s;
-//   &.open {
-//     opacity: 1;
-//   }
-// }
 
 body {
   font-family: $font-main;
@@ -35,8 +16,6 @@ body {
   box-sizing: border-box;
   background-color: $color-black;
   position: relative;
-
-  // background-color: #888;
 }
 
 .main {

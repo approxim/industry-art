@@ -6,7 +6,6 @@
   padding-bottom: 30px;
   background: $color-darkgrey url(../../img/images/building-opacity.webp)
     no-repeat 50% 87% / cover;
-
   @media (min-width: $tablet) {
     padding-top: 72px;
   }
@@ -75,7 +74,6 @@
     flex-direction: row;
     align-items: stretch;
     gap: 80px;
-
     margin-top: 50px;
     overflow: visible;
     height: 100%;
@@ -139,7 +137,6 @@
   line-height: 30px;
   text-transform: uppercase;
   color: $color-white;
-
   padding-bottom: 50px;
   position: relative;
 
@@ -158,7 +155,6 @@
     content: "";
     position: absolute;
     left: 0;
-
     width: 110%;
     height: 1px;
     background-color: $color-white;
@@ -213,7 +209,6 @@
 .about__info-toggle {
   width: auto;
   align-self: flex-start;
-
   font-family: geometria;
   font-weight: 400;
   font-size: 14px;
@@ -221,18 +216,13 @@
   text-transform: uppercase;
   white-space: nowrap;
   color: $color-white;
-
   padding: 9px 20px 5px;
-
   background-color: transparent;
   border-radius: 0;
   border: 1px solid $color-white;
-
   box-shadow: inset 0 0 10px $color-pink-2, 0 0 10px $color-pink-2;
   text-shadow: 0 0 10px $color-pink-2;
-
   transition: all 0.3s ease, transform 0.5s ease;
-
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 
@@ -336,6 +326,8 @@
   opacity: 1;
   transition: opacity 0.5s;
   cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 
   &:first-child {
     margin-bottom: 35px;
@@ -539,12 +531,10 @@
   width: 100%;
   height: 100%;
   padding: 30px 20px 15px;
-
   background-color: $color-black;
   background-repeat: no-repeat;
   border-radius: 25px;
   border: none;
-
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 

@@ -1,43 +1,120 @@
-*html, body {
+*html,
+body {
   width: 100%;
   border: 0;
-  // font-family: "Helvetica-Neue","Helvetica",Arial,sans-serif;
-  color: #FFF;
+  color: #fff;
   margin: 0;
   padding: 0;
   caret-color: transparent;
 }
 
-div,span,object,iframe,img,table,caption,thead,tbody,tfoot,tr,tr,td,article,aside,canvas,details,figure,hgroup,menu,nav,footer,header,section,summary,mark,audio,video {
+div,
+span,
+object,
+iframe,
+img,
+table,
+caption,
+thead,
+tbody,
+tfoot,
+tr,
+tr,
+td,
+article,
+aside,
+canvas,
+details,
+figure,
+hgroup,
+menu,
+nav,
+footer,
+header,
+section,
+summary,
+mark,
+audio,
+video {
   border: 0;
   margin: 0;
-  padding: 0
+  padding: 0;
 }
 
-h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,code,del,dfn,em,ins,q,samp,small,strong,sub,sup,b,i,hr,dl,dt,dd,ol,ul,li,fieldset,legend,label {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+code,
+del,
+dfn,
+em,
+ins,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+b,
+i,
+hr,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+legend,
+label {
   border: 0;
   font-size: 100%;
   vertical-align: baseline;
   margin: 0;
-  padding: 0
+  padding: 0;
 }
 
-div,main,article,aside,canvas,figure,figure img,figcaption,hgroup,footer,header,nav,section,audio,video {
-  display: block
+div,
+main,
+article,
+aside,
+canvas,
+figure,
+figure img,
+figcaption,
+hgroup,
+footer,
+header,
+nav,
+section,
+audio,
+video {
+  display: block;
 }
 
 table {
   border-collapse: separate;
-  border-spacing: 0
+  border-spacing: 0;
 }
 
-table caption,table th,table td {
+table caption,
+table th,
+table td {
   text-align: left;
-  vertical-align: middle
+  vertical-align: middle;
 }
 
 a img {
-  border: 0
+  border: 0;
 }
 
 img {
@@ -46,26 +123,29 @@ img {
 }
 
 a {
-    text-decoration: none
+  text-decoration: none;
 }
 
-ul,li {
+ul,
+li {
   list-style-type: none;
-  line-height: 1
+  line-height: 1;
 }
 
 :focus {
-  outline: 0
+  outline: 0;
 }
 
 * {
-  box-sizing: border-box
-}
-
-:after, :before {
   box-sizing: border-box;
 }
 
-button, a {
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+button,
+a {
   cursor: pointer;
 }
