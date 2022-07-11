@@ -1,6 +1,7 @@
-.second-page {
+.body__council {
   background-color: $color-lightgray;
 }
+
 .council {
   width: 100%;
   min-height: 100%;
@@ -104,7 +105,7 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @media (min-width: $desktop) {
+  @media (min-width: 1440px) {
     grid-template-columns: repeat(6, 1fr);
     gap: 10px;
   }

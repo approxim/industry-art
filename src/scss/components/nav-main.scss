@@ -15,6 +15,24 @@
   @media (min-width: $desktop) {
     display: block;
   }
+
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   top: -35px;
+  //   right: -30px;
+  //   z-index: -13;
+  //   width: 100vh;
+  //   height: 13vw;
+  //   background: rgb(255, 255, 255);
+  //   background: linear-gradient(
+  //     0deg,
+  //     rgba(255, 255, 255, 0.2) 0%,
+  //     rgba(255, 255, 255, 0.2) 95%,
+  //     rgba(255, 255, 255, 0) 100%
+  //   );
+  //   backdrop-filter: blur(5px);
+  // }
 }
 
 .nav-main__list {
