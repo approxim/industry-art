@@ -19,7 +19,7 @@ export function slickInit() {
         },
       },
       {
-        breakpoint: 1440,
+        breakpoint: 1365,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
