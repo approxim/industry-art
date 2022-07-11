@@ -10,8 +10,11 @@
 
   @media (min-width: $desktop) {
     height: 100vh;
-    }
-  @media (min-width: 1400px) and (max-height: 900px) {
+  }
+  @media (min-width: $tablet) {
+    min-height: 1096px;
+  }
+  @media (min-width: 900px) and (max-height: 900px) {
     min-height: 900px;
   }
 }
@@ -445,7 +448,7 @@
     }
 
     & #circle__word_1 .circle__shadow {
-      background: lightblue;
+      background: #4f4b98;
     }
   }
   &.activate-2 {
@@ -468,7 +471,7 @@
     }
 
     & #circle__word_2 .circle__shadow {
-      background: lightblue;
+      background: #4f4b98;
     }
   }
   &.activate-3 {
@@ -491,7 +494,7 @@
     }
 
     & #circle__word_3 .circle__shadow {
-      background: lightblue;
+      background: #4f4b98;
     }
   }
   &.activate-4 {
@@ -514,7 +517,7 @@
     }
 
     & #circle__word_4 .circle__shadow {
-      background: lightblue;
+      background: #4f4b98;
     }
   }
   &.activate-5 {
@@ -537,7 +540,7 @@
     }
 
     & #circle__word_5 .circle__shadow {
-      background: lightblue;
+      background: #4f4b98;
     }
   }
 
@@ -573,18 +576,17 @@ ul.circle__text {
     margin-bottom: 10px;
 
     position: relative;
-    font-family: "Geometria";
+    font-family: 'Geometria';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 25px;
-    text-shadow: 0px 0px 15px rgba(97, 0, 255, 1),
-      0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1),
+    text-shadow: 0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1),
       0px 0px 15px rgba(97, 0, 255, 1);
     border: 1px solid #000000;
 
     &::before {
-      content: "";
+      content: '';
       box-shadow: 0px 0px 15px 4px rgba(97, 0, 255, 1);
       position: absolute;
       left: -20px;
@@ -597,7 +599,7 @@ ul.circle__text {
     }
 
     @media (max-width: 900px) {
-      font-family: "Geometria";
+      font-family: 'Geometria';
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
@@ -677,8 +679,7 @@ ul.circle__text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-shadow: 0px 0px 15px rgba(97, 0, 255, 1),
-    0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1),
+  text-shadow: 0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1), 0px 0px 15px rgba(97, 0, 255, 1),
     0px 0px 15px rgba(97, 0, 255, 1);
   display: none;
 
@@ -700,7 +701,7 @@ ul.circle__text {
     align-items: center;
     position: relative;
 
-    font-family: "Geometria";
+    font-family: 'Geometria';
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
@@ -714,7 +715,7 @@ ul.circle__text {
     }
 
     &::after {
-      content: url("../img/support/arrow.svg");
+      content: url('../img/support/arrow.svg');
       position: absolute;
       top: 23%;
       right: 13px;
@@ -772,7 +773,7 @@ ul.circle__text {
   cursor: pointer;
   &:hover {
     .circle__shadow {
-      background: lightblue;
+      background: #4f4b98;
     }
   }
 }

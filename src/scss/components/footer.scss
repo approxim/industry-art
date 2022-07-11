@@ -28,7 +28,11 @@
 
   @media (min-width: $desktop) {
     position: absolute;
-    bottom: 100px;
+    bottom: none;
+
+    @media (min-height: 900px) {
+      bottom: 100px;
+    }
   }
 }
 
