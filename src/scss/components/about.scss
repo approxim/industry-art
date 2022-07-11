@@ -54,7 +54,7 @@
       margin: 0 60px;
       width: calc(100% - 120px);
     }
-    @media (min-width: $desktop) {
+    @media (min-width: $desktop + 1px) {
       margin: 0 100px 0 267px;
       width: calc(100% - 367px);
     }
@@ -335,6 +335,7 @@
   flex-basis: auto;
   opacity: 1;
   transition: opacity 0.5s;
+  cursor: pointer;
 
   &:first-child {
     margin-bottom: 35px;

@@ -61,7 +61,7 @@
     height: 1px;
     background-color: $color-white;
 
-    @media (min-width: $desktop) {
+    @media (min-width: $desktop - 1px) {
       width: 100%;
     }
   }
