@@ -137,8 +137,10 @@ export function init() {
 
   function updateCanvasFilling() {
     fillCanvas();
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    let supports = document.querySelector('.supports');
+    let compStyles = getComputedStyle(supports);
+    canvas.width = compStyles.width;
+    canvas.height = compStyles.height;
     removeStaticBomb();
     createStaticBomb();
   }

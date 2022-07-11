@@ -74,7 +74,6 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  // height: 70vh;
   @media (min-width: $desktop) {
     flex-direction: row;
     align-items: stretch;
@@ -155,7 +154,6 @@
   }
   @media (min-width: $desktop) {
     padding-bottom: 0;
-    // margin-bottom: 70px;
     height: 0;
   }
 
@@ -290,7 +288,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  // gap: 35px;
   margin: auto 0;
   border-radius: 50%;
   transform-style: preserve-3d;
@@ -350,7 +347,7 @@
     }
   }
 
-  @media (min-width: $tablet) {
+  @media (min-width: $desktop) {
     opacity: 0;
     width: 302px;
     height: 468px;
@@ -365,7 +362,6 @@
 
   &--green {
     @media (min-width: $tablet) {
-      // transform: rotateX(-90deg);
     }
     @media (min-width: $desktop) {
       top: -250px;
@@ -375,7 +371,6 @@
 
   &--pink {
     @media (min-width: $tablet) {
-      // transform: rotateX(-90deg);
     }
     @media (min-width: $desktop) {
       bottom: -250px;
@@ -550,31 +545,15 @@
   background-repeat: no-repeat;
   border-radius: 25px;
   border: none;
-  // display: flex;
-  // flex-direction: column;
-  // text-align: left;
 
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 
   @media (min-width: $tablet) {
-    // padding: 57px 50px;
   }
 
   @media (min-width: $desktop) {
   }
-
-  // &--green {
-  //   background-image: url(../../img/images/background-green-popup.webp);
-  //   background-position: 46% 87%;
-  //   background-size: 147%;
-  // }
-
-  // &--pink {
-  //   background-image: url(../../img/images/background-pink-popup.webp);
-  //   background-position: 30% 78%;
-  //   background-size: 98%;
-  // }
 }
 
 .about__infopanel-title {
@@ -614,20 +593,4 @@
     font-size: 19px;
     line-height: 26px;
   }
-
-  // li {
-  //   padding-bottom: 7px;
-  //   position: relative;
-  //   margin-left: 15px;
-
-  //   &::before {
-  //     content: "○";
-  //     position: absolute;
-  //     left: -15px;
-  //     top: 50%;
-  //     transform: translateY(-65%);
-  //     font-size: 18px;
-  //     color: $color-white;
-  //   }
-  // }
 }
