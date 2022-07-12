@@ -23,7 +23,7 @@ function getRandomColor() {
 function activateSection(sectionID) {
   if (isFunctionalActive) {
     let section = sections[sectionID];
-    wheelCounter = sectionID * clicksToScroll;
+    // wheelCounter = sectionID * clicksToScroll;
     sections.forEach((sectionToRemove) => {
       sectionToRemove.classList.remove('open');
       setTimeout(() => {
@@ -96,20 +96,7 @@ function activateNavItem(item, navItems) {
 export function init() {
   let navItems = document.querySelectorAll('.nav-main__item');
   const navList = document.querySelector('.nav-main__list');
-
-  document.addEventListener('scroll', () => {
-    if (isScrolledIntoView(document.querySelector('#promo'))) {
-      activateNavItem(navItems[0], navItems);
-    } else if (isScrolledIntoView(document.querySelector('#about'))) {
-      activateNavItem(navItems[1], navItems);
-    } else if (isScrolledIntoView(document.querySelector('#supports'))) {
-      activateNavItem(navItems[2], navItems);
-    } else if (isScrolledIntoView(document.querySelector('#team'))) {
-      activateNavItem(navItems[3], navItems);
-    } else if (isScrolledIntoView(document.querySelector('#footer'))) {
-      activateNavItem(navItems[4], navItems);
-    }
-  });
+  const navSecond = document.querySelector('.nav-secondary__list');
 
   overflowChanger();
   window.addEventListener('resize', overflowChanger);
@@ -117,21 +104,27 @@ export function init() {
   if (anchor == '#promo') {
     activateSection(0);
     activateNavItem(navItems[0], navItems);
+    wheelCounter = 0;
   } else if (anchor == '#about') {
     activateSection(1);
     activateNavItem(navItems[1], navItems);
+    wheelCounter = 5;
   } else if (anchor == '#supports') {
     activateSection(2);
     activateNavItem(navItems[2], navItems);
+    wheelCounter = 10;
   } else if (anchor == '#team') {
     activateSection(3);
     activateNavItem(navItems[3], navItems);
+    wheelCounter = 15;
   } else if (anchor == '#footer') {
     activateSection(4);
     activateNavItem(navItems[4], navItems);
+    wheelCounter = 20;
   } else {
     activateSection(0);
     activateNavItem(navItems[0], navItems);
+    wheelCounter = 0;
   }
 
   navList.addEventListener('click', (event) => {
@@ -148,7 +141,26 @@ export function init() {
       wheelCounter = sectionToScroll * 5;
       activateSection(sectionToScroll);
     }
-    if (isFunctionalActive) {
+  });
+
+  navSecond.addEventListener('click', (event) => {
+    let navItem = event.target.closest('.nav-secondary__item');
+    if (navItem) {
+      activateNavItem(
+        document.querySelector(
+          '[data-scroll="' + navItem.dataset.scroll + '"]'
+        ),
+        navItems
+      );
+
+      let sectionToScroll;
+      for (let i = 0; i < sections.length; i++) {
+        if ('#' + sections[i].id == navItem.dataset.scroll) {
+          sectionToScroll = i;
+        }
+      }
+      wheelCounter = sectionToScroll * 5;
+      activateSection(sectionToScroll);
     }
   });
 
@@ -163,7 +175,8 @@ export function init() {
       $('html, body').animate(
         {
           scrollTop:
-            elementOffset - 65 /*65 это отступ(смещение) для уточнения позиционирования при скролле документа*/,
+            elementOffset -
+            65 /*65 это отступ(смещение) для уточнения позиционирования при скролле документа*/,
         },
         700
       );
@@ -202,10 +215,16 @@ function isScrolledIntoView(elem) {
 }
 
 function overflowChanger() {
-  if (parseInt(window.innerWidth) > 1399 && parseInt(window.innerHeight) > 899) {
+  if (
+    parseInt(window.innerWidth) > 1399 &&
+    parseInt(window.innerHeight) > 899
+  ) {
     document.body.style.overflow = 'hidden';
     activateSection(0);
-    activateNavItem(document.querySelectorAll('.nav-main__item')[0], document.querySelectorAll('.nav-main__item'));
+    activateNavItem(
+      document.querySelectorAll('.nav-main__item')[0],
+      document.querySelectorAll('.nav-main__item')
+    );
     isFunctionalActive = true;
   } else {
     document.body.style.overflow = '';
