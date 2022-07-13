@@ -290,7 +290,7 @@
     position: static;
     bottom: 0;
     left: 8000px;
-    transform: rotateX(75deg);
+    transform: rotateX(0);
     margin: 0 auto;
     align-self: center;
     width: 24em;
@@ -303,6 +303,7 @@
     @media (min-width: $desktop) {
       right: 0;
       height: 16.5em;
+      transform: rotateX(75deg);
     }
   }
 }
