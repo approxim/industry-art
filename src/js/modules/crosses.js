@@ -69,21 +69,36 @@ export function init() {
 
       let a = crosses[i];
       let b = crosses[0];
-      let delta = { x: a.startPos.x - a.currPos.x, y: a.startPos.y - a.currPos.y };
+      let delta = {
+        x: a.startPos.x - a.currPos.x,
+        y: a.startPos.y - a.currPos.y,
+      };
       let dist = Math.sqrt(delta.x * delta.x + delta.y * delta.y);
       let force = dist * a.mass;
 
-      let deltaToMouse = { x: a.currPos.x - b.currPos.x, y: a.currPos.y - b.currPos.y };
-      let distToMouse = Math.sqrt(deltaToMouse.x * deltaToMouse.x + deltaToMouse.y * deltaToMouse.y) || 1;
+      let deltaToMouse = {
+        x: a.currPos.x - b.currPos.x,
+        y: a.currPos.y - b.currPos.y,
+      };
+      let distToMouse =
+        Math.sqrt(
+          deltaToMouse.x * deltaToMouse.x + deltaToMouse.y * deltaToMouse.y
+        ) || 1;
       let forceToMouse = 0;
 
       let forceToStaticBomb = 0;
       let distToStaticBomb = 0;
       let deltaToStaticBomb = { x: 0, y: 0 };
       if (staticBomb) {
-        deltaToStaticBomb = { x: a.currPos.x - staticBomb.currPos.x, y: a.currPos.y - staticBomb.currPos.y };
+        deltaToStaticBomb = {
+          x: a.currPos.x - staticBomb.currPos.x,
+          y: a.currPos.y - staticBomb.currPos.y,
+        };
         distToStaticBomb =
-          Math.sqrt(deltaToStaticBomb.x * deltaToStaticBomb.x + deltaToStaticBomb.y * deltaToStaticBomb.y) || 1;
+          Math.sqrt(
+            deltaToStaticBomb.x * deltaToStaticBomb.x +
+              deltaToStaticBomb.y * deltaToStaticBomb.y
+          ) || 1;
       }
       if (distToStaticBomb < config.circleSize && staticBomb) {
         forceToStaticBomb = (distToStaticBomb - config.circleSize) * 0.03;
@@ -93,21 +108,36 @@ export function init() {
       }
       for (let j = 0; j < bombs.length; j++) {
         let bomb = bombs[j];
-        let deltaToBomb = { x: a.currPos.x - bomb.currPos.x, y: a.currPos.y - bomb.currPos.y };
-        let distToBomb = Math.sqrt(deltaToBomb.x * deltaToBomb.x + deltaToBomb.y * deltaToBomb.y);
+        let deltaToBomb = {
+          x: a.currPos.x - bomb.currPos.x,
+          y: a.currPos.y - bomb.currPos.y,
+        };
+        let distToBomb = Math.sqrt(
+          deltaToBomb.x * deltaToBomb.x + deltaToBomb.y * deltaToBomb.y
+        );
         let forceToBomb = 0;
-        distToBomb < config.bombSize ? (forceToBomb = (distToBomb - config.bombSize) * bomb.mass) : (forceToBomb = 0);
+        distToBomb < config.bombSize
+          ? (forceToBomb = (distToBomb - config.bombSize) * bomb.mass)
+          : (forceToBomb = 0);
         acc.x += deltaToBomb.x * forceToBomb;
         acc.y += deltaToBomb.y * forceToBomb;
       }
-      acc.x += delta.x * force - deltaToMouse.x * forceToMouse - deltaToStaticBomb.x * forceToStaticBomb;
-      acc.y += delta.y * force - deltaToMouse.y * forceToMouse - deltaToStaticBomb.y * forceToStaticBomb;
+      acc.x +=
+        delta.x * force -
+        deltaToMouse.x * forceToMouse -
+        deltaToStaticBomb.x * forceToStaticBomb;
+      acc.y +=
+        delta.y * force -
+        deltaToMouse.y * forceToMouse -
+        deltaToStaticBomb.y * forceToStaticBomb;
 
       let alpha = (config.mouseSize / distToMouse) * config.blurСoefficient;
       a.color = `rgba(200,200,200,${alpha})`;
 
-      crosses[i].vel.x = crosses[i].vel.x * config.smooth + acc.x * crosses[i].mass;
-      crosses[i].vel.y = crosses[i].vel.y * config.smooth + acc.y * crosses[i].mass;
+      crosses[i].vel.x =
+        crosses[i].vel.x * config.smooth + acc.x * crosses[i].mass;
+      crosses[i].vel.y =
+        crosses[i].vel.y * config.smooth + acc.y * crosses[i].mass;
     }
     crosses.map((e) => e.draw());
     bombs.map((e) => e.draw());
@@ -121,7 +151,9 @@ export function init() {
     window.requestAnimationFrame(loop);
   }
 
-  crosses.push(new Cross(mouse.x, mouse.y, 'rgba(0,0,0,0)', config.mouseWeight));
+  crosses.push(
+    new Cross(mouse.x, mouse.y, 'rgba(0,0,0,0)', config.mouseWeight)
+  );
 
   function setPos({ clientX, clientY }) {
     [mouse.x, mouse.y] = [clientX, clientY];
@@ -134,17 +166,28 @@ export function init() {
 
   loop();
   function fearCrosses(e) {
-    let cross = new Cross(e.clientX, e.clientY, 'rgb(255,0,0)', config.bombMass);
+    let cross = new Cross(
+      e.clientX,
+      e.clientY,
+      'rgb(255,0,0)',
+      config.bombMass
+    );
     bombs.push(cross);
     setTimeout(() => bombs.pop(), 50);
   }
 
   function updateCanvasFilling() {
-    fillCanvas();
     let supports = document.querySelector('.supports');
     let compStyles = getComputedStyle(supports);
-    canvas.width = compStyles.width;
-    canvas.height = compStyles.height;
+    if (compStyles.width == '100%') {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    } else {
+      canvas.width = parseInt(compStyles.width);
+      canvas.height = parseInt(compStyles.height);
+    }
+    fillCanvas();
+
     removeStaticBomb();
     createStaticBomb();
   }

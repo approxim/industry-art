@@ -19,7 +19,7 @@
   }
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     bottom: 0;
@@ -213,7 +213,7 @@
       user-select: none;
       -webkit-tap-highlight-color: transparent;
       &:hover .circle__icon_image {
-        border-color: rgba(97, 0, 255, 1); // ТРЕБУЕТ ДОРАБОТКИ
+        // border-color: rgba(97, 0, 255, 1); // ТРЕБУЕТ ДОРАБОТКИ
       }
       & .circle__icon {
         position: absolute;
@@ -637,7 +637,7 @@ ul.circle__text {
     margin-bottom: 10px;
 
     position: relative;
-    font-family: "Geometria";
+    font-family: 'Geometria';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -648,7 +648,7 @@ ul.circle__text {
     // border: 1px solid #000000;
 
     &::before {
-      content: "";
+      content: '';
       box-shadow: 0px 0px 15px 4px rgba(97, 0, 255, 1);
       position: absolute;
       left: -20px;
@@ -661,7 +661,7 @@ ul.circle__text {
     }
 
     @media (max-width: 900px) {
-      font-family: "Geometria";
+      font-family: 'Geometria';
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
@@ -759,7 +759,7 @@ ul.circle__text {
     align-items: center;
     position: relative;
 
-    font-family: "Geometria";
+    font-family: 'Geometria';
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
@@ -773,7 +773,7 @@ ul.circle__text {
     }
 
     &::after {
-      content: url("../img/support/arrow.svg");
+      content: url('../img/support/arrow.svg');
       position: absolute;
       top: 23%;
       right: 13px;
@@ -922,3 +922,7 @@ ul.circle__text {
   z-index: -2;
   user-select: none;
 }
+
+// .circle__icon_image stop:first-of-type {
+//   stop-color: $color-blue;
+// }
