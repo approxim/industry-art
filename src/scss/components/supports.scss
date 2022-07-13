@@ -272,10 +272,10 @@
         transform: translate(-50%, -50%);
         width: 80%;
         height: 80%;
-        border: 0px solid transparentize($color-blue, 0.5);
+        border: 6px solid transparent;
         border-radius: 50%;
         box-sizing: content-box;
-        transition: border-width 0.5s ease;
+        transition: border-color 0.5s ease;
 
         svg {
           stop {
@@ -513,7 +513,7 @@
 
     & .circle__icon_wrapper_1 {
       & .circle__icon_image {
-        border-width: 6px;
+        border-color: transparentize($color-blue, 0.5);
         & stop:nth-of-type(1) {
           stop-color: rgba(79, 75, 152, 1);
         }
@@ -547,7 +547,7 @@
     }
     & .circle__icon_wrapper_2 {
       & .circle__icon_image {
-        border-width: 6px;
+        border-color: transparentize($color-blue, 0.5);
         & stop:nth-of-type(1) {
           stop-color: rgba(79, 75, 152, 1);
         }
@@ -581,7 +581,7 @@
     }
     & .circle__icon_wrapper_3 {
       & .circle__icon_image {
-        border-width: 6px;
+        border-color: transparentize($color-blue, 0.5);
         & stop:nth-of-type(1) {
           stop-color: rgba(79, 75, 152, 1);
         }
@@ -615,7 +615,7 @@
     }
     & .circle__icon_wrapper_4 {
       & .circle__icon_image {
-        border-width: 6px;
+        border-color: transparentize($color-blue, 0.5);
         & stop:nth-of-type(1) {
           stop-color: rgba(79, 75, 152, 1);
         }
@@ -649,7 +649,7 @@
     }
     & .circle__icon_wrapper_5 {
       & .circle__icon_image {
-        border-width: 6px;
+        border-color: transparentize($color-blue, 0.5);
         & stop:nth-of-type(1) {
           stop-color: rgba(79, 75, 152, 1);
         }
@@ -681,7 +681,7 @@
   &.hover-1 {
     & .circle__icon_wrapper_1 {
       & .circle__icon_image {
-        border-width: 6px;
+        border-color: transparentize($color-blue, 0.5);
 
         & stop:nth-of-type(1) {
           stop-color: rgba(79, 75, 152, 1);
@@ -700,7 +700,7 @@
   &.hover-2 {
     & .circle__icon_wrapper_2 {
       & .circle__icon_image {
-        border-width: 6px;
+        border-color: transparentize($color-blue, 0.5);
 
         & stop:nth-of-type(1) {
           stop-color: rgba(79, 75, 152, 1);
@@ -719,7 +719,7 @@
   &.hover-3 {
     & .circle__icon_wrapper_3 {
       & .circle__icon_image {
-        border-width: 6px;
+        border-color: transparentize($color-blue, 0.5);
 
         & stop:nth-of-type(1) {
           stop-color: rgba(79, 75, 152, 1);
@@ -738,7 +738,7 @@
   &.hover-4 {
     & .circle__icon_wrapper_4 {
       & .circle__icon_image {
-        border-width: 6px;
+        border-color: transparentize($color-blue, 0.5);
 
         & stop:nth-of-type(1) {
           stop-color: rgba(79, 75, 152, 1);
@@ -757,7 +757,7 @@
   &.hover-5 {
     & .circle__icon_wrapper_5 {
       & .circle__icon_image {
-        border-width: 6px;
+        border-color: transparentize($color-blue, 0.5);
 
         & stop:nth-of-type(1) {
           stop-color: rgba(79, 75, 152, 1);
