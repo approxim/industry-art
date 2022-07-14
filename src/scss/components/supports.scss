@@ -19,13 +19,15 @@
   }
 
   &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 6vw;
-    width: 4vw;
-    background-color: rgba(0, 0, 0, 0.7);
+    @media (min-width: $desktop + 1) {
+      content: '';
+      position: absolute;
+      bottom: 90px;
+      left: 6vw;
+      width: 4vw;
+      height: 90vh;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
   }
 }
 
@@ -63,8 +65,6 @@
   overflow: hidden;
   white-space: nowrap;
   margin-top: 0;
-  // padding-top: 5px;
-  background-color: rgba(0, 0, 0, 0.7);
 
   @media (min-width: $tablet) {
     margin-top: 1px;
@@ -74,6 +74,7 @@
   @media (min-width: $desktop) {
     width: 0%;
     transition: width 0.5s ease;
+    overflow: visible;
   }
 
   &::after {
@@ -86,6 +87,23 @@
     @media (min-width: $desktop + 1) {
       margin: 0 100px 0 267px;
       width: calc(100% - 367px);
+    }
+  }
+  span {
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      width: 120%;
+      height: 200%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.7);
     }
   }
 }
@@ -520,6 +538,16 @@
         & stop:nth-of-type(2) {
           stop-color: rgba(79, 75, 152, 0.85);
         }
+
+        & .circle__shadow {
+        }
+      }
+    }
+    &.hover-1 {
+      & #circle__word_1 {
+        & .circle__shadow {
+          background-color: $color-blue;
+        }
       }
     }
   }
@@ -553,6 +581,13 @@
         }
         & stop:nth-of-type(2) {
           stop-color: rgba(79, 75, 152, 0.85);
+        }
+      }
+    }
+    &.hover-2 {
+      & #circle__word_2 {
+        & .circle__shadow {
+          background-color: $color-blue;
         }
       }
     }
@@ -590,6 +625,13 @@
         }
       }
     }
+    &.hover-3 {
+      & #circle__word_3 {
+        & .circle__shadow {
+          background-color: $color-blue;
+        }
+      }
+    }
   }
   &.activate-4 {
     transform: translate(-50%, -10%) rotateZ(-216deg);
@@ -624,6 +666,13 @@
         }
       }
     }
+    &.hover-4 {
+      & #circle__word_4 {
+        & .circle__shadow {
+          background-color: $color-blue;
+        }
+      }
+    }
   }
   &.activate-5 {
     transform: translate(-50%, -10%) rotateZ(-288deg);
@@ -655,6 +704,13 @@
         }
         & stop:nth-of-type(2) {
           stop-color: rgba(79, 75, 152, 0.85);
+        }
+      }
+    }
+    &.hover-5 {
+      & #circle__word_5 {
+        & .circle__shadow {
+          background-color: $color-blue;
         }
       }
     }
@@ -693,7 +749,7 @@
     }
     & #circle__word_1 {
       & .circle__shadow {
-        background: #4f4b98;
+        background: transparentize($color-lightgray, 0.3);
       }
     }
   }
@@ -712,7 +768,7 @@
     }
     & #circle__word_2 {
       & .circle__shadow {
-        background: #4f4b98;
+        background: transparentize($color-lightgray, 0.3);
       }
     }
   }
@@ -731,7 +787,7 @@
     }
     & #circle__word_3 {
       & .circle__shadow {
-        background: #4f4b98;
+        background: transparentize($color-lightgray, 0.3);
       }
     }
   }
@@ -750,7 +806,7 @@
     }
     & #circle__word_4 {
       & .circle__shadow {
-        background: #4f4b98;
+        background: transparentize($color-lightgray, 0.3);
       }
     }
   }
@@ -769,7 +825,7 @@
     }
     & #circle__word_5 {
       & .circle__shadow {
-        background: #4f4b98;
+        background: transparentize($color-lightgray, 0.3);
       }
     }
   }
@@ -781,7 +837,8 @@ ul.circle__text {
   position: absolute;
   width: 320px;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  overflow: visible;
+  // background-color: rgba(0, 0, 0, 0.7);
 
   right: 50px;
 
@@ -837,6 +894,17 @@ ul.circle__text {
       transform: translateX(-39%);
       width: 60%;
     }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 40%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background-color: rgba(0, 0, 0, 0.7);
   }
 }
 
