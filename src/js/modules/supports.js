@@ -69,26 +69,28 @@ export function init() {
     });
   }
 
-  circle.addEventListener('mouseover', (event) => {
-    let word = event.target.closest('.circle__word');
-    if (word) {
-      circle.classList.add('hover-' + word.id.split('_')[3]);
-    }
-    let icon = event.target.closest('.circle__icon_wrapper');
-    if (icon) {
-      circle.classList.add('hover-' + icon.classList[1].split('_')[4]);
-    }
-  });
-  circle.addEventListener('mouseout', (event) => {
-    let word = event.target.closest('.circle__word');
-    if (word) {
-      circle.classList.remove('hover-' + word.id.split('_')[3]);
-    }
-    let icon = event.target.closest('.circle__icon_wrapper');
-    if (icon) {
-      circle.classList.remove('hover-' + icon.classList[1].split('_')[4]);
-    }
-  });
+  if (circle) {
+    circle.addEventListener('mouseover', (event) => {
+      let word = event.target.closest('.circle__word');
+      if (word) {
+        circle.classList.add('hover-' + word.id.split('_')[3]);
+      }
+      let icon = event.target.closest('.circle__icon_wrapper');
+      if (icon) {
+        circle.classList.add('hover-' + icon.classList[1].split('_')[4]);
+      }
+    });
+    circle.addEventListener('mouseout', (event) => {
+      let word = event.target.closest('.circle__word');
+      if (word) {
+        circle.classList.remove('hover-' + word.id.split('_')[3]);
+      }
+      let icon = event.target.closest('.circle__icon_wrapper');
+      if (icon) {
+        circle.classList.remove('hover-' + icon.classList[1].split('_')[4]);
+      }
+    });
+  }
 }
 
 activateSection(1);
