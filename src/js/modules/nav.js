@@ -189,13 +189,10 @@ export function init() {
     if (document.body.style.overflow == '') {
       return;
     }
-    console.log(Date.now(), temp);
     if (Date.now() - temp < 50) {
-      console.log(1);
       return;
     }
     temp = Date.now();
-    console.log(3);
     const scrollDelta = event.deltaY;
     scrollDelta > 0 ? wheelCounter++ : wheelCounter--;
     if (wheelCounter < 0) {
