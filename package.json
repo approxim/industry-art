@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "circletype": "^2.3.0",
+    "gsap": "^3.10.4",
     "jquery": "latest",
     "mobile-device-detect": "^0.4.3",
     "slick-carousel": "^1.8.1",
